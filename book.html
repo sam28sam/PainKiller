@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Call — PainKiller Consulting</title>
+  <meta name="description" content="Book a free 20-minute diagnostic call with PainKiller Consulting. No commitment, no pitch — a direct conversation about your warehouse operation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .label{font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;}
+    .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-menu a:hover{color:var(--red);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+
+    /* MAIN LAYOUT */
+    .book-section{padding:64px 0 104px;}
+    .book-inner{display:grid;grid-template-columns:1fr 380px;gap:80px;align-items:start;}
+
+    /* LEFT: CALENDLY AREA */
+    .book-left .label{margin-bottom:16px;}
+    .book-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:20px;}
+    .book-headline em{font-style:italic;color:var(--red);}
+    .book-sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.75;margin-bottom:36px;max-width:480px;}
+    .what-to-expect{margin-bottom:40px;}
+    .what-to-expect-title{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;}
+    .expect-list{list-style:none;border-top:1px solid var(--rule);}
+    .expect-list li{padding:13px 0;border-bottom:1px solid var(--rule);font-size:0.92rem;color:var(--ink-mid);display:flex;gap:12px;line-height:1.5;}
+    .expect-list li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:700;}
+
+    /* CALENDLY EMBED */
+    .calendly-wrap{border:1px solid var(--rule);background:var(--paper-mid);min-height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:48px 32px;text-align:center;}
+    .calendly-placeholder-text{font-size:0.85rem;color:var(--ink-light);line-height:1.6;}
+    .calendly-btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.9rem;padding:14px 28px;transition:background 0.2s;}
+    .calendly-btn:hover{background:#333330;}
+
+    /* RIGHT SIDEBAR */
+    .book-sidebar{}
+    .sidebar-block{border:1px solid var(--rule);padding:28px;margin-bottom:2px;}
+    .sidebar-block.featured{background:var(--red-light);border-color:rgba(192,57,43,0.2);}
+    .sidebar-block-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
+    .featured .sidebar-block-label{color:var(--red);border-color:rgba(192,57,43,0.15);}
+    .sidebar-product-name{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em;}
+    .sidebar-product-desc{font-size:0.85rem;color:var(--ink-mid);line-height:1.6;margin-bottom:16px;}
+    .sidebar-price{font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-0.02em;}
+    .sidebar-price-note{font-size:0.75rem;color:var(--ink-light);margin-bottom:16px;}
+    .sidebar-cta{display:block;text-align:center;padding:11px 20px;font-weight:600;font-size:0.85rem;transition:all 0.2s;}
+    .sidebar-cta.dark{background:var(--ink);color:var(--paper);}
+    .sidebar-cta.dark:hover{background:#333330;}
+    .sidebar-cta.border{border:1px solid var(--rule);color:var(--ink);}
+    .sidebar-cta.border:hover{border-color:var(--ink);}
+    .sidebar-cta.red{background:var(--red);color:white;}
+    .sidebar-cta.red:hover{background:#A93226;}
+
+    /* CONTACT */
+    .contact-section{padding:64px 0;background:var(--paper-mid);border-top:1px solid var(--rule);}
+    .contact-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .contact-card{background:var(--paper);padding:36px 32px;}
+    .contact-card-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule);}
+    .contact-card-value{font-family:var(--font-serif);font-size:1.2rem;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em;}
+    .contact-card-note{font-size:0.83rem;color:var(--ink-mid);line-height:1.6;}
+    .contact-card a{color:var(--ink);border-bottom:1px solid var(--rule);transition:border-color 0.2s;}
+    .contact-card a:hover{border-color:var(--ink);}
+
+    footer{padding:48px 0;border-top:1px solid var(--rule);}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);transition:color 0.2s;}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-bottom a{color:var(--ink-light);}
+    .footer-legal{display:flex;gap:20px;}
+
+    @media(max-width:900px){
+      .nav-links{display:none;}.nav-hamburger{display:flex;}
+      .book-inner{grid-template-columns:1fr;gap:48px;}
+      .contact-inner{grid-template-columns:1fr;}
+      .book-section{padding:48px 0 72px;}
+    }
+    @media(max-width:600px){.container{padding:0 20px;}.contact-section{padding:48px 0;}}
+  </style>
+</head>
+<body>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="audit.html">Audit</a>
+  <a href="results.html">Results</a><a href="about.html">About</a><a href="book.html">Book a Call</a>
+</div>
+<nav><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li><li><a href="audit.html">Audit</a></li>
+    <li><a href="results.html">Results</a></li><li><a href="tools.html">Tools</a></li>
+    <li><a href="about.html">About</a></li><li><a href="book.html" class="nav-cta active">Book Free Call</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</div></div></nav>
+
+<div class="book-section">
+  <div class="container">
+    <div class="book-inner">
+      <div class="book-left">
+        <p class="label">Free Diagnostic Call</p>
+        <h1 class="book-headline">20 minutes.<br><em>No pitch. No obligation.</em></h1>
+        <p class="book-sub">Tell me about your operation and what isn't working. I'll tell you honestly whether the audit makes sense — and if it doesn't, I'll say so and suggest something that does.</p>
+        <div class="what-to-expect">
+          <div class="what-to-expect-title">What to expect on the call</div>
+          <ul class="expect-list">
+            <li>A brief overview of your operation — size, sector, current setup</li>
+            <li>The main pressure points you're experiencing right now</li>
+            <li>What you've already tried and why it hasn't stuck</li>
+            <li>An honest view from me on whether an audit would be worthwhile</li>
+            <li>If yes: a summary of what the process looks like and what it costs</li>
+          </ul>
+        </div>
+
+        <!-- CALENDLY EMBED -->
+        <!-- Replace the href below with your actual Calendly link, or embed using the Calendly inline script -->
+        <div class="calendly-wrap">
+          <p class="calendly-placeholder-text">To book directly, click below. You'll be taken to Calendly to choose a time that works.</p>
+          <a href="https://calendly.com/sam-painkillerconsulting/30min" class="calendly-btn" target="_blank">Choose a time →</a>
+          <p class="calendly-placeholder-text" style="font-size:0.75rem;margin-top:8px;">Alternatively, email <a href="mailto:info@painkillerconsulting.co.uk" style="color:var(--ink);border-bottom:1px solid var(--rule);">info@painkillerconsulting.co.uk</a> or call 0333 339 0617</p>
+        </div>
+
+        <!-- To embed Calendly inline, replace the div above with:
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        -->
+      </div>
+
+      <div class="book-sidebar">
+        <div class="sidebar-block featured">
+          <div class="sidebar-block-label">Flagship service</div>
+          <div class="sidebar-product-name">On-Site Audit</div>
+          <div class="sidebar-product-desc">Full floor-level assessment. Findings in 7 working days. Zero-risk guarantee.</div>
+          <div class="sidebar-price">from £950</div>
+          <div class="sidebar-price-note">50% deposit on booking</div>
+          <a href="audit.html" class="sidebar-cta red">See full detail →</a>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-block-label">Single problem</div>
+          <div class="sidebar-product-name">Rapid-Resolve</div>
+          <div class="sidebar-product-desc">One 90-minute session. Written action plan within 48 hours. No call needed before purchase.</div>
+          <div class="sidebar-price">£297</div>
+          <div class="sidebar-price-note">Fixed fee · no call required</div>
+          <a href="https://buy.stripe.com/YOUR_RAPIDRESOLVE_LINK" class="sidebar-cta dark">Buy directly →</a>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-block-label">Self-serve</div>
+          <div class="sidebar-product-name">Operations Toolkit</div>
+          <div class="sidebar-product-desc">Five warehouse operations templates. Instant download.</div>
+          <div class="sidebar-price">£49</div>
+          <div class="sidebar-price-note">One-time · instant</div>
+          <a href="https://buy.stripe.com/YOUR_TOOLKIT_LINK" class="sidebar-cta border">Buy directly →</a>
+        </div>
+        <div class="sidebar-block" style="background:var(--paper-mid);">
+          <div class="sidebar-block-label">The guarantee</div>
+          <p style="font-size:0.88rem;color:var(--ink-mid);line-height:1.65;">Every audit carries a zero-risk guarantee. If we don't identify savings greater than the fee, the second instalment is waived. No invoice. No conversation needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-card">
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a></div>
+        <p class="contact-card-note">Responses within one working day. For urgent enquiries, call directly.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-value"><a href="tel:03333390617">0333 339 0617</a></div>
+        <p class="contact-card-note">Available Monday–Friday, 8am–6pm. If I'm on a site visit, leave a message and I'll return the call the same day.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value"><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">PainKiller Consulting</a></div>
+        <p class="contact-card-note">Follow for operational insights and case study updates, or message directly through LinkedIn.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="container">
+  <div class="footer-inner">
+    <div><div class="footer-logo">Pain<span>Killer</span> Consulting</div><p class="footer-tagline">Warehouse operations consultancy. UK-based.</p></div>
+    <nav class="footer-links"><a href="services.html">Services</a><a href="audit.html">On-Site Audit</a><a href="results.html">Results</a><a href="tools.html">Tools</a><a href="about.html">About</a><a href="book.html">Book a Call</a></nav>
+    <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 PainKiller Consulting Ltd</span><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div></div>
+</div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body></html>

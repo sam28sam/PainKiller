@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On-Site Warehouse Audit — PainKiller Consulting</title>
+  <meta name="description" content="One day on-site. Seven days to your findings. Every bottleneck, quick win, and risk flag identified. Zero-risk guarantee on every audit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1A1A18; --ink-mid: #4A4A46; --ink-light: #8A8A84;
+      --paper: #FAFAF7; --paper-mid: #F2F2ED; --paper-dark: #E8E8E2;
+      --rule: #DDDDD6; --red: #C0392B; --red-light: #F5EAE9;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+    .label { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 16px; }
+    .section-headline { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); }
+    .btn-primary { display: inline-block; background: var(--ink); color: var(--paper); font-weight: 600; font-size: 0.9rem; padding: 14px 28px; transition: background 0.2s; }
+    .btn-primary:hover { background: #333330; }
+    .btn-text { font-size: 0.88rem; font-weight: 500; color: var(--ink-mid); border-bottom: 1px solid var(--rule); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .btn-text:hover { color: var(--ink); border-color: var(--ink); }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem; color: var(--ink); }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; color: var(--ink-mid); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { background: var(--ink) !important; color: var(--paper) !important; padding: 8px 18px; font-weight: 600 !important; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--paper); z-index: 200; flex-direction: column; align-items: flex-start; justify-content: center; padding: 48px 32px; gap: 28px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 2rem; font-weight: 600; color: var(--ink); }
+    .mobile-menu a:hover { color: var(--red); }
+    .mobile-close { position: absolute; top: 20px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--ink-mid); }
+
+    /* HERO */
+    .hero { padding: 72px 0 0; border-bottom: 1px solid var(--rule); }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 20px; }
+    .hero-headline { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.4rem, 4.5vw, 3.8rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 24px; }
+    .hero-headline em { font-style: italic; color: var(--red); }
+    .hero-sub { font-size: 1.08rem; color: var(--ink-mid); line-height: 1.7; max-width: 580px; margin-bottom: 36px; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-guarantee { font-size: 0.8rem; color: var(--ink-light); margin-bottom: 56px; }
+    .hero-guarantee strong { color: var(--ink-mid); font-weight: 500; }
+
+    /* TIMELINE BAR */
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); }
+    .timeline-node { padding: 24px 24px; border-right: 1px solid var(--rule); }
+    .timeline-node:last-child { border-right: none; }
+    .timeline-day { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+    .timeline-event { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 4px; }
+    .timeline-detail { font-size: 0.8rem; color: var(--ink-light); line-height: 1.5; }
+
+    /* SECTIONS */
+    section { padding: 88px 0; border-bottom: 1px solid var(--rule); }
+    .alt-bg { background: var(--paper-mid); }
+
+    /* INCLUDED GRID */
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
+    .included-item { background: var(--paper); padding: 28px; display: flex; gap: 20px; align-items: flex-start; }
+    .included-num { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--paper-dark); line-height: 1; flex-shrink: 0; width: 32px; }
+    .included-label { font-weight: 600; font-size: 0.92rem; color: var(--ink); margin-bottom: 6px; }
+    .included-desc { font-size: 0.84rem; color: var(--ink-mid); line-height: 1.6; }
+
+    /* FIT */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+    .fit-column h3 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
+    .fit-column.yes h3 { color: var(--ink); }
+    .fit-column.no h3 { color: var(--ink-light); }
+    .fit-list { list-style: none; border-top: 1px solid var(--rule); }
+    .fit-list li { padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 0.92rem; color: var(--ink-mid); display: flex; gap: 12px; line-height: 1.5; }
+    .fit-column.yes .fit-list li::before { content: '→'; color: var(--red); flex-shrink: 0; font-weight: 700; }
+    .fit-column.no .fit-list li::before { content: '—'; color: var(--ink-light); flex-shrink: 0; }
+    .fit-note { margin-top: 16px; padding: 16px 20px; background: var(--paper-mid); border: 1px solid var(--rule); font-size: 0.85rem; color: var(--ink-mid); line-height: 1.6; }
+    .fit-note a { color: var(--ink); font-weight: 500; border-bottom: 1px solid var(--rule); }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
+    .pricing-card { background: var(--paper); padding: 40px 36px; }
+    .pricing-card.featured { background: var(--red-light); }
+    .pricing-tier { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 8px; }
+    .pricing-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.8rem; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.02em; }
+    .pricing-amount { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; letter-spacing: -0.03em; color: var(--ink); line-height: 1; margin-bottom: 8px; }
+    .pricing-note-small { font-size: 0.82rem; color: var(--ink-light); margin-bottom: 28px; line-height: 1.55; }
+    .pricing-features { list-style: none; border-top: 1px solid var(--rule); margin-bottom: 32px; }
+    .pricing-features li { padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.88rem; color: var(--ink-mid); display: flex; gap: 10px; }
+    .pricing-features li::before { content: '✓'; color: var(--red); flex-shrink: 0; font-weight: 700; }
+    .pricing-cta { display: block; text-align: center; padding: 13px 24px; font-weight: 600; font-size: 0.88rem; border: 1px solid var(--ink); color: var(--ink); transition: all 0.2s; }
+    .pricing-cta:hover, .featured .pricing-cta { background: var(--ink); color: var(--paper); }
+    .pricing-deposit { margin-top: 12px; text-align: center; font-size: 0.76rem; color: var(--ink-light); }
+
+    /* GUARANTEE */
+    .guarantee-section { background: var(--ink); }
+    .guarantee-section .label { color: #555; }
+    .guarantee-section .section-headline { color: var(--paper); margin-top: 12px; margin-bottom: 24px; }
+    .guarantee-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .guarantee-body { font-size: 1rem; color: #999; line-height: 1.75; margin-bottom: 28px; }
+    .guarantee-terms { list-style: none; border-top: 1px solid #2A2A28; }
+    .guarantee-terms li { padding: 14px 0; border-bottom: 1px solid #2A2A28; font-size: 0.88rem; color: #777; display: flex; gap: 12px; }
+    .guarantee-terms li::before { content: '✓'; color: var(--red); flex-shrink: 0; }
+    .guarantee-right { border: 1px solid #2A2A28; padding: 48px 40px; text-align: center; }
+    .guarantee-zero { font-family: var(--font-serif); font-size: 6rem; font-weight: 700; color: var(--paper); line-height: 1; letter-spacing: -0.04em; margin-bottom: 8px; }
+    .guarantee-zero span { color: var(--red); }
+    .guarantee-caption { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: #555; }
+
+    /* RESULTS */
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 48px; }
+    .result-card { background: var(--paper); padding: 36px 32px; }
+    .result-number { font-family: var(--font-serif); font-size: 3.6rem; font-weight: 700; color: var(--red); line-height: 1; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .result-label { font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 6px; }
+    .result-context { font-size: 0.78rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+    .result-detail { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.65; padding-top: 16px; border-top: 1px solid var(--rule); }
+
+    /* FINAL CTA */
+    .final-cta { padding: 104px 0; }
+    .final-cta-inner { max-width: 640px; }
+    .final-cta .section-headline { margin-top: 12px; margin-bottom: 20px; }
+    .final-cta-sub { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.7; margin-bottom: 36px; }
+    .final-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { padding: 48px 0; border-top: 1px solid var(--rule); }
+    .footer-inner { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
+    .footer-logo { font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+    .footer-logo span { color: var(--red); }
+    .footer-tagline { font-size: 0.8rem; color: var(--ink-light); }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.83rem; color: var(--ink-mid); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-contact { font-size: 0.83rem; color: var(--ink-mid); line-height: 1.8; }
+    .footer-contact a { border-bottom: 1px solid var(--rule); }
+    .footer-bottom { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 24px; font-size: 0.75rem; color: var(--ink-light); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom a { color: var(--ink-light); }
+    .footer-legal { display: flex; gap: 20px; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; } .nav-hamburger { display: flex; }
+      .included-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .guarantee-inner { grid-template-columns: 1fr; gap: 48px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      section { padding: 64px 0; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .timeline { grid-template-columns: 1fr; }
+      .hero { padding: 48px 0 0; }
+      .final-cta { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a><a href="services.html">Services</a>
+  <a href="audit.html">Audit</a><a href="results.html">Results</a>
+  <a href="about.html">About</a><a href="book.html">Book a Call</a>
+</div>
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="audit.html" class="active">Audit</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding-bottom:0; border-bottom: 1px solid var(--rule);">
+  <div class="container">
+    <p class="hero-eyebrow">On-Site Warehouse Audit</p>
+    <h1 class="hero-headline">One day on-site.<br><em>Seven days to your findings.</em></h1>
+    <p class="hero-sub">A full floor-level assessment of your warehouse operation. Every bottleneck, every quick win, every risk flag — identified and written up clearly. Delivered within 7 working days of the audit.</p>
+    <div class="hero-actions">
+      <a href="book.html" class="btn-primary">Book Your Audit — from £950</a>
+      <a href="#whats-included" class="btn-text">What's included ↓</a>
+    </div>
+    <p class="hero-guarantee"><strong>Zero-risk guarantee on every audit.</strong> No savings identified greater than the fee = no second instalment.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-node">
+      <div class="timeline-day">Day 0</div>
+      <div class="timeline-event">Booking confirmed</div>
+      <div class="timeline-detail">Intake questionnaire sent. 50% deposit processed.</div>
+    </div>
+    <div class="timeline-node">
+      <div class="timeline-day">Audit day</div>
+      <div class="timeline-event">On-site</div>
+      <div class="timeline-detail">Floor observation, staff interviews, process mapping.</div>
+    </div>
+    <div class="timeline-node">
+      <div class="timeline-day">7 working days later</div>
+      <div class="timeline-event">Report delivered</div>
+      <div class="timeline-detail">Full written findings. Guaranteed delivery.</div>
+    </div>
+    <div class="timeline-node">
+      <div class="timeline-day">Day after report</div>
+      <div class="timeline-event">Debrief call</div>
+      <div class="timeline-detail">30 minutes to walk through findings and next steps.</div>
+    </div>
+  </div>
+</section>
+
+<section id="whats-included">
+  <div class="container">
+    <p class="label">What's Included</p>
+    <h2 class="section-headline">Everything needed to get a complete picture of your operation.</h2>
+    <div class="included-grid">
+      <div class="included-item"><div class="included-num">01</div><div><div class="included-label">Pre-Audit Intake</div><p class="included-desc">A short structured questionnaire sent before the audit day. Covers current KPIs, known pain points, and operational context — so no time is wasted getting up to speed on site.</p></div></div>
+      <div class="included-item"><div class="included-num">02</div><div><div class="included-label">Full Audit Day On-Site</div><p class="included-desc">A complete floor-level assessment. Observation across all key areas: goods-in, storage, pick/pack, despatch, and any site-specific workflows.</p></div></div>
+      <div class="included-item"><div class="included-num">03</div><div><div class="included-label">Staff Interviews</div><p class="included-desc">Up to 5 interviews with operatives, supervisors, and team leaders. The people on the floor always know where the problems are — we ask them directly.</p></div></div>
+      <div class="included-item"><div class="included-num">04</div><div><div class="included-label">Live Process Mapping</div><p class="included-desc">Every key workflow mapped in real time during the audit day. Bottlenecks, handoff failures, and waste points visualised and documented.</p></div></div>
+      <div class="included-item"><div class="included-num">05</div><div><div class="included-label">KPI Benchmarking</div><p class="included-desc">Your current operational KPIs benchmarked against sector norms — putting your numbers in context and identifying where you're underperforming most.</p></div></div>
+      <div class="included-item"><div class="included-num">06</div><div><div class="included-label">Written Findings Report</div><p class="included-desc">Delivered within 7 working days. Covers: top bottlenecks, quick wins (implementable within 30 days), risk flags, and recommended next steps. Clear and practical — no filler.</p></div></div>
+      <div class="included-item"><div class="included-num">07</div><div><div class="included-label">Risk Flag Summary</div><p class="included-desc">Anything identified during the audit that poses an operational, safety-adjacent, or compliance-adjacent risk is flagged clearly and separately.</p></div></div>
+      <div class="included-item"><div class="included-num">08</div><div><div class="included-label">Debrief Call</div><p class="included-desc">A 30-minute call the day after report delivery to walk through the findings, answer questions, and discuss what a sensible next move looks like.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <p class="label">Is This Right For You?</p>
+    <h2 class="section-headline">This audit is designed for a specific type of operation.</h2>
+    <div class="fit-grid">
+      <div class="fit-column yes">
+        <h3>Right fit</h3>
+        <ul class="fit-list">
+          <li>Your site has 20 or more warehouse staff</li>
+          <li>Labour costs are rising but output isn't keeping pace</li>
+          <li>You've tried fixing the problem internally and it keeps coming back</li>
+          <li>You want evidence-based findings, not generic recommendations</li>
+          <li>You're preparing for site expansion and need a clean baseline</li>
+          <li>You've just taken a new operations role and need to understand the real state of the site</li>
+        </ul>
+      </div>
+      <div class="fit-column no">
+        <h3>Not the right fit</h3>
+        <ul class="fit-list">
+          <li>You have one specific, bounded question that doesn't need a full audit</li>
+          <li>Your operation has fewer than 10 warehouse staff</li>
+          <li>You need a report written for external stakeholders rather than operational action</li>
+        </ul>
+        <div class="fit-note">If you have one specific problem to solve, <a href="services.html">Rapid-Resolve</a> is the better fit at £297. <a href="book.html">Book a diagnostic call</a> if you're not sure which applies.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="label">Pricing</p>
+    <h2 class="section-headline">Two tiers. Fixed price. No surprises.</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Standard site</div>
+        <div class="pricing-name">Audit — Standard</div>
+        <div class="pricing-amount">£950</div>
+        <p class="pricing-note-small">For warehouse operations with up to 50 staff. Travel expenses billed at cost for sites outside the Midlands / M1 corridor.</p>
+        <ul class="pricing-features">
+          <li>Full audit day on-site</li>
+          <li>Staff interviews (up to 5)</li>
+          <li>Process mapping &amp; KPI benchmarking</li>
+          <li>Written findings report — 7 working days</li>
+          <li>Risk flags &amp; quick wins list</li>
+          <li>30-minute debrief call</li>
+          <li>Zero-risk guarantee</li>
+        </ul>
+        <a href="book.html" class="pricing-cta">Book this audit →</a>
+        <p class="pricing-deposit">50% deposit on booking · 50% on report delivery</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Larger site</div>
+        <div class="pricing-name">Audit — Extended</div>
+        <div class="pricing-amount">£1,250</div>
+        <p class="pricing-note-small">For sites with 51–150 warehouse staff. Additional scope for greater operational complexity and more process flows.</p>
+        <ul class="pricing-features">
+          <li>Everything in Standard, plus:</li>
+          <li>Extended audit day (up to 9 hours)</li>
+          <li>Staff interviews (up to 8)</li>
+          <li>Multi-zone process mapping</li>
+          <li>Expanded KPI benchmarking across zones</li>
+          <li>Shift crossover observation where relevant</li>
+          <li>Zero-risk guarantee</li>
+        </ul>
+        <a href="book.html" class="pricing-cta">Book this audit →</a>
+        <p class="pricing-deposit">50% deposit on booking · 50% on report delivery</p>
+      </div>
+    </div>
+    <p style="margin-top:20px; font-size:0.83rem; color:var(--ink-light);">Sites with 150+ staff or multi-site requirements — <a href="book.html" style="color:var(--ink); border-bottom: 1px solid var(--rule);">get in touch directly</a> for a scoped quote.</p>
+  </div>
+</section>
+
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-inner">
+      <div>
+        <p class="label">The Guarantee</p>
+        <h2 class="section-headline">If we don't find savings greater than our fee — you don't pay the rest.</h2>
+        <p class="guarantee-body">Every PainKiller audit carries a full zero-risk guarantee. If the findings don't identify operational savings or improvements worth more than the audit fee, the second instalment is waived in full. No invoice. No uncomfortable conversation.</p>
+        <ul class="guarantee-terms">
+          <li>No partial payment — the guarantee is total, not conditional</li>
+          <li>You keep the findings report regardless of outcome</li>
+          <li>Applies to every audit, regardless of site size or complexity</li>
+          <li>No time limit — if the savings aren't there, they aren't there</li>
+        </ul>
+      </div>
+      <div class="guarantee-right">
+        <div class="guarantee-zero">0<span>%</span></div>
+        <div class="guarantee-caption">Financial risk to you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <p class="label">Results</p>
+    <h2 class="section-headline">What audits like this have delivered.</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">17%</div>
+        <div class="result-label">Reduction in Overtime</div>
+        <div class="result-context">Multi-shift operation · ~80 staff</div>
+        <p class="result-detail">Overtime was being driven by planning gaps and handover failures between shifts — not by genuine volume. Shift structure and workflow were restructured. The overtime requirement fell 17% within eight weeks.</p>
+      </div>
+      <div class="result-card">
+        <div class="result-number">22%</div>
+        <div class="result-label">Increase in Pick Rate</div>
+        <div class="result-context">Retail warehouse · e-commerce fulfilment</div>
+        <p class="result-detail">Poor product slotting and wasted travel time were the root cause — not picker performance. Picking logic was restructured and movement waste reduced. Pick rate increased 22% with the same headcount.</p>
+      </div>
+      <div class="result-card">
+        <div class="result-number">28%</div>
+        <div class="result-label">Faster Goods-In to Shelf</div>
+        <div class="result-context">FMCG operation · high-throughput site</div>
+        <p class="result-detail">Delays across intake, checking, and putaway were creating downstream drag. The intake flow was redesigned to remove waiting time at the key handoff points. Goods reached shelf 28% faster within six weeks.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px; font-size:0.78rem; color:var(--ink-light); font-style:italic;">All results anonymised. Sector, site size, and context available on request.</p>
+  </div>
+</section>
+
+<section class="final-cta" style="border-bottom: none;">
+  <div class="container">
+    <div class="final-cta-inner">
+      <p class="label">Book Your Audit</p>
+      <h2 class="section-headline">One day on-site. Everything you need to know.</h2>
+      <p class="final-cta-sub">Start with a free 20-minute diagnostic call to confirm the audit is the right fit — or book directly if you already know what you need.</p>
+      <div class="final-actions">
+        <a href="book.html" class="btn-primary">Book Free Diagnostic Call</a>
+        <a href="book.html" class="btn-text">Book audit directly →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo">Pain<span>Killer</span> Consulting</div><p class="footer-tagline">Warehouse operations consultancy. UK-based.</p></div>
+      <nav class="footer-links"><a href="services.html">Services</a><a href="audit.html">On-Site Audit</a><a href="results.html">Results</a><a href="tools.html">Tools</a><a href="about.html">About</a><a href="book.html">Book a Call</a></nav>
+      <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 PainKiller Consulting Ltd</span><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div></div>
+  </div>
+</footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>
