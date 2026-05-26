@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapid-Resolve — Next Steps — PainKiller Consulting</title>
+  <meta name="description" content="Your Rapid-Resolve session — intake form, booking, and what happens next." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/rapid-resolve-intake.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:880px;margin:0 auto;padding:0 32px;}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-back{font-size:0.82rem;font-weight:500;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-back:hover{color:var(--ink);}
+
+    /* SUCCESS HEADER */
+    .success-header{padding:72px 0 56px;border-bottom:1px solid var(--rule);}
+    .success-mark{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border:2px solid var(--red);border-radius:50%;color:var(--red);font-size:1.6rem;font-weight:700;margin-bottom:24px;}
+    .label{font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
+    .headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.18;letter-spacing:-0.02em;color:var(--ink);margin-bottom:18px;}
+    .sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;max-width:620px;}
+
+    /* SEQUENCE — what happens next */
+    .sequence-section{padding:56px 0;border-bottom:1px solid var(--rule);background:var(--paper-mid);}
+    .section-label{font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
+    .section-headline{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;letter-spacing:-0.02em;color:var(--ink);margin-bottom:12px;line-height:1.2;}
+    .section-sub{font-size:0.95rem;color:var(--ink-mid);margin-bottom:36px;max-width:600px;line-height:1.7;}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--paper);}
+    .step{padding:28px 24px;border-right:1px solid var(--rule);}
+    .step:last-child{border-right:none;}
+    .step-num{font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--paper-dark);line-height:1;margin-bottom:16px;letter-spacing:-0.03em;}
+    .step-active .step-num{color:var(--red);}
+    .step-title{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+    .step-body{font-size:0.82rem;color:var(--ink-mid);line-height:1.6;}
+
+    /* INTAKE FORM */
+    .intake-section{padding:64px 0;border-bottom:1px solid var(--rule);}
+    .intake-tag{display:inline-block;padding:4px 10px;background:var(--red);color:white;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;}
+    .intake-headline{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;letter-spacing:-0.02em;color:var(--ink);margin-bottom:12px;line-height:1.2;}
+    .intake-sub{font-size:0.95rem;color:var(--ink-mid);margin-bottom:32px;max-width:600px;line-height:1.7;}
+    .intake-sub strong{color:var(--ink);font-weight:600;}
+    .form-wrap{border:1px solid var(--rule);background:var(--paper);min-height:540px;}
+    /* Tally embed — height set inline by Tally script */
+
+    /* BOOKING */
+    .booking-section{padding:64px 0;border-bottom:1px solid var(--rule);background:var(--paper-mid);}
+    .booking-headline{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;letter-spacing:-0.02em;color:var(--ink);margin-bottom:12px;line-height:1.2;}
+    .booking-sub{font-size:0.95rem;color:var(--ink-mid);margin-bottom:32px;max-width:600px;line-height:1.7;}
+    .calendly-wrap{border:1px solid var(--rule);background:var(--paper);min-height:700px;}
+
+    /* WHAT TO PREPARE */
+    .prep-section{padding:56px 0;border-bottom:1px solid var(--rule);}
+    .prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:28px;}
+    .prep-card{background:var(--paper);border:1px solid var(--rule);padding:26px;}
+    .prep-card h3{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:12px;}
+    .prep-card p{font-size:0.9rem;color:var(--ink-mid);line-height:1.7;}
+    .prep-card ul{list-style:none;margin-top:10px;}
+    .prep-card li{font-size:0.85rem;color:var(--ink-mid);padding:6px 0;display:flex;gap:10px;line-height:1.5;}
+    .prep-card li::before{content:'—';color:var(--red);flex-shrink:0;font-weight:600;}
+
+    /* SUPPORT */
+    .support-section{padding:56px 0;border-bottom:1px solid var(--rule);}
+    .support-inner{display:flex;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+    .support-block{flex:1;min-width:240px;}
+    .support-block h3{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:10px;}
+    .support-block p{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;}
+    .support-block a{color:var(--ink);border-bottom:1px solid var(--rule);transition:border-color 0.2s;}
+    .support-block a:hover{border-color:var(--ink);}
+
+    footer{padding:48px 0;}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:32px;padding-top:20px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-bottom a{color:var(--ink-light);}
+
+    @media(max-width:900px){
+      .steps-grid{grid-template-columns:1fr 1fr;}
+      .step{border-bottom:1px solid var(--rule);}
+      .step:nth-child(2){border-right:none;}
+      .prep-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:600px){
+      .container{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .success-header{padding:48px 0 40px;}
+      .sequence-section,.intake-section,.booking-section,.prep-section{padding:48px 0;}
+      .steps-grid{grid-template-columns:1fr;}
+      .step{border-right:none;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <a href="index.html" class="nav-back">← Back to site</a>
+  </div>
+</nav>
+
+<section class="success-header">
+  <div class="container">
+    <div class="success-mark">✓</div>
+    <p class="label">Payment received — thank you</p>
+    <h1 class="headline">Your Rapid-Resolve session is ready to schedule.</h1>
+    <p class="sub">There are two things to do on this page before the session can run — both should take less than 10 minutes. Once done, you'll have a confirmed slot in the diary and I'll have what I need to make the session count.</p>
+  </div>
+</section>
+
+<section class="sequence-section">
+  <div class="container">
+    <p class="section-label">What happens next</p>
+    <h2 class="section-headline">Four steps to your action plan.</h2>
+    <p class="section-sub">The first two are on this page. The third and fourth happen after the session.</p>
+
+    <div class="steps-grid">
+      <div class="step step-active">
+        <div class="step-num">01</div>
+        <div class="step-title">Complete intake form</div>
+        <p class="step-body">Five questions about the problem. Takes 5 minutes. This is how I prepare so we don't waste session time on basics.</p>
+      </div>
+      <div class="step step-active">
+        <div class="step-num">02</div>
+        <div class="step-title">Book your session</div>
+        <p class="step-body">90 minutes, video call. Choose a time that works — usually within the next 7–10 working days.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Session runs</div>
+        <p class="step-body">We work the problem in real time. You bring the operational detail; I bring the diagnostic structure and pattern recognition.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Action plan — 48 hours</div>
+        <p class="step-body">Written action plan in your inbox within two working days of the session. One follow-up question by email included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="intake-section">
+  <div class="container">
+    <span class="intake-tag">Step 1 of 2</span>
+    <h2 class="intake-headline">Tell me about the problem.</h2>
+    <p class="intake-sub">Five questions. The more specific you are, the more I can prepare — which means more useful time in the session. <strong>Please complete this before booking</strong>, so I have it before we speak.</p>
+
+    <div class="form-wrap">
+      <!-- TALLY EMBED — REPLACE w3wxXX BELOW with your actual Tally form ID after you create it -->
+      <iframe data-tally-src="https://tally.so/embed/obkZj5?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="540"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Rapid-Resolve intake form">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="container">
+    <span class="intake-tag">Step 2 of 2</span>
+    <h2 class="booking-headline">Choose a session time.</h2>
+    <p class="booking-sub">Pick any available 90-minute slot. You'll get a Google Meet link in the confirmation email — no software to install.</p>
+
+    <div class="calendly-wrap">
+      <!-- CALENDLY EMBED — REPLACE the data-url with your actual secret Calendly event URL -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/sam-painkillerconsulting/rapid-resolve-working-session?hide_gdpr_banner=1"
+           style="min-width:320px;height:700px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prep-section">
+  <div class="container">
+    <p class="section-label">Make the session count</p>
+    <h2 class="section-headline">Three things worth doing before we speak.</h2>
+
+    <div class="prep-grid">
+      <div class="prep-card">
+        <h3>Have the numbers to hand.</h3>
+        <p>If your problem is measurable in any way — pick rate, overtime hours, error rate, throughput — have the last 4–8 weeks of data accessible during the call. Doesn't need to be polished. A screenshot of your weekly KPI report is fine.</p>
+      </div>
+
+      <div class="prep-card">
+        <h3>Write down what's already been tried.</h3>
+        <p>Most operational problems have already had multiple attempts. Knowing what's been tried — and crucially, <em>why each attempt didn't stick</em> — is often where the real cause hides. A bullet list is enough.</p>
+      </div>
+
+      <div class="prep-card">
+        <h3>Identify the floor-level person who knows most.</h3>
+        <ul>
+          <li>Not necessarily the manager</li>
+          <li>The shift supervisor, team leader, or senior operative closest to the problem</li>
+          <li>Be prepared to share what they've said about the cause</li>
+        </ul>
+      </div>
+
+      <div class="prep-card">
+        <h3>Be ready to be wrong about the cause.</h3>
+        <p>Most Rapid-Resolve sessions identify a different root cause than the one the operation came in believing. That's expected. Coming in with a fixed hypothesis makes the session less useful. Coming in with the symptoms and an open mind makes it more useful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support-section">
+  <div class="container">
+    <div class="support-inner">
+      <div class="support-block">
+        <h3>Need to reschedule?</h3>
+        <p>The Calendly confirmation email contains a reschedule link valid up to 24 hours before the session. After that, email <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a> and we'll find a new slot.</p>
+      </div>
+      <div class="support-block">
+        <h3>Form not loading?</h3>
+        <p>If the intake form or booking widget above doesn't appear, the page may need a refresh — or your browser may be blocking embedded content. Email <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a> and I'll send a direct link to both.</p>
+      </div>
+      <div class="support-block">
+        <h3>Question outside the session?</h3>
+        <p>Your purchase includes one follow-up question by email after the action plan is delivered. For anything urgent before the session, email directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <div class="footer-tagline" style="text-align:right;">
+        <a href="mailto:info@painkillerconsulting.co.uk" style="color:var(--ink-mid);">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617" style="color:var(--ink-mid);">0333 339 0617</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Tally embed script -->
+<script async src="https://tally.so/widgets/embed.js"></script>
+
+<!-- Calendly embed script -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</body>
+</html>
