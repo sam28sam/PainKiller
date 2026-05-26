@@ -232,15 +232,20 @@
       margin-top: 2px;
     }
     .experience-marks {
-      display: flex; flex-wrap: wrap; gap: 32px 56px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
       align-items: center;
+      gap: 24px;
+      width: 100%;
     }
     .experience-mark {
       font-family: var(--font-serif);
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: clamp(0.95rem, 1.4vw, 1.4rem);
       letter-spacing: -0.01em;
       color: var(--ink-light);
+      white-space: nowrap;
       transition: color 0.2s;
     }
     .experience-mark:hover { color: var(--ink-mid); }
@@ -461,7 +466,8 @@
       .about-inner { grid-template-columns: 1fr; gap: 40px; }
       .results-grid { grid-template-columns: 1fr; }
       .experience-strip-inner { grid-template-columns: 1fr; gap: 20px; }
-      .experience-marks { gap: 24px 36px; }
+      .experience-marks { flex-wrap: wrap; justify-content: flex-start; gap: 16px 28px; }
+      .experience-mark { font-size: 1.15rem; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 20px; }
@@ -473,7 +479,7 @@
       .services-table td { display: block; padding: 8px 16px; }
       .services-table td:first-child { padding-top: 20px; }
       .services-table td:last-child { padding-bottom: 20px; }
-      .experience-mark { font-size: 1.2rem; }
+      .experience-mark { font-size: 1rem; }
     }
   </style>
 </head>
@@ -563,7 +569,7 @@
     </div>
   </div>
 </div>
-  
+
 <div class="strip">
   <div class="container">
     <div class="strip-inner">
