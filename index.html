@@ -212,46 +212,45 @@
 
     /* ─── EXPERIENCE STRIP ───────────────────────────────── */
     .experience-strip {
-      background: var(--paper-mid);
+      background: var(--paper);
+      border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
-      padding: 36px 0;
-    }
-    .experience-strip-inner {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 48px;
-      align-items: center;
+      padding: 56px 0;
     }
     .experience-label {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--ink-light);
-      line-height: 1.5;
-    }
-    .experience-label strong {
-      display: block; color: var(--ink-mid); font-weight: 600;
-      margin-top: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-align: center;
+      margin-bottom: 32px;
     }
     .experience-marks {
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       width: 100%;
     }
     .experience-mark {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: clamp(0.95rem, 1.4vw, 1.4rem);
-      letter-spacing: -0.01em;
-      color: var(--ink-light);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+      letter-spacing: 0.01em;
+      color: var(--ink-mid);
       white-space: nowrap;
       transition: color 0.2s;
     }
-    .experience-mark:hover { color: var(--ink-mid); }
-    .experience-note {
-      font-size: 0.72rem; color: var(--ink-light); font-style: italic;
-      margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule);
+    .experience-mark:hover { color: var(--ink); }
+    .experience-divider {
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      background: var(--rule);
+      flex-shrink: 0;
     }
 
     /* ─── STRIP ──────────────────────────────────────────── */
@@ -465,9 +464,10 @@
       .guarantee-inner { grid-template-columns: 1fr; gap: 48px; }
       .about-inner { grid-template-columns: 1fr; gap: 40px; }
       .results-grid { grid-template-columns: 1fr; }
-      .experience-strip-inner { grid-template-columns: 1fr; gap: 20px; }
-      .experience-marks { flex-wrap: wrap; justify-content: flex-start; gap: 16px 28px; }
-      .experience-mark { font-size: 1.15rem; }
+      .experience-strip { padding: 40px 0; }
+      .experience-label { margin-bottom: 24px; }
+      .experience-marks { flex-wrap: wrap; justify-content: center; gap: 14px 20px; }
+      .experience-divider { display: none; }
     }
     @media (max-width: 600px) {
       .container { padding: 0 20px; }
@@ -479,7 +479,7 @@
       .services-table td { display: block; padding: 8px 16px; }
       .services-table td:first-child { padding-top: 20px; }
       .services-table td:last-child { padding-bottom: 20px; }
-      .experience-mark { font-size: 1rem; }
+      .experience-mark { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -552,20 +552,21 @@
      Only operational employers go here. Expert networks (Prosapient/Arbolus/Guidepoint) are on the About page. -->
 <div class="experience-strip">
   <div class="container">
-    <div class="experience-strip-inner">
-      <div class="experience-label">
-        Operational experience<br>
-        <strong>built across:</strong>
-      </div>
-      <div class="experience-marks">
-        <span class="experience-mark">Aldi</span>
-        <span class="experience-mark">Lidl</span>
-        <span class="experience-mark">ZF Automotive</span>
-        <span class="experience-mark">WHSmith</span>
-        <span class="experience-mark">British Airways</span>
-        <span class="experience-mark">Hayman's Group</span>
-        <span class="experience-mark">Kimia</span>
-      </div>
+    <p class="experience-label">Operational experience built across</p>
+    <div class="experience-marks">
+      <span class="experience-mark">Aldi</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">Lidl</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">ZF Automotive</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">WHSmith</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">British Airways</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">Hayman's Group</span>
+      <span class="experience-divider" aria-hidden="true"></span>
+      <span class="experience-mark">Kimia</span>
     </div>
   </div>
 </div>
