@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Scorecard Assessment — PainKiller Consulting</title>
+  <meta name="description" content="Complete your Warehouse Operations Scorecard. 25 questions, 10 minutes, instant PDF report." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;
+      --paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;
+      --rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;
+      --green:#2E7D32;--amber:#F57C00;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;}
+    a{color:inherit;text-decoration:none;}
+    button{font-family:inherit;cursor:pointer;border:none;background:none;}
+    .container{max-width:780px;margin:0 auto;padding:0 32px;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-progress{font-size:0.82rem;color:var(--ink-mid);font-weight:500;}
+
+    /* ACCESS DENIED SCREEN */
+    .denied-wrap{min-height:calc(100vh - 60px);display:flex;align-items:center;justify-content:center;padding:48px 32px;}
+    .denied-card{max-width:560px;text-align:center;}
+    .denied-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border:2px solid var(--red);border-radius:50%;color:var(--red);font-size:1.8rem;font-weight:700;margin-bottom:28px;}
+    .denied-title{font-family:var(--font-serif);font-weight:700;font-size:2rem;letter-spacing:-0.02em;line-height:1.18;margin-bottom:18px;color:var(--ink);}
+    .denied-body{font-size:1rem;color:var(--ink-mid);line-height:1.7;margin-bottom:24px;}
+    .denied-cta{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.92rem;}
+    .denied-link{display:block;margin-top:14px;font-size:0.85rem;color:var(--ink-light);}
+    .denied-link a{color:var(--ink-mid);border-bottom:1px solid var(--rule);}
+
+    /* INTRO SCREEN */
+    .intro-wrap{padding:72px 0 96px;}
+    .intro-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .intro-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-0.02em;line-height:1.15;margin-bottom:20px;}
+    .intro-sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;margin-bottom:36px;}
+    .intro-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px;padding:24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .intro-meta-item{}
+    .intro-meta-num{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:4px;}
+    .intro-meta-label{font-size:0.75rem;color:var(--ink-light);letter-spacing:0.04em;}
+    .intro-instructions{margin-bottom:36px;}
+    .intro-instructions h3{font-size:0.74rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .intro-instructions ul{list-style:none;border-top:1px solid var(--rule);}
+    .intro-instructions li{padding:14px 0;border-bottom:1px solid var(--rule);font-size:0.95rem;color:var(--ink-mid);line-height:1.6;display:flex;gap:14px;}
+    .intro-instructions li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:700;}
+    .site-name-wrap{margin-bottom:36px;}
+    .site-name-label{display:block;font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;}
+    .site-name-input{width:100%;padding:14px 16px;border:1px solid var(--rule);background:var(--paper);font-family:var(--font-sans);font-size:1rem;color:var(--ink);outline:none;transition:border-color 0.2s;}
+    .site-name-input:focus{border-color:var(--ink);}
+    .site-name-help{font-size:0.78rem;color:var(--ink-light);margin-top:6px;font-style:italic;}
+    .intro-start{display:inline-block;padding:16px 32px;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:background 0.2s;border:none;}
+    .intro-start:hover{background:#333330;}
+    .resume-notice{margin-bottom:24px;padding:16px 20px;background:var(--paper-mid);border-left:3px solid var(--amber);font-size:0.9rem;color:var(--ink-mid);line-height:1.6;}
+    .resume-notice strong{color:var(--ink);font-weight:600;}
+    .resume-notice button{color:var(--red);font-weight:600;border-bottom:1px solid var(--red);font-size:0.9rem;padding-bottom:1px;}
+
+    /* QUESTION SCREEN */
+    .q-wrap{padding:48px 0 96px;min-height:calc(100vh - 60px);}
+    .q-progress-bar{margin-bottom:48px;}
+    .q-progress-label{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
+    .q-progress-label strong{color:var(--red);font-weight:700;}
+    .q-progress-track{height:3px;background:var(--paper-dark);overflow:hidden;}
+    .q-progress-fill{height:100%;background:var(--ink);transition:width 0.4s ease;}
+    .q-domain-name{font-family:var(--font-serif);font-weight:700;font-size:1.2rem;color:var(--ink-light);letter-spacing:-0.01em;margin-bottom:8px;}
+    .q-domain-name strong{color:var(--red);font-weight:700;}
+    .q-text{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-0.02em;line-height:1.25;color:var(--ink);margin-bottom:32px;}
+    .q-options{display:flex;flex-direction:column;gap:10px;margin-bottom:40px;}
+    .q-option{display:block;padding:18px 22px;background:var(--paper);border:1px solid var(--rule);font-size:0.98rem;color:var(--ink-mid);line-height:1.5;cursor:pointer;transition:all 0.15s;text-align:left;width:100%;font-family:inherit;}
+    .q-option:hover{border-color:var(--ink-light);background:var(--paper-mid);}
+    .q-option.selected{border-color:var(--ink);background:var(--ink);color:var(--paper);}
+    .q-option.selected::before{content:'✓ ';color:var(--red);font-weight:700;margin-right:6px;}
+
+    /* Slider variant */
+    .q-slider-wrap{margin-bottom:40px;}
+    .q-slider-labels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px;}
+    .q-slider-pill{padding:14px 12px;background:var(--paper);border:1px solid var(--rule);text-align:center;font-size:0.82rem;color:var(--ink-mid);line-height:1.4;cursor:pointer;transition:all 0.15s;font-family:inherit;}
+    .q-slider-pill:hover{border-color:var(--ink-light);}
+    .q-slider-pill.selected{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+
+    /* Nav buttons */
+    .q-nav{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:28px;gap:16px;}
+    .q-back{font-size:0.9rem;font-weight:500;color:var(--ink-mid);transition:color 0.2s;background:none;border:none;padding:8px 0;cursor:pointer;}
+    .q-back:hover{color:var(--ink);}
+    .q-back:disabled{color:var(--paper-dark);cursor:not-allowed;}
+    .q-next{padding:14px 28px;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.9rem;letter-spacing:0.02em;transition:background 0.2s;border:none;cursor:pointer;}
+    .q-next:hover{background:#333330;}
+    .q-next:disabled{background:var(--paper-dark);color:var(--ink-light);cursor:not-allowed;}
+    .q-save-note{font-size:0.78rem;color:var(--ink-light);font-style:italic;text-align:center;margin-top:24px;}
+
+    /* COMPLETION SCREEN */
+    .complete-wrap{padding:64px 0 96px;text-align:center;}
+    .complete-icon{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border:2px solid var(--red);border-radius:50%;color:var(--red);font-size:2.4rem;font-weight:700;margin-bottom:32px;}
+    .complete-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-0.02em;line-height:1.18;margin-bottom:20px;}
+    .complete-headline em{font-style:italic;color:var(--red);}
+    .complete-sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;}
+    .complete-score-card{max-width:480px;margin:0 auto 40px;padding:48px 40px;background:var(--paper-mid);border:1px solid var(--rule);}
+    .complete-score-label{font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
+    .complete-score-num{font-family:var(--font-serif);font-weight:700;font-size:5rem;color:var(--red);line-height:1;letter-spacing:-0.04em;margin-bottom:8px;}
+    .complete-score-denom{font-size:1.2rem;color:var(--ink-light);font-weight:400;}
+    .complete-score-band{font-size:1rem;font-weight:600;color:var(--ink);margin-top:10px;}
+    .complete-actions{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;align-items:center;margin-bottom:40px;}
+    .download-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 32px;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.98rem;letter-spacing:0.02em;border:none;cursor:pointer;transition:background 0.2s;font-family:inherit;}
+    .download-btn:hover{background:#333330;}
+    .download-btn:disabled{background:var(--paper-dark);color:var(--ink-light);cursor:wait;}
+    .download-btn svg{width:18px;height:18px;}
+    .retake-link{font-size:0.88rem;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:inherit;}
+    .retake-link:hover{color:var(--ink);border-bottom-color:var(--ink);}
+    .complete-footnote{font-size:0.85rem;color:var(--ink-light);font-style:italic;max-width:520px;margin:0 auto;line-height:1.65;}
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+      .screen{animation:fadeIn 0.4s ease both;}
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      .container{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .intro-wrap,.q-wrap,.complete-wrap{padding-top:40px;padding-bottom:64px;}
+      .intro-meta{grid-template-columns:1fr;gap:12px;}
+      .q-slider-labels{grid-template-columns:1fr 1fr;}
+      .complete-score-num{font-size:4rem;}
+      .complete-actions{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <div class="nav-progress" id="navProgress">The Warehouse Operations Scorecard</div>
+  </div>
+</nav>
+
+<!-- ─── ACCESS DENIED SCREEN ─────────────────────────────── -->
+<div class="denied-wrap screen" id="screenDenied" style="display:none;">
+  <div class="denied-card">
+    <div class="denied-icon">!</div>
+    <h1 class="denied-title">Access not available</h1>
+    <p class="denied-body">This page is only accessible after purchasing the Warehouse Operations Scorecard. If you've already paid, please check your Stripe receipt for the access link — it contains a unique token in the URL. If you can't find it, get in touch and we'll send it again.</p>
+    <a href="scorecard.html" class="denied-cta">View the Scorecard</a>
+    <p class="denied-link">Already bought it but lost the link? Email <a href="mailto:info@painkillerconsulting.co.uk?subject=Lost%20Scorecard%20access%20link">info@painkillerconsulting.co.uk</a></p>
+  </div>
+</div>
+
+<!-- ─── INTRO SCREEN ─────────────────────────────────────── -->
+<div class="container screen" id="screenIntro" style="display:none;">
+  <div class="intro-wrap">
+    <p class="intro-eyebrow">Welcome — purchase verified</p>
+    <h1 class="intro-headline">Your Scorecard is ready to begin.</h1>
+    <p class="intro-sub">Twenty-five questions across six operational health dimensions. The questions are designed to surface patterns you might not see from inside the operation. Be honest in your answers — the report is only as useful as the inputs.</p>
+
+    <div class="intro-meta">
+      <div class="intro-meta-item">
+        <div class="intro-meta-num">25</div>
+        <div class="intro-meta-label">Questions</div>
+      </div>
+      <div class="intro-meta-item">
+        <div class="intro-meta-num">~10 min</div>
+        <div class="intro-meta-label">Completion time</div>
+      </div>
+      <div class="intro-meta-item">
+        <div class="intro-meta-num">6</div>
+        <div class="intro-meta-label">Domains assessed</div>
+      </div>
+    </div>
+
+    <div id="resumeNotice" class="resume-notice" style="display:none;">
+      <strong>You have a saved assessment in progress.</strong> You can <button id="resumeBtn">resume from where you left off</button>, or start over below.
+    </div>
+
+    <div class="intro-instructions">
+      <h3>Before you begin</h3>
+      <ul>
+        <li>Your answers are saved automatically in your browser — you can close the page and come back</li>
+        <li>Answer honestly. The most valuable insights come from the questions you'd rather skip</li>
+        <li>Where data isn't readily available, give your best estimate — the trend matters more than the precision</li>
+        <li>Your responses never leave your device. We don't see them, we don't store them</li>
+      </ul>
+    </div>
+
+    <div class="site-name-wrap">
+      <label class="site-name-label" for="siteName">Optional: name this assessment</label>
+      <input type="text" id="siteName" class="site-name-input" placeholder="e.g. Birmingham DC, Site A, Q3 baseline" maxlength="60" />
+      <p class="site-name-help">Appears on the report cover. Leave blank if you'd prefer just "Warehouse Operations" on the cover.</p>
+    </div>
+
+    <button class="intro-start" id="startBtn">Begin Scorecard →</button>
+  </div>
+</div>
+
+<!-- ─── QUESTION SCREEN ──────────────────────────────────── -->
+<div class="container screen" id="screenQuestion" style="display:none;">
+  <div class="q-wrap">
+    <div class="q-progress-bar">
+      <div class="q-progress-label">
+        <span>Question <strong id="qNum">1</strong> of 25</span>
+        <span id="qDomainLabel">Labour Efficiency</span>
+      </div>
+      <div class="q-progress-track">
+        <div class="q-progress-fill" id="qProgressFill" style="width:4%;"></div>
+      </div>
+    </div>
+
+    <div class="q-domain-name">Domain <strong id="qDomainNum">01</strong> of 06</div>
+    <h2 class="q-text" id="qText">Loading question…</h2>
+
+    <div id="qOptionsArea"></div>
+
+    <div class="q-nav">
+      <button class="q-back" id="backBtn" disabled>← Back</button>
+      <button class="q-next" id="nextBtn" disabled>Next →</button>
+    </div>
+    <p class="q-save-note">Your progress saves automatically.</p>
+  </div>
+</div>
+
+<!-- ─── COMPLETION SCREEN ────────────────────────────────── -->
+<div class="container screen" id="screenComplete" style="display:none;">
+  <div class="complete-wrap">
+    <div class="complete-icon">✓</div>
+    <h1 class="complete-headline">Assessment complete. <em>Your report is ready.</em></h1>
+    <p class="complete-sub">Below is your overall operational health score. Tap the button to download your full 10-page PDF report — including all six domain scores, your top three risk areas, and a recommended next step.</p>
+
+    <div class="complete-score-card">
+      <div class="complete-score-label">Your overall score</div>
+      <div>
+        <span class="complete-score-num" id="finalScore">—</span>
+        <span class="complete-score-denom">/ 100</span>
+      </div>
+      <div class="complete-score-band" id="finalBand">—</div>
+    </div>
+
+    <div class="complete-actions">
+      <button class="download-btn" id="downloadBtn">
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+        Download full PDF report
+      </button>
+      <button class="retake-link" id="retakeBtn">Retake the Scorecard</button>
+    </div>
+
+    <p class="complete-footnote">If the download doesn't begin automatically, check your browser's download permissions. The PDF is generated on your device — no data is sent to PainKiller during this process.</p>
+  </div>
+</div>
+
+<!-- jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// ACCESS GATE
+// ═══════════════════════════════════════════════════════════
+const VALID_TOKEN = "SCORECARD-VALID";
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get('token');
+
+if (token !== VALID_TOKEN) {
+  document.getElementById('screenDenied').style.display = 'block';
+} else {
+  // Show intro screen
+  document.getElementById('screenIntro').style.display = 'block';
+  checkForSavedProgress();
+}
+
+// ═══════════════════════════════════════════════════════════
+// QUESTION DATA
+// ═══════════════════════════════════════════════════════════
+const DOMAINS = [
+  { id: 'labour',    name: 'Labour Efficiency',     weight: 22 },
+  { id: 'slotting',  name: 'Slotting Health',       weight: 12 },
+  { id: 'goodsin',   name: 'Goods-In Flow',         weight: 16 },
+  { id: 'shift',     name: 'Shift Integrity',       weight: 16 },
+  { id: 'kpi',       name: 'KPI Confidence',        weight: 12 },
+  { id: 'maturity',  name: 'Operational Maturity',  weight: 22 }
+];
+
+const QUESTIONS = [
+  // DOMAIN 1: Labour Efficiency
+  { domain: 'labour', text: 'Over the last 3 months, how has your overtime requirement trended?', type: 'choice', options: [
+    { label: 'Decreased meaningfully', points: 4 },
+    { label: 'Stable at an acceptable level', points: 3 },
+    { label: 'Stable but uncomfortably high', points: 1 },
+    { label: 'Increased despite adding headcount', points: 0 },
+    { label: 'I don\'t track overtime trend', points: 0 }
+  ]},
+  { domain: 'labour', text: 'How has your pick rate (units per picker per hour) changed in the last 6 months?', type: 'choice', options: [
+    { label: 'Improved through specific changes', points: 4 },
+    { label: 'Stable at an acceptable level', points: 3 },
+    { label: 'Stable but feels low', points: 1 },
+    { label: 'Declining or unpredictable', points: 0 },
+    { label: 'I don\'t currently measure this', points: 0 }
+  ]},
+  { domain: 'labour', text: 'When demand spikes, what is your default response?', type: 'choice', options: [
+    { label: 'We have a tested process variation that handles spikes without overtime', points: 4 },
+    { label: 'We use scheduled overtime that we can predict and budget for', points: 3 },
+    { label: 'We add agency staff at short notice', points: 1 },
+    { label: 'We rely on permanent staff working over their hours', points: 1 },
+    { label: 'We absorb the spike and accept service-level slippage', points: 0 }
+  ]},
+  { domain: 'labour', text: 'How quickly can you tell me your labour cost per unit shipped last week?', type: 'choice', options: [
+    { label: 'Within 10 minutes — it\'s on a live dashboard', points: 4 },
+    { label: 'Within an hour with the right report run', points: 3 },
+    { label: 'By end of week with some manual work', points: 2 },
+    { label: 'Roughly, from monthly finance reports', points: 1 },
+    { label: 'I don\'t track this at unit level', points: 0 }
+  ]},
+  { domain: 'labour', text: 'How confident are you that your current shift staffing levels are correctly matched to actual workload?', type: 'slider', options: [
+    { label: 'Very confident', points: 4 },
+    { label: 'Fairly confident', points: 3 },
+    { label: 'Uncertain', points: 1 },
+    { label: 'Not at all confident', points: 0 }
+  ]},
+
+  // DOMAIN 2: Slotting Health
+  { domain: 'slotting', text: 'When did you last formally review your product slotting against pick velocity?', type: 'choice', options: [
+    { label: 'Within the last 3 months', points: 4 },
+    { label: '3–9 months ago', points: 3 },
+    { label: '9–18 months ago', points: 1 },
+    { label: 'Over 18 months ago, or after a significant SKU change without review', points: 0 },
+    { label: 'Slotting has never been formally reviewed', points: 0 }
+  ]},
+  { domain: 'slotting', text: 'Where are your fastest-moving SKUs currently stored?', type: 'choice', options: [
+    { label: 'In dedicated A-zone locations close to pick start, at ergonomic height', points: 4 },
+    { label: 'Generally in the front of the warehouse, mixed levels', points: 2 },
+    { label: 'Wherever there was space when they were added', points: 1 },
+    { label: 'I\'m not sure how slotting decisions are currently made', points: 0 }
+  ]},
+  { domain: 'slotting', text: 'What\'s your average picker travel distance per order?', type: 'choice', options: [
+    { label: 'We measure it and have benchmarked it', points: 4 },
+    { label: 'We have a rough estimate but haven\'t validated it', points: 2 },
+    { label: 'We don\'t measure it but we know it\'s a problem', points: 1 },
+    { label: 'We\'ve never thought about it as a metric', points: 0 }
+  ]},
+  { domain: 'slotting', text: 'How often do you update your SKU velocity rankings?', type: 'choice', options: [
+    { label: 'Monthly or more often, with automatic ranking', points: 4 },
+    { label: 'Quarterly review', points: 3 },
+    { label: 'Annually or when something obvious goes wrong', points: 1 },
+    { label: 'We don\'t formally rank SKU velocity', points: 0 }
+  ]},
+
+  // DOMAIN 3: Goods-In Flow
+  { domain: 'goodsin', text: 'In the last month, how often did goods-in create a downstream bottleneck (delayed putaway, missed shelf-ready times)?', type: 'choice', options: [
+    { label: 'Rarely or never', points: 4 },
+    { label: 'Occasionally, predictable causes', points: 3 },
+    { label: 'Most weeks', points: 1 },
+    { label: 'Daily or near-daily', points: 0 }
+  ]},
+  { domain: 'goodsin', text: 'How do you handle the intake check process across different suppliers?', type: 'choice', options: [
+    { label: 'Tiered by supplier reliability — trusted suppliers get lighter checks', points: 4 },
+    { label: 'Same intensive check for every supplier', points: 1 },
+    { label: 'Same light check for every supplier', points: 1 },
+    { label: 'Process varies by who\'s on shift', points: 0 },
+    { label: 'No formalised intake check process', points: 0 }
+  ]},
+  { domain: 'goodsin', text: 'How often do delivery vehicles wait more than 30 minutes for a dock?', type: 'choice', options: [
+    { label: 'Rarely — we have effective dock scheduling', points: 4 },
+    { label: 'Occasionally during known peak periods', points: 3 },
+    { label: 'Several times a week', points: 1 },
+    { label: 'Daily', points: 0 },
+    { label: 'I don\'t actually know — drivers don\'t always report it', points: 0 }
+  ]},
+  { domain: 'goodsin', text: 'From goods arriving at the dock to stock being visible on the system — what\'s the average time?', type: 'choice', options: [
+    { label: 'Under 2 hours', points: 4 },
+    { label: '2–6 hours', points: 2 },
+    { label: 'Same day but variable', points: 1 },
+    { label: 'Next day or longer', points: 0 },
+    { label: 'I don\'t measure this', points: 0 }
+  ]},
+
+  // DOMAIN 4: Shift Integrity
+  { domain: 'shift', text: 'How do shift handovers happen in your operation?', type: 'choice', options: [
+    { label: 'Structured written handover log plus verbal walkthrough', points: 4 },
+    { label: 'Verbal walkthrough between supervisors only', points: 2 },
+    { label: 'Outgoing supervisor leaves notes for incoming', points: 1 },
+    { label: 'Handover is informal or skipped if shifts overlap', points: 0 },
+    { label: 'We only run one shift, so this doesn\'t apply', points: 4 }
+  ]},
+  { domain: 'shift', text: 'In the first hour of a new shift, how much time is typically spent on clarifying handover issues?', type: 'choice', options: [
+    { label: 'Under 10 minutes — everyone has what they need', points: 4 },
+    { label: '10–25 minutes', points: 2 },
+    { label: '25–45 minutes', points: 1 },
+    { label: 'Often more — incoming shift is genuinely catching up', points: 0 },
+    { label: 'I don\'t know', points: 0 }
+  ]},
+  { domain: 'shift', text: 'How would you rate the variation in performance between your shifts?', type: 'choice', options: [
+    { label: 'Minimal variation — performance is consistent', points: 4 },
+    { label: 'Some predictable variation by shift type', points: 3 },
+    { label: 'One shift consistently underperforms', points: 1 },
+    { label: 'Significant unpredictable variation between shifts', points: 0 }
+  ]},
+  { domain: 'shift', text: 'If your strongest team leader called in sick tomorrow for two weeks, what would happen?', type: 'choice', options: [
+    { label: 'We\'d be fine — knowledge is properly documented and distributed', points: 4 },
+    { label: 'Manageable bumpy period', points: 3 },
+    { label: 'It would be a real problem', points: 1 },
+    { label: 'That has happened and it caused significant disruption', points: 0 }
+  ]},
+
+  // DOMAIN 5: KPI Confidence
+  { domain: 'kpi', text: 'What does your operational KPI dashboard look like?', type: 'choice', options: [
+    { label: 'Live dashboard, automatically updated, reviewed in weekly meetings', points: 4 },
+    { label: 'Weekly report compiled from system data', points: 3 },
+    { label: 'Monthly report with some manual aggregation', points: 1 },
+    { label: 'KPIs exist but aren\'t reviewed systematically', points: 0 },
+    { label: 'No formal KPI dashboard', points: 0 }
+  ]},
+  { domain: 'kpi', text: 'When were your current KPI targets last reviewed and adjusted?', type: 'choice', options: [
+    { label: 'Within the last 6 months, based on actual performance data', points: 4 },
+    { label: 'Within the last 12 months', points: 3 },
+    { label: 'Over a year ago', points: 1 },
+    { label: 'I\'m not sure — they\'ve been the same as long as I\'ve been here', points: 0 }
+  ]},
+  { domain: 'kpi', text: 'How confident are you in the accuracy of the KPI numbers your team reports?', type: 'choice', options: [
+    { label: 'Very confident — numbers tie out to source data', points: 4 },
+    { label: 'Mostly confident — minor discrepancies', points: 3 },
+    { label: 'Some scepticism — numbers feel optimistic', points: 1 },
+    { label: 'Not confident — different reports show different numbers', points: 0 }
+  ]},
+  { domain: 'kpi', text: 'When a KPI moves in the wrong direction, what typically happens?', type: 'choice', options: [
+    { label: 'Documented action plan with owner and review date', points: 4 },
+    { label: 'Discussed at the next meeting, action assigned verbally', points: 3 },
+    { label: 'Noted but rarely actioned', points: 1 },
+    { label: 'Not consistently noticed in the first place', points: 0 }
+  ]},
+
+  // DOMAIN 6: Operational Maturity
+  { domain: 'maturity', text: 'What proportion of your operational processes are documented to the level a new supervisor could follow?', type: 'choice', options: [
+    { label: '80%+ — onboarding is structured', points: 4 },
+    { label: '50–80% — core processes are documented', points: 3 },
+    { label: '25–50% — patchy documentation', points: 1 },
+    { label: 'Under 25% — knowledge lives mostly with individuals', points: 0 }
+  ]},
+  { domain: 'maturity', text: 'How often does your operation make a deliberate, measurable improvement to a process?', type: 'choice', options: [
+    { label: 'Continuously — we have an active improvement cadence', points: 4 },
+    { label: 'Quarterly — improvements are planned but not constant', points: 3 },
+    { label: 'Once or twice a year', points: 1 },
+    { label: 'Only when something breaks', points: 0 },
+    { label: 'I\'m not sure', points: 0 }
+  ]},
+  { domain: 'maturity', text: 'When was the last time someone from outside your operation reviewed your warehouse and gave you findings?', type: 'choice', options: [
+    { label: 'Within the last 12 months', points: 4 },
+    { label: '1–3 years ago', points: 2 },
+    { label: 'Over 3 years ago', points: 1 },
+    { label: 'Never', points: 0 }
+  ]},
+  { domain: 'maturity', text: 'If a competent external consultant walked your floor tomorrow for a full day, how many material improvement opportunities do you genuinely believe they\'d find?', type: 'slider', weight: 2, options: [
+    { label: 'Almost none — we\'re pretty optimised', points: 4 },
+    { label: 'A handful, but minor', points: 3 },
+    { label: 'Several worth acting on', points: 1 },
+    { label: 'A lot — I know we have problems', points: 0 }
+  ]}
+];
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+const STORAGE_KEY = 'pks_scorecard_v1';
+let state = {
+  siteName: '',
+  currentQ: 0,
+  answers: new Array(QUESTIONS.length).fill(null) // each will be {points, label, qWeight}
+};
+
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch(e) { return null; }
+}
+function clearState() { try { localStorage.removeItem(STORAGE_KEY); } catch(e) {} }
+
+function checkForSavedProgress() {
+  const saved = loadState();
+  if (saved && saved.answers && saved.answers.some(a => a !== null)) {
+    document.getElementById('resumeNotice').style.display = 'block';
+    document.getElementById('resumeBtn').addEventListener('click', () => {
+      state = saved;
+      goToQuestion();
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SCREEN TRANSITIONS
+// ═══════════════════════════════════════════════════════════
+function showScreen(id) {
+  ['screenIntro','screenQuestion','screenComplete','screenDenied'].forEach(s => {
+    document.getElementById(s).style.display = 'none';
+  });
+  document.getElementById(id).style.display = 'block';
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+// ═══════════════════════════════════════════════════════════
+// INTRO → BEGIN
+// ═══════════════════════════════════════════════════════════
+document.getElementById('startBtn').addEventListener('click', () => {
+  state.siteName = document.getElementById('siteName').value.trim();
+  state.currentQ = 0;
+  state.answers = new Array(QUESTIONS.length).fill(null);
+  saveState();
+  goToQuestion();
+});
+
+// ═══════════════════════════════════════════════════════════
+// QUESTION RENDERING
+// ═══════════════════════════════════════════════════════════
+function goToQuestion() {
+  showScreen('screenQuestion');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const i = state.currentQ;
+  const q = QUESTIONS[i];
+  const domain = DOMAINS.find(d => d.id === q.domain);
+  const domainIdx = DOMAINS.findIndex(d => d.id === q.domain) + 1;
+
+  // Progress
+  const progress = ((i + 1) / QUESTIONS.length) * 100;
+  document.getElementById('qProgressFill').style.width = progress + '%';
+  document.getElementById('qNum').textContent = i + 1;
+  document.getElementById('qDomainLabel').textContent = domain.name;
+  document.getElementById('qDomainNum').textContent = String(domainIdx).padStart(2, '0');
+
+  // Question text
+  document.getElementById('qText').textContent = q.text;
+
+  // Options
+  const area = document.getElementById('qOptionsArea');
+  area.innerHTML = '';
+
+  if (q.type === 'slider') {
+    const wrap = document.createElement('div');
+    wrap.className = 'q-slider-wrap';
+    const pills = document.createElement('div');
+    pills.className = 'q-slider-labels';
+    q.options.forEach((opt, idx) => {
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'q-slider-pill';
+      pill.textContent = opt.label;
+      if (state.answers[i] && state.answers[i].selectedIdx === idx) pill.classList.add('selected');
+      pill.addEventListener('click', () => selectAnswer(i, idx));
+      pills.appendChild(pill);
+    });
+    wrap.appendChild(pills);
+    area.appendChild(wrap);
+  } else {
+    const list = document.createElement('div');
+    list.className = 'q-options';
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'q-option';
+      btn.textContent = opt.label;
+      if (state.answers[i] && state.answers[i].selectedIdx === idx) btn.classList.add('selected');
+      btn.addEventListener('click', () => selectAnswer(i, idx));
+      list.appendChild(btn);
+    });
+    area.appendChild(list);
+  }
+
+  // Nav buttons
+  document.getElementById('backBtn').disabled = (i === 0);
+  document.getElementById('nextBtn').disabled = (state.answers[i] === null);
+  document.getElementById('nextBtn').textContent = (i === QUESTIONS.length - 1) ? 'Complete Scorecard →' : 'Next →';
+}
+
+function selectAnswer(qIdx, optIdx) {
+  const q = QUESTIONS[qIdx];
+  const opt = q.options[optIdx];
+  state.answers[qIdx] = {
+    selectedIdx: optIdx,
+    label: opt.label,
+    points: opt.points,
+    qWeight: q.weight || 1
+  };
+  saveState();
+  renderQuestion();
+}
+
+document.getElementById('backBtn').addEventListener('click', () => {
+  if (state.currentQ > 0) {
+    state.currentQ--;
+    saveState();
+    renderQuestion();
+  }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (state.answers[state.currentQ] === null) return;
+  if (state.currentQ < QUESTIONS.length - 1) {
+    state.currentQ++;
+    saveState();
+    renderQuestion();
+  } else {
+    completeAssessment();
+  }
+});
+
+// ═══════════════════════════════════════════════════════════
+// SCORING ENGINE
+// ═══════════════════════════════════════════════════════════
+function computeScores() {
+  // Per-domain: sum (points * qWeight) / sum (4 * qWeight) * 100
+  const domainScores = {};
+  DOMAINS.forEach(d => {
+    let earnedPoints = 0;
+    let maxPoints = 0;
+    QUESTIONS.forEach((q, qi) => {
+      if (q.domain !== d.id) return;
+      const w = q.weight || 1;
+      const ans = state.answers[qi];
+      if (ans) earnedPoints += ans.points * w;
+      maxPoints += 4 * w;
+    });
+    domainScores[d.id] = Math.round((earnedPoints / maxPoints) * 100);
+  });
+  // Overall: weighted sum of domain scores by domain weight
+  let weightedSum = 0;
+  let totalWeight = 0;
+  DOMAINS.forEach(d => {
+    weightedSum += domainScores[d.id] * d.weight;
+    totalWeight += d.weight;
+  });
+  const overall = Math.round(weightedSum / totalWeight);
+  return { domainScores, overall };
+}
+
+function bandFor(score) {
+  if (score >= 80) return { label: 'Strong operation', tone: 'good' };
+  if (score >= 60) return { label: 'Solid foundation', tone: 'good' };
+  if (score >= 40) return { label: 'Material risk', tone: 'warn' };
+  if (score >= 20) return { label: 'Significant drag', tone: 'bad' };
+  return { label: 'Foundational issues', tone: 'bad' };
+}
+
+function bandNarrative(score) {
+  if (score >= 80) return 'Your operation is performing strongly across most dimensions. The opportunity here is marginal optimisation — fine-tuning rather than rebuilding.';
+  if (score >= 60) return 'Your operation has a solid foundation but specific improvement areas exist. The top-scoring domains are working well; the lower-scoring ones merit focused attention.';
+  if (score >= 40) return 'Your operation shows material risk areas that warrant structured intervention. The pattern in your scores suggests problems that are visible but probably misdiagnosed from inside the operation.';
+  if (score >= 20) return 'Your operation is carrying significant operational drag that is likely costing measurable money and time daily. An external diagnostic is strongly recommended before further internal effort.';
+  return 'Your operation shows foundational issues across multiple dimensions. A comprehensive transformation programme — not just an audit — is the realistic path forward.';
+}
+
+function recommendNext(overall, lowestDomain) {
+  if (overall >= 70) {
+    return {
+      title: 'Rapid-Resolve recommended',
+      price: '£297',
+      body: 'Your overall score suggests your operation is performing well. The specific weakness in ' + lowestDomain.name + ' is a good candidate for a focused 90-minute Rapid-Resolve session — one problem, one written action plan, no full audit needed.',
+      link: 'services.html'
+    };
+  } else if (overall >= 40) {
+    return {
+      title: 'On-Site Audit recommended',
+      price: 'from £950',
+      body: 'Your scores indicate material problems across multiple dimensions. A self-assessment can identify them; only an on-site audit can confirm root causes and produce an actionable findings report. The audit carries a zero-risk guarantee.',
+      link: 'audit.html'
+    };
+  } else {
+    return {
+      title: 'Transformation Programme recommended',
+      price: '£4,500/month',
+      body: 'Your scores suggest the problems are systemic rather than isolated. A full 90-day Transformation Programme, beginning with an on-site audit, is the realistic path. Hands-on implementation support throughout.',
+      link: 'services.html'
+    };
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// COMPLETION
+// ═══════════════════════════════════════════════════════════
+function completeAssessment() {
+  const scores = computeScores();
+  const band = bandFor(scores.overall);
+
+  document.getElementById('finalScore').textContent = scores.overall;
+  document.getElementById('finalBand').textContent = band.label;
+
+  // Set colour on score based on band
+  const scoreEl = document.getElementById('finalScore');
+  if (band.tone === 'good') scoreEl.style.color = 'var(--green)';
+  else if (band.tone === 'warn') scoreEl.style.color = 'var(--amber)';
+  else scoreEl.style.color = 'var(--red)';
+
+  showScreen('screenComplete');
+}
+
+// ═══════════════════════════════════════════════════════════
+// PDF GENERATION
+// ═══════════════════════════════════════════════════════════
+document.getElementById('downloadBtn').addEventListener('click', generatePDF);
+
+function generatePDF() {
+  const btn = document.getElementById('downloadBtn');
+  btn.disabled = true;
+  btn.innerHTML = 'Generating report…';
+
+  setTimeout(() => {
+    try {
+      buildPDF();
+      btn.disabled = false;
+      btn.innerHTML = '<svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg> Download again';
+    } catch(e) {
+      console.error(e);
+      btn.disabled = false;
+      btn.innerHTML = 'Try again';
+      alert('Something went wrong generating the PDF. Please try again, or email info@painkillerconsulting.co.uk for help.');
+    }
+  }, 100);
+}
+
+function buildPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+
+  const PAGE_W = 210, PAGE_H = 297;
+  const MARGIN = 22;
+  const CONTENT_W = PAGE_W - (MARGIN * 2);
+
+  // Colours
+  const COL_INK = [26, 26, 24];
+  const COL_INK_MID = [74, 74, 70];
+  const COL_INK_LIGHT = [138, 138, 132];
+  const COL_RULE = [221, 221, 214];
+  const COL_PAPER_MID = [242, 242, 237];
+  const COL_RED = [192, 57, 43];
+  const COL_GREEN = [46, 125, 50];
+  const COL_AMBER = [245, 124, 0];
+
+  const scores = computeScores();
+  const band = bandFor(scores.overall);
+  const today = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+  const siteName = state.siteName || 'Warehouse Operations';
+
+  // Helper: footer
+  function drawFooter(pageNum, totalPages) {
+    doc.setDrawColor(...COL_RULE);
+    doc.setLineWidth(0.2);
+    doc.line(MARGIN, PAGE_H - 18, PAGE_W - MARGIN, PAGE_H - 18);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...COL_INK_LIGHT);
+    doc.text('The Warehouse Operations Scorecard · PainKiller Consulting', MARGIN, PAGE_H - 12);
+    doc.text(`Page ${pageNum} of ${totalPages}`, PAGE_W - MARGIN, PAGE_H - 12, { align: 'right' });
+  }
+
+  function colourForScore(s) {
+    if (s >= 60) return COL_GREEN;
+    if (s >= 40) return COL_AMBER;
+    return COL_RED;
+  }
+
+  // ═══════ PAGE 1 — COVER ═══════
+  doc.setFillColor(250, 250, 247);
+  doc.rect(0, 0, PAGE_W, PAGE_H, 'F');
+
+  // Eyebrow
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('PAINKILLER CONSULTING', MARGIN, 50);
+
+  // Main title — Playfair-style via Times Bold
+  doc.setFont('times', 'bold');
+  doc.setFontSize(36);
+  doc.setTextColor(...COL_INK);
+  doc.text('The Warehouse', MARGIN, 90);
+  doc.text('Operations Scorecard', MARGIN, 104);
+
+  // Subtitle
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(12);
+  doc.setTextColor(...COL_INK_MID);
+  doc.text('Operational Health Assessment Report', MARGIN, 118);
+
+  // Rule
+  doc.setDrawColor(...COL_RULE);
+  doc.setLineWidth(0.3);
+  doc.line(MARGIN, 130, PAGE_W - MARGIN, 130);
+
+  // Score block
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_INK_LIGHT);
+  doc.text('OVERALL SCORE', MARGIN, 155);
+
+  doc.setFont('times', 'bold');
+  doc.setFontSize(96);
+  doc.setTextColor(...colourForScore(scores.overall));
+  doc.text(String(scores.overall), MARGIN, 198);
+
+  // /100 next to score
+  doc.setFontSize(24);
+  doc.setTextColor(...COL_INK_LIGHT);
+  const scoreWidth = doc.getTextWidth(String(scores.overall)) * (96/96);
+  doc.text('/ 100', MARGIN + 65, 198);
+
+  // Band
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...colourForScore(scores.overall));
+  doc.text(band.label.toUpperCase(), MARGIN, 210);
+
+  // Assessment info
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(...COL_INK_LIGHT);
+  doc.text(`Assessed: ${siteName}`, MARGIN, 240);
+  doc.text(`Date: ${today}`, MARGIN, 247);
+  doc.text(`Methodology: Six-domain operational health diagnostic`, MARGIN, 254);
+
+  // Cover footer
+  doc.setDrawColor(...COL_RULE);
+  doc.line(MARGIN, 270, PAGE_W - MARGIN, 270);
+  doc.setFont('helvetica', 'italic');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_INK_LIGHT);
+  doc.text('Confidential. For use within the assessed organisation.', MARGIN, 277);
+
+  // ═══════ PAGE 2 — EXECUTIVE SUMMARY ═══════
+  doc.addPage();
+  let y = 28;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('EXECUTIVE SUMMARY', MARGIN, y);
+
+  y += 12;
+  doc.setFont('times', 'bold');
+  doc.setFontSize(22);
+  doc.setTextColor(...COL_INK);
+  doc.text('Your operational health, at a glance.', MARGIN, y);
+
+  y += 16;
+  doc.setDrawColor(...COL_RULE);
+  doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+  y += 12;
+
+  // Narrative
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(...COL_INK_MID);
+  const narrative = bandNarrative(scores.overall);
+  const narrativeLines = doc.splitTextToSize(narrative, CONTENT_W);
+  doc.text(narrativeLines, MARGIN, y);
+  y += narrativeLines.length * 5.2 + 12;
+
+  // Bar chart of all six domain scores
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('DOMAIN SCORES', MARGIN, y);
+  y += 8;
+
+  const barAreaY = y;
+  const barRowH = 11;
+  const labelW = 50;
+  const barX = MARGIN + labelW;
+  const barMaxW = CONTENT_W - labelW - 18;
+
+  DOMAINS.forEach((d, i) => {
+    const s = scores.domainScores[d.id];
+    const rowY = barAreaY + (i * barRowH);
+
+    // Label
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...COL_INK_MID);
+    doc.text(d.name, MARGIN, rowY + 4);
+
+    // Track
+    doc.setFillColor(...COL_PAPER_MID);
+    doc.rect(barX, rowY + 1.5, barMaxW, 4, 'F');
+
+    // Fill
+    doc.setFillColor(...colourForScore(s));
+    doc.rect(barX, rowY + 1.5, (barMaxW * s) / 100, 4, 'F');
+
+    // Value
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(...COL_INK);
+    doc.text(String(s), PAGE_W - MARGIN, rowY + 4, { align: 'right' });
+  });
+
+  y = barAreaY + (DOMAINS.length * barRowH) + 10;
+
+  // Top 3 risks
+  doc.setDrawColor(...COL_RULE);
+  doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+  y += 12;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('YOUR THREE HIGHEST-RISK AREAS', MARGIN, y);
+  y += 10;
+
+  const sortedDomains = DOMAINS.slice().sort((a, b) => scores.domainScores[a.id] - scores.domainScores[b.id]);
+  const top3 = sortedDomains.slice(0, 3);
+
+  top3.forEach((d, i) => {
+    const s = scores.domainScores[d.id];
+    doc.setFont('times', 'bold');
+    doc.setFontSize(13);
+    doc.setTextColor(...COL_INK);
+    doc.text(`${i + 1}.  ${d.name}`, MARGIN, y);
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.setTextColor(...colourForScore(s));
+    doc.text(`${s}/100`, PAGE_W - MARGIN, y, { align: 'right' });
+
+    y += 5;
+    doc.setDrawColor(...COL_RULE);
+    doc.setLineWidth(0.2);
+    doc.line(MARGIN, y, PAGE_W - MARGIN, y);
+    y += 8;
+  });
+
+  drawFooter(2, 10);
+
+  // ═══════ PAGES 3-8 — ONE PER DOMAIN ═══════
+  DOMAINS.forEach((domain, dIdx) => {
+    doc.addPage();
+    let yy = 28;
+
+    // Eyebrow
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...COL_INK_LIGHT);
+    doc.text(`DOMAIN ${String(dIdx + 1).padStart(2, '0')} OF 06`, MARGIN, yy);
+
+    // Domain title + score on same horizontal line
+    yy += 14;
+    const s = scores.domainScores[domain.id];
+    const dBand = bandFor(s);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(26);
+    doc.setTextColor(...COL_INK);
+    doc.text(domain.name, MARGIN, yy);
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(40);
+    doc.setTextColor(...colourForScore(s));
+    doc.text(String(s), PAGE_W - MARGIN, yy + 2, { align: 'right' });
+
+    yy += 6;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...colourForScore(s));
+    doc.text(dBand.label.toUpperCase(), PAGE_W - MARGIN, yy, { align: 'right' });
+
+    yy += 10;
+    doc.setDrawColor(...COL_RULE);
+    doc.line(MARGIN, yy, PAGE_W - MARGIN, yy);
+    yy += 10;
+
+    // Narrative
+    const domainNarr = domainNarrative(domain.id, s);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(...COL_INK_MID);
+    const narrLines = doc.splitTextToSize(domainNarr, CONTENT_W);
+    doc.text(narrLines, MARGIN, yy);
+    yy += narrLines.length * 5.2 + 10;
+
+    // "Your answers in this domain"
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...COL_RED);
+    doc.text('YOUR ANSWERS IN THIS DOMAIN', MARGIN, yy);
+    yy += 8;
+
+    QUESTIONS.forEach((q, qi) => {
+      if (q.domain !== domain.id) return;
+      const ans = state.answers[qi];
+      if (!ans) return;
+
+      // Question
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(9);
+      doc.setTextColor(...COL_INK);
+      const qLines = doc.splitTextToSize(q.text, CONTENT_W);
+      doc.text(qLines, MARGIN, yy);
+      yy += qLines.length * 4.5 + 2;
+
+      // Answer
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(9);
+      // Colour: bad answers get red
+      const aColor = ans.points <= 1 ? COL_RED : COL_INK_MID;
+      doc.setTextColor(...aColor);
+      const aLines = doc.splitTextToSize('→  ' + ans.label, CONTENT_W);
+      doc.text(aLines, MARGIN + 4, yy);
+      yy += aLines.length * 4.5 + 4;
+
+      doc.setDrawColor(...COL_RULE);
+      doc.setLineWidth(0.15);
+      doc.line(MARGIN, yy, PAGE_W - MARGIN, yy);
+      yy += 6;
+    });
+
+    // Pattern indication box
+    yy += 4;
+    const pattern = domainPattern(domain.id, s);
+    const patternLines = doc.splitTextToSize(pattern, CONTENT_W - 12);
+    const boxH = patternLines.length * 4.8 + 18;
+
+    doc.setFillColor(...COL_PAPER_MID);
+    doc.rect(MARGIN, yy, CONTENT_W, boxH, 'F');
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(8);
+    doc.setTextColor(...COL_RED);
+    doc.text('WHAT THIS PATTERN TYPICALLY INDICATES', MARGIN + 6, yy + 7);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...COL_INK_MID);
+    doc.text(patternLines, MARGIN + 6, yy + 14);
+
+    drawFooter(3 + dIdx, 10);
+  });
+
+  // ═══════ PAGE 9 — RECOMMENDED NEXT STEP ═══════
+  doc.addPage();
+  let y9 = 28;
+  const lowestDomain = sortedDomains[0];
+  const rec = recommendNext(scores.overall, lowestDomain);
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('YOUR RECOMMENDED NEXT STEP', MARGIN, y9);
+
+  y9 += 14;
+  doc.setFont('times', 'bold');
+  doc.setFontSize(26);
+  doc.setTextColor(...COL_INK);
+  doc.text(rec.title, MARGIN, y9);
+
+  y9 += 8;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(...COL_RED);
+  doc.text(rec.price, MARGIN, y9);
+
+  y9 += 10;
+  doc.setDrawColor(...COL_RULE);
+  doc.line(MARGIN, y9, PAGE_W - MARGIN, y9);
+  y9 += 10;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10.5);
+  doc.setTextColor(...COL_INK_MID);
+  const recLines = doc.splitTextToSize(rec.body, CONTENT_W);
+  doc.text(recLines, MARGIN, y9);
+  y9 += recLines.length * 5.5 + 14;
+
+  // CTA box
+  doc.setFillColor(...COL_INK);
+  doc.rect(MARGIN, y9, CONTENT_W, 32, 'F');
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(192, 57, 43);
+  doc.text('NEXT STEP', MARGIN + 8, y9 + 10);
+
+  doc.setFont('times', 'bold');
+  doc.setFontSize(14);
+  doc.setTextColor(250, 250, 247);
+  doc.text('Book a free 20-minute conversation', MARGIN + 8, y9 + 19);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(180, 180, 175);
+  doc.text('painkillerconsulting.co.uk/book.html  ·  info@painkillerconsulting.co.uk', MARGIN + 8, y9 + 27);
+
+  drawFooter(9, 10);
+
+  // ═══════ PAGE 10 — SIGNED NOTE FROM SAM ═══════
+  doc.addPage();
+  let y10 = 28;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(...COL_RED);
+  doc.text('A PERSONAL NOTE', MARGIN, y10);
+
+  y10 += 14;
+  doc.setFont('times', 'bold');
+  doc.setFontSize(22);
+  doc.setTextColor(...COL_INK);
+  doc.text('A few words on what to do', MARGIN, y10);
+  y10 += 9;
+  doc.text('with this report.', MARGIN, y10);
+
+  y10 += 12;
+  doc.setDrawColor(...COL_RULE);
+  doc.line(MARGIN, y10, PAGE_W - MARGIN, y10);
+  y10 += 12;
+
+  const samNote = `These findings are based on the same diagnostic methodology I use on full £950 on-site audits across UK warehouses. The scoring engine reflects 15 years of pattern recognition — what tends to correlate with what, where the real causes usually sit, what the symptoms typically mask.
+
+If your scorecard surfaced problems you already knew about, the value here is the structured evidence — something you can take to a leadership meeting and say "here's what we need to look at, and here's how it benchmarks."
+
+If your scorecard surfaced problems you didn't know about, the next step depends on how bad they look on paper. Severe scores in two or more domains usually means you can't solve this from inside the operation — you need someone with no political stake in what they find. That's what I do.
+
+If your scorecard came back looking healthier than you expected, that's also useful information. Either the operation is in better shape than you feared, or — more commonly — the questions surfaced blind spots that the operation has trained itself not to see. Either is worth a conversation.
+
+Whatever the result, I'm available for a free 20-minute call to talk it through honestly. No pitch, no obligation. If the right answer for your situation is "do nothing externally and use this report internally," I'll say so.`;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(...COL_INK_MID);
+  const noteLines = doc.splitTextToSize(samNote, CONTENT_W);
+  doc.text(noteLines, MARGIN, y10);
+  y10 += noteLines.length * 5.2 + 16;
+
+  // Signature
+  doc.setFont('times', 'italic');
+  doc.setFontSize(20);
+  doc.setTextColor(...COL_INK);
+  doc.text('Sam Mustatea', MARGIN, y10);
+
+  y10 += 6;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(...COL_INK_LIGHT);
+  doc.text('Founder · PainKiller Consulting', MARGIN, y10);
+
+  y10 += 5;
+  doc.text('info@painkillerconsulting.co.uk  ·  0333 339 0617', MARGIN, y10);
+
+  drawFooter(10, 10);
+
+  // Save
+  const filename = `PainKiller-Scorecard-${siteName.replace(/[^a-zA-Z0-9]/g, '-')}-${today.replace(/\s/g, '-')}.pdf`;
+  doc.save(filename);
+}
+
+// ═══════════════════════════════════════════════════════════
+// DOMAIN NARRATIVES (used in PDF)
+// ═══════════════════════════════════════════════════════════
+function domainNarrative(domainId, score) {
+  const band = bandFor(score);
+  const intros = {
+    labour: {
+      good: 'Your Labour Efficiency score suggests labour cost is being managed against real workload data, with visibility into where time is going. The pattern in your answers indicates discipline around the metrics that drive cost.',
+      warn: 'Your Labour Efficiency score places this domain in a risk band. The pattern in your answers suggests labour cost is being driven by something other than work volume — most commonly process waste, planning gaps, or handover failures.',
+      bad: 'Your Labour Efficiency score indicates significant operational drag in this domain. The combination of weak measurement and reactive headcount decisions is the classic signature of a labour problem that is actually a process problem.'
+    },
+    slotting: {
+      good: 'Your Slotting Health score suggests storage decisions are made deliberately and reviewed against velocity changes. This is rare and valuable — most operations leave significant pick-time savings on the floor here.',
+      warn: 'Your Slotting Health score suggests location decisions have drifted from product velocity over time. This is the single biggest unrecovered source of pick-time savings in mid-size operations.',
+      bad: 'Your Slotting Health score indicates slotting is not being actively managed. The travel time cost of this typically compounds quietly across every shift — usually invisible until measured.'
+    },
+    goodsin: {
+      good: 'Your Goods-In Flow score suggests intake is well-controlled and doesn\'t create downstream drag. This is the area where most operations lose hidden hours daily.',
+      warn: 'Your Goods-In Flow score indicates intake is creating intermittent drag downstream. The cause is usually one of: dock scheduling, over-engineered checking processes, or putaway authorisation bottlenecks.',
+      bad: 'Your Goods-In Flow score suggests intake has become a structural bottleneck. The downstream cost of this — across picking, replenishment, and despatch — is typically much larger than the goods-in team\'s direct overtime.'
+    },
+    shift: {
+      good: 'Your Shift Integrity score suggests handovers are working and knowledge transfers cleanly across shifts. This is the foundation of consistent multi-shift performance.',
+      warn: 'Your Shift Integrity score indicates handover quality is variable. Time loss at shift transitions is the most overlooked source of operational drag — small daily losses compound into significant weekly cost.',
+      bad: 'Your Shift Integrity score suggests handover is structurally broken. The classic pattern: each shift feels they\'re cleaning up the previous shift\'s problems, and overtime grows in ways that don\'t map to volume.'
+    },
+    kpi: {
+      good: 'Your KPI Confidence score suggests the measurement infrastructure is working — you trust the numbers, targets are calibrated to reality, and variance gets actioned.',
+      warn: 'Your KPI Confidence score indicates measurement infrastructure has gaps. When KPI accuracy is uncertain, leadership decisions get made on intuition — which works until it doesn\'t.',
+      bad: 'Your KPI Confidence score suggests the operation is being managed without trustworthy measurement. Any improvement effort built on shaky data will produce shaky results — fixing measurement is typically a prerequisite to fixing operations.'
+    },
+    maturity: {
+      good: 'Your Operational Maturity score suggests a healthy improvement culture with structured processes and openness to external perspective. This is the strongest single predictor of long-term operational health.',
+      warn: 'Your Operational Maturity score indicates the operation runs but improvement is reactive rather than systematic. Most of the value here comes from building the cadence, not from any single improvement.',
+      bad: 'Your Operational Maturity score suggests the operation has become dependent on individuals rather than systems. This is a fragility risk before it\'s an efficiency risk — losing a key person could destabilise the whole operation.'
+    }
+  };
+  const map = intros[domainId];
+  if (score >= 60) return map.good;
+  if (score >= 40) return map.warn;
+  return map.bad;
+}
+
+function domainPattern(domainId, score) {
+  const patterns = {
+    labour: 'When labour cost climbs without a matching volume increase, the root cause is rarely volume itself. In the majority of operations with this pattern, the issue is one of three things: shift handover failure (work redistributing unevenly between shifts), process bottlenecks (operatives waiting rather than working), or misaligned KPI targets (chasing the wrong metric). The combination of weak labour cost visibility and uncertain shift staffing typically means the root cause cannot be confirmed from inside the operation.',
+    slotting: 'The 80/20 rule applies to nearly every warehouse: roughly 20% of SKUs account for 80% of picks. When those fast-movers drift away from prime locations — either through SKU range expansion, layout changes, or simple neglect — every pick costs more time than it should. Travel time compounds across thousands of picks per week; the cost is large but invisible without measurement.',
+    goodsin: 'Goods-in drag rarely shows up as a goods-in problem. It shows up downstream — as a picking shortage at 11am, a replenishment delay, a despatch overtime spike. Most operations end up adding headcount or hours to the symptom rather than addressing the intake constraint. The typical hidden causes are: same-process-for-every-supplier (creating unnecessary work for trusted suppliers), single sign-off bottlenecks for putaway authorisation, and dock scheduling that creates vehicle queuing the goods-in team can\'t see.',
+    shift: 'A shift handover that loses 25 minutes per transition costs roughly 125 minutes per week, per shift — 8+ hours per month. Multiplied across multiple supervisors and the cascading effect on shift performance, the cost is typically far larger than the time loss itself. The hidden second-order effect is that incoming shifts learn to mistrust the operation\'s readiness state, which slows decisions throughout the shift.',
+    kpi: 'KPI infrastructure is the foundation everything else sits on. If the numbers aren\'t trusted, targets get ignored. If targets are wrong, hitting them means nothing. If variance doesn\'t get actioned, the metrics become decoration. The strongest predictor of an operation\'s ability to improve is the integrity of its measurement system — not the sophistication of it, but the trustworthiness.',
+    maturity: 'Operational maturity is hard to fake and hard to fix quickly. Operations with mature improvement culture run continuously better; operations without it run on the heroism of individuals. The most diagnostic question of the whole Scorecard was the final one — your honest estimate of how many improvement opportunities an external consultant would find. The answer to that question tends to be the most accurate single predictor of what an audit will actually surface.'
+  };
+  return patterns[domainId];
+}
+
+// ═══════════════════════════════════════════════════════════
+// RETAKE
+// ═══════════════════════════════════════════════════════════
+document.getElementById('retakeBtn').addEventListener('click', () => {
+  if (confirm('Are you sure? Your current answers will be cleared and you\'ll start over.')) {
+    clearState();
+    state = {
+      siteName: '',
+      currentQ: 0,
+      answers: new Array(QUESTIONS.length).fill(null)
+    };
+    document.getElementById('siteName').value = '';
+    showScreen('screenIntro');
+    document.getElementById('resumeNotice').style.display = 'none';
+  }
+});
+
+</script>
+</body>
+</html>
