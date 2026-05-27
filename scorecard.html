@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Warehouse Operations Scorecard — Diagnostic Tool for UK Warehouse Operations | PainKiller Consulting</title>
+  <meta name="description" content="A £99 diagnostic tool for UK warehouse operations managers. 25 questions across 6 operational health dimensions. Instant scored report. The same methodology used in our £950 on-site audits." />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/scorecard.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Warehouse Operations Scorecard" />
+  <meta property="og:description" content="Score your warehouse against six operational health dimensions. 25 questions. Instant report. £99." />
+  <meta property="og:url" content="https://painkillerconsulting.co.uk/scorecard.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;
+      --paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;
+      --rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;
+      --green:#2E7D32;--amber:#F57C00;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    img{display:block;max-width:100%;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .container-narrow{max-width:780px;margin:0 auto;padding:0 32px;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+
+    /* GLOBAL TYPOGRAPHY */
+    .label{font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;}
+    .label-red{color:var(--red);}
+    h1,h2,h3{font-family:var(--font-serif);font-weight:700;letter-spacing:-0.02em;color:var(--ink);line-height:1.18;}
+
+    /* HERO */
+    .hero{padding:88px 0 96px;border-bottom:1px solid var(--rule);position:relative;overflow:hidden;}
+    .hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:start;}
+    .hero-eyebrow{font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:24px;display:inline-block;}
+    .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .hero-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.08;letter-spacing:-0.025em;margin-bottom:24px;}
+    .hero-headline em{font-style:italic;color:var(--red);}
+    .hero-sub{font-size:1.12rem;color:var(--ink-mid);line-height:1.7;margin-bottom:36px;}
+    .hero-meta{display:flex;gap:32px;margin-bottom:36px;padding:24px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);flex-wrap:wrap;}
+    .meta-item{flex:1;min-width:120px;}
+    .meta-number{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:4px;}
+    .meta-label{font-size:0.78rem;color:var(--ink-light);letter-spacing:0.04em;}
+    .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .btn-primary{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.95rem;letter-spacing:0.02em;padding:16px 32px;transition:all 0.2s;border:1px solid var(--ink);}
+    .btn-primary:hover{background:#333330;border-color:#333330;}
+    .btn-text{font-size:0.92rem;font-weight:500;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
+    .btn-text:hover{color:var(--ink);border-color:var(--ink);}
+    .hero-trust{margin-top:18px;font-size:0.8rem;color:var(--ink-light);}
+
+    /* HERO REPORT CARD VISUAL */
+    .hero-visual{position:relative;}
+    .preview-card{background:var(--paper);border:1px solid var(--rule);padding:32px 28px;box-shadow:0 30px 60px -20px rgba(26,26,24,0.12);position:relative;}
+    .preview-card::before{content:'';position:absolute;top:-12px;right:24px;background:var(--red);color:white;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;}
+    .preview-card::before{content:'Sample';}
+    .preview-label{font-size:0.66rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:12px;}
+    .preview-title{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:20px;line-height:1.3;}
+    .preview-score{display:flex;align-items:baseline;gap:8px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule);}
+    .preview-score-num{font-family:var(--font-serif);font-weight:700;font-size:3.4rem;color:var(--red);letter-spacing:-0.04em;line-height:1;}
+    .preview-score-denom{font-size:1.2rem;color:var(--ink-light);}
+    .preview-score-band{font-size:0.8rem;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:0.08em;margin-left:auto;}
+    .preview-bars{display:flex;flex-direction:column;gap:10px;}
+    .preview-bar-row{display:grid;grid-template-columns:90px 1fr 28px;gap:10px;align-items:center;font-size:0.8rem;}
+    .preview-bar-label{color:var(--ink-mid);}
+    .preview-bar-track{height:6px;background:var(--paper-dark);position:relative;overflow:hidden;}
+    .preview-bar-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);}
+    .preview-bar-fill.warn{background:var(--amber);}
+    .preview-bar-fill.bad{background:var(--red);}
+    .preview-bar-fill.good{background:var(--green);}
+    .preview-bar-val{font-weight:600;color:var(--ink);text-align:right;font-size:0.78rem;}
+
+    /* SECTIONS */
+    section{padding:104px 0;border-bottom:1px solid var(--rule);}
+    .alt-bg{background:var(--paper-mid);}
+    .section-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .section-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,3.6vw,3rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px;}
+    .section-headline em{font-style:italic;color:var(--red);}
+    .section-intro{font-size:1.08rem;color:var(--ink-mid);line-height:1.7;max-width:640px;margin-bottom:48px;}
+
+    /* WHO THIS IS FOR */
+    .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+    .who-list{list-style:none;border-top:1px solid var(--rule);}
+    .who-list li{padding:18px 0;border-bottom:1px solid var(--rule);display:flex;gap:18px;font-size:0.98rem;color:var(--ink-mid);line-height:1.55;}
+    .who-list.yes li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:700;}
+    .who-list.no li::before{content:'—';color:var(--ink-light);flex-shrink:0;}
+    .who-column h3{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;margin-bottom:20px;color:var(--ink);}
+    .who-column.no h3{color:var(--ink-light);}
+
+    /* METHODOLOGY (6 domains) */
+    .methodology-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .domain-card{background:var(--paper);padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:background 0.2s;}
+    .domain-card:hover{background:var(--paper-mid);}
+    .domain-num{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;color:var(--paper-dark);line-height:1;letter-spacing:-0.03em;}
+    .domain-title{font-family:var(--font-serif);font-weight:700;font-size:1.25rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.25;}
+    .domain-body{font-size:0.88rem;color:var(--ink-mid);line-height:1.65;}
+    .domain-weight{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);}
+    .domain-weight strong{color:var(--red);font-weight:600;}
+
+    /* SAMPLE REPORT PREVIEW (big one) */
+    .sample-section{background:var(--ink);color:var(--paper);border-bottom:none;position:relative;overflow:hidden;}
+    .sample-section .section-eyebrow{color:var(--red);}
+    .sample-section .section-headline{color:var(--paper);}
+    .sample-section .section-intro{color:#999;}
+    .sample-frame{background:var(--paper);color:var(--ink);padding:56px 56px;margin-top:40px;position:relative;box-shadow:0 60px 120px -40px rgba(0,0,0,0.5);}
+    .sample-frame::before{content:'SAMPLE — LABOUR EFFICIENCY DOMAIN';position:absolute;top:-1px;left:0;background:var(--red);color:white;font-size:0.66rem;font-weight:700;letter-spacing:0.12em;padding:6px 14px;}
+    .sample-header{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:32px;}
+    .sample-domain-label{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;}
+    .sample-domain-name{font-family:var(--font-serif);font-weight:700;font-size:2rem;color:var(--ink);letter-spacing:-0.02em;line-height:1.15;}
+    .sample-score{text-align:right;}
+    .sample-score-num{font-family:var(--font-serif);font-weight:700;font-size:3.6rem;color:var(--amber);letter-spacing:-0.04em;line-height:1;}
+    .sample-score-band{font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-top:6px;}
+    .sample-narrative{font-size:1.02rem;color:var(--ink-mid);line-height:1.7;margin-bottom:32px;padding:20px 24px;border-left:3px solid var(--red);background:var(--paper-mid);}
+    .sample-narrative strong{color:var(--ink);font-weight:600;}
+    .sample-qa-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
+    .sample-qa-list{list-style:none;border-top:1px solid var(--rule);margin-bottom:32px;}
+    .sample-qa-list li{padding:14px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;}
+    .sample-q{font-size:0.92rem;color:var(--ink);font-weight:500;line-height:1.5;}
+    .sample-a{font-size:0.82rem;color:var(--ink-mid);background:var(--paper-mid);padding:4px 10px;white-space:nowrap;}
+    .sample-a.bad{background:var(--red-light);color:var(--red);}
+    .sample-pattern{margin-top:32px;padding:24px;background:var(--paper-mid);border:1px solid var(--rule);}
+    .sample-pattern-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .sample-pattern-text{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;}
+    .sample-pattern-text strong{color:var(--ink);font-weight:600;}
+    .sample-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+    .sample-footer-text{font-size:0.78rem;color:var(--ink-light);font-style:italic;}
+    .sample-page-num{font-size:0.78rem;color:var(--ink-light);}
+    .sample-disclaimer{margin-top:32px;font-size:0.85rem;color:#777;line-height:1.7;max-width:640px;}
+    .sample-disclaimer strong{color:#CCC;}
+
+    /* PROCESS — THREE STEPS */
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:48px;}
+    .process-step{background:var(--paper);padding:40px 32px;}
+    .process-num{font-family:var(--font-serif);font-weight:700;font-size:3rem;color:var(--paper-dark);line-height:1;margin-bottom:24px;letter-spacing:-0.04em;}
+    .process-title{font-family:var(--font-serif);font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em;line-height:1.25;}
+    .process-body{font-size:0.92rem;color:var(--ink-mid);line-height:1.7;}
+
+    /* PRICING / CTA SECTION */
+    .pricing-section{background:var(--paper-mid);}
+    .pricing-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .pricing-text{}
+    .pricing-text .section-headline{margin-bottom:24px;}
+    .pricing-text p{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;margin-bottom:18px;}
+    .pricing-card{background:var(--paper);border:1px solid var(--rule);padding:48px 44px;position:relative;}
+    .pricing-card-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+    .pricing-card-name{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:8px;letter-spacing:-0.02em;}
+    .pricing-card-sub{font-size:0.92rem;color:var(--ink-light);margin-bottom:32px;}
+    .pricing-amount{font-family:var(--font-serif);font-weight:700;font-size:4rem;color:var(--ink);letter-spacing:-0.04em;line-height:1;margin-bottom:8px;}
+    .pricing-amount-unit{font-size:0.85rem;color:var(--ink-light);margin-bottom:32px;}
+    .pricing-features{list-style:none;margin-bottom:36px;border-top:1px solid var(--rule);}
+    .pricing-features li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:0.9rem;color:var(--ink-mid);display:flex;gap:12px;line-height:1.55;}
+    .pricing-features li::before{content:'✓';color:var(--red);flex-shrink:0;font-weight:700;}
+    .pricing-cta{display:block;text-align:center;padding:16px 24px;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:background 0.2s;}
+    .pricing-cta:hover{background:#333330;}
+    .pricing-card-note{font-size:0.78rem;color:var(--ink-light);text-align:center;margin-top:14px;line-height:1.5;}
+
+    /* TRUST / METHODOLOGY ORIGIN */
+    .trust-section{padding:96px 0;}
+    .trust-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .trust-quote{border-left:3px solid var(--red);padding:0 0 0 32px;}
+    .trust-quote blockquote{font-family:var(--font-serif);font-size:1.6rem;line-height:1.5;color:var(--ink);font-style:italic;font-weight:400;margin-bottom:24px;letter-spacing:-0.01em;}
+    .trust-quote cite{font-size:0.85rem;font-style:normal;color:var(--ink-light);letter-spacing:0.04em;display:block;line-height:1.6;}
+    .trust-quote cite strong{color:var(--ink-mid);font-weight:600;display:block;}
+    .trust-points{}
+    .trust-list{list-style:none;border-top:1px solid var(--rule);}
+    .trust-list li{padding:18px 0;border-bottom:1px solid var(--rule);display:flex;gap:18px;font-size:0.95rem;color:var(--ink-mid);line-height:1.6;}
+    .trust-list li strong{color:var(--ink);font-weight:600;display:block;margin-bottom:4px;}
+    .trust-list li::before{content:'';display:block;width:6px;height:6px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:8px;}
+
+    /* FAQ */
+    .faq-list{margin-top:48px;border-top:1px solid var(--rule);max-width:780px;}
+    .faq-item{border-bottom:1px solid var(--rule);padding:28px 0;}
+    .faq-q{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:12px;letter-spacing:-0.01em;}
+    .faq-a{font-size:0.95rem;color:var(--ink-mid);line-height:1.75;}
+    .faq-a a{color:var(--ink);border-bottom:1px solid var(--rule);}
+
+    /* FINAL CTA */
+    .final-cta{padding:128px 0;border-bottom:1px solid var(--rule);text-align:center;}
+    .final-cta-inner{max-width:720px;margin:0 auto;}
+    .final-cta .section-eyebrow{margin-bottom:24px;}
+    .final-cta-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.4rem,4.5vw,3.6rem);letter-spacing:-0.025em;line-height:1.1;margin-bottom:28px;}
+    .final-cta-headline em{font-style:italic;color:var(--red);}
+    .final-cta-sub{font-size:1.12rem;color:var(--ink-mid);line-height:1.7;margin-bottom:44px;}
+    .final-cta-actions{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;align-items:center;}
+
+    /* FOOTER */
+    footer{padding:56px 0;}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);transition:color 0.2s;}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-bottom a{color:var(--ink-light);}
+    .footer-legal{display:flex;gap:20px;}
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes fadeUp{
+        from{opacity:0;transform:translateY(20px);}
+        to{opacity:1;transform:translateY(0);}
+      }
+      .hero-eyebrow{animation:fadeUp 0.6s ease both;}
+      .hero-headline{animation:fadeUp 0.7s 0.1s ease both;}
+      .hero-sub{animation:fadeUp 0.7s 0.2s ease both;}
+      .hero-meta{animation:fadeUp 0.7s 0.3s ease both;}
+      .hero-actions{animation:fadeUp 0.7s 0.4s ease both;}
+      .hero-visual{animation:fadeUp 0.8s 0.3s ease both;}
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .nav-links{display:none;}.nav-hamburger{display:flex;}
+      .hero{padding:64px 0 72px;}
+      .hero-inner{grid-template-columns:1fr;gap:48px;}
+      .who-grid{grid-template-columns:1fr;gap:48px;}
+      .methodology-grid{grid-template-columns:1fr 1fr;}
+      .process-grid{grid-template-columns:1fr;}
+      .process-step{border-bottom:1px solid var(--rule);}
+      .pricing-inner{grid-template-columns:1fr;gap:48px;}
+      .trust-inner{grid-template-columns:1fr;gap:48px;}
+      section{padding:72px 0;}
+      .sample-frame{padding:36px 28px;}
+      .sample-header{grid-template-columns:1fr;}
+      .sample-score{text-align:left;}
+    }
+    @media(max-width:600px){
+      .container,.container-narrow{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .methodology-grid{grid-template-columns:1fr;}
+      .hero{padding:48px 0 56px;}
+      .sample-frame{padding:28px 20px;}
+      .sample-domain-name{font-size:1.6rem;}
+      .sample-score-num{font-size:2.8rem;}
+      .pricing-card{padding:36px 28px;}
+      .pricing-amount{font-size:3.2rem;}
+      .final-cta{padding:80px 0;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="audit.html">Audit</a>
+  <a href="results.html">Results</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="book.html">Book a Call</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="audit.html">Audit</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="tools.html" class="active">Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow">The Warehouse Operations Scorecard</span>
+        <h1 class="hero-headline">Score your warehouse against six operational health dimensions — <em>before</em> hiring anyone to do it for you.</h1>
+        <p class="hero-sub">Twenty-five questions. Ten minutes. A scored report identifying your three highest-risk operational areas, built on the same diagnostic methodology used in our £950 on-site audits.</p>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <div class="meta-number">25</div>
+            <div class="meta-label">Questions across 6 domains</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-number">10<span style="font-size:1rem;color:var(--ink-light);"> min</span></div>
+            <div class="meta-label">Average completion time</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-number">Instant</div>
+            <div class="meta-label">PDF report delivery</div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#pricing" class="btn-primary">Take the Scorecard — £99</a>
+          <a href="#sample" class="btn-text">See sample report →</a>
+        </div>
+        <p class="hero-trust">UK-based. Built by Sam Mustatea, founder of PainKiller Consulting.</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="preview-card">
+          <div class="preview-label">Your Operational Health</div>
+          <div class="preview-title">Scorecard Report — Warehouse Operations</div>
+          <div class="preview-score">
+            <span class="preview-score-num">47</span>
+            <span class="preview-score-denom">/100</span>
+            <span class="preview-score-band">Material risk</span>
+          </div>
+          <div class="preview-bars">
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">Labour</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill bad" style="width:32%"></div></div>
+              <span class="preview-bar-val">32</span>
+            </div>
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">Slotting</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill warn" style="width:54%"></div></div>
+              <span class="preview-bar-val">54</span>
+            </div>
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">Goods-In</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill warn" style="width:48%"></div></div>
+              <span class="preview-bar-val">48</span>
+            </div>
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">Shift</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill bad" style="width:38%"></div></div>
+              <span class="preview-bar-val">38</span>
+            </div>
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">KPIs</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill warn" style="width:58%"></div></div>
+              <span class="preview-bar-val">58</span>
+            </div>
+            <div class="preview-bar-row">
+              <span class="preview-bar-label">Maturity</span>
+              <div class="preview-bar-track"><div class="preview-bar-fill bad" style="width:42%"></div></div>
+              <span class="preview-bar-val">42</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO THIS IS FOR ──────────────────────────────────── -->
+<section>
+  <div class="container">
+    <span class="section-eyebrow">Who this is for</span>
+    <h2 class="section-headline">Designed for one specific role: the operations manager who suspects there's a problem and wants the data to <em>prove it.</em></h2>
+
+    <div class="who-grid">
+      <div class="who-column">
+        <h3>Right fit if you…</h3>
+        <ul class="who-list yes">
+          <li>Run a UK warehouse, distribution, 3PL, or fulfilment operation</li>
+          <li>Suspect your operation has inefficiencies but can't pinpoint exactly where</li>
+          <li>Want a structured assessment before committing to consultancy spend</li>
+          <li>Are preparing a business case for operational improvement to leadership</li>
+          <li>Have just inherited an operation and need a baseline understanding fast</li>
+          <li>Want to compare your operation against benchmarks without an external visit</li>
+        </ul>
+      </div>
+      <div class="who-column no">
+        <h3>Worth knowing before you buy…</h3>
+        <ul class="who-list no">
+          <li>The Scorecard is a self-assessment. It cannot replace on-floor observation — if your problem is "I don't know what's actually happening in the warehouse," you need the on-site audit, not this</li>
+          <li>The report is built for internal use. It's not a third-party assessment suitable for due diligence, audit committees, or external regulatory submissions</li>
+          <li>Software recommendations aren't included. The Scorecard identifies what's wrong operationally — it doesn't tell you which WMS or robot to buy</li>
+          <li>The output is a PDF, not a consultancy engagement. If you want someone to do the thinking with you, start with a free 20-min call instead</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── METHODOLOGY ──────────────────────────────────────── -->
+<section class="alt-bg">
+  <div class="container">
+    <span class="section-eyebrow">The methodology</span>
+    <h2 class="section-headline">Six dimensions. The same six we score in every on-site audit.</h2>
+    <p class="section-intro">Each domain has been weighted based on its predictive value — how strongly issues in that area tend to correlate with overall operational drag. The weights reflect 15 years of pattern recognition across UK warehouses.</p>
+
+    <div class="methodology-grid">
+      <div class="domain-card">
+        <div class="domain-num">01</div>
+        <div class="domain-title">Labour Efficiency</div>
+        <p class="domain-body">Overtime trajectory, headcount calibration, pick rate trend, labour cost visibility, and shift staffing confidence. The strongest single predictor of audit-able value.</p>
+        <div class="domain-weight">Weighting · <strong>22%</strong></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-num">02</div>
+        <div class="domain-title">Slotting Health</div>
+        <p class="domain-body">Recency of slotting review, velocity-to-location mapping, travel distance awareness, and SKU ranking discipline. The biggest single driver of wasted pick time.</p>
+        <div class="domain-weight">Weighting · <strong>12%</strong></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-num">03</div>
+        <div class="domain-title">Goods-In Flow</div>
+        <p class="domain-body">Intake bottleneck frequency, supplier risk-tiering, vehicle queuing, and putaway authorisation lag. Where downstream operational drag almost always begins.</p>
+        <div class="domain-weight">Weighting · <strong>16%</strong></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-num">04</div>
+        <div class="domain-title">Shift Integrity</div>
+        <p class="domain-body">Handover process maturity, time loss at shift transitions, cross-shift performance variation, and key-individual dependency risk.</p>
+        <div class="domain-weight">Weighting · <strong>16%</strong></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-num">05</div>
+        <div class="domain-title">KPI Confidence</div>
+        <p class="domain-body">Dashboard maturity, target validity, data trust, and follow-through on negative variance. The integrity of what you measure determines what you can fix.</p>
+        <div class="domain-weight">Weighting · <strong>12%</strong></div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-num">06</div>
+        <div class="domain-title">Operational Maturity</div>
+        <p class="domain-body">Process documentation, improvement cadence, exposure to outside perspective, and honest self-assessment. The deepest predictor of long-term operational health.</p>
+        <div class="domain-weight">Weighting · <strong>22%</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SAMPLE REPORT ──────────────────────────────────── -->
+<section class="sample-section" id="sample">
+  <div class="container">
+    <span class="section-eyebrow">A sample of what you get</span>
+    <h2 class="section-headline">One domain, fully scored — to show you what a £99 report actually looks like.</h2>
+    <p class="section-intro">Below is the Labour Efficiency domain page from a real anonymised report. Every Scorecard you complete produces six pages like this one, plus an executive summary and a recommended next step.</p>
+
+    <div class="sample-frame">
+      <div class="sample-header">
+        <div>
+          <div class="sample-domain-label">Domain 01 of 06 · Operational Health Report</div>
+          <h3 class="sample-domain-name">Labour Efficiency</h3>
+        </div>
+        <div class="sample-score">
+          <div class="sample-score-num">32</div>
+          <div class="sample-score-band">Material risk</div>
+        </div>
+      </div>
+
+      <div class="sample-narrative">
+        Your Labour Efficiency score of 32/100 places this domain in the <strong>material risk</strong> band. The pattern in your answers suggests labour cost is being driven by something other than work volume — most commonly process waste, planning gaps, or handover failures between shifts. <strong>This is the most frequent root cause we encounter in mid-size warehouse operations</strong>, and is rarely visible from inside the operation.
+      </div>
+
+      <div class="sample-qa-label">Your answers in this domain</div>
+      <ul class="sample-qa-list">
+        <li>
+          <div class="sample-q">Over the last 3 months, how has your overtime requirement trended?</div>
+          <div class="sample-a bad">Increased despite adding headcount</div>
+        </li>
+        <li>
+          <div class="sample-q">How has your pick rate changed in the last 6 months?</div>
+          <div class="sample-a bad">Stable but feels low</div>
+        </li>
+        <li>
+          <div class="sample-q">When demand spikes, what's your default response?</div>
+          <div class="sample-a">Permanent staff working over their hours</div>
+        </li>
+        <li>
+          <div class="sample-q">How quickly can you tell me your labour cost per unit shipped last week?</div>
+          <div class="sample-a">From monthly finance reports, roughly</div>
+        </li>
+        <li>
+          <div class="sample-q">How confident are you in current shift staffing levels?</div>
+          <div class="sample-a bad">Not at all confident</div>
+        </li>
+      </ul>
+
+      <div class="sample-pattern">
+        <div class="sample-pattern-label">What this pattern typically indicates</div>
+        <p class="sample-pattern-text">When overtime climbs despite added headcount, the root cause is almost never volume. In the majority of operations we audit with this pattern, the issue is one of three things: <strong>shift handover failure</strong> (work redistributing unevenly between shifts), <strong>process bottlenecks</strong> (operatives waiting rather than working), or <strong>misaligned KPI targets</strong> (chasing the wrong metric). The combination of low confidence in shift staffing plus weak labour cost visibility makes the root cause hard to identify from inside the operation — which is precisely the diagnostic problem the on-site audit is designed to solve.</p>
+      </div>
+
+      <div class="sample-footer">
+        <span class="sample-footer-text">PainKiller Consulting · Warehouse Operations Scorecard</span>
+        <span class="sample-page-num">Page 3 of 10</span>
+      </div>
+    </div>
+
+    <p class="sample-disclaimer"><strong>What's hidden from this preview:</strong> the other 5 domain pages (Slotting, Goods-In, Shift Integrity, KPI Confidence, Operational Maturity), the executive summary with all six domain scores plotted together, the personalised "recommended next step" page, and the signed note from Sam. Each domain page follows the same structure as above — narrative interpretation, your answers, and the pattern they typically indicate.</p>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="section-headline">Three steps. No ambiguity.</h2>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3 class="process-title">Purchase — £99</h3>
+        <p class="process-body">One-time payment via Stripe. After payment, you're sent immediately to a secure assessment page with a unique access link. The same link is in your receipt email — bookmark it if you want to come back later.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3 class="process-title">Complete the Scorecard</h3>
+        <p class="process-body">Twenty-five questions across six domains. Progress saves automatically — leave the page and come back. Most people complete it in 8–12 minutes. Be honest in your answers — the report is only as useful as the inputs.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3 class="process-title">Get your scored report</h3>
+        <p class="process-body">A 10-page PDF generated instantly in your browser. Save it, share it with your team, take it to your next leadership meeting. Then decide what to do next — implement internally, or book a deeper conversation with us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING / CTA ──────────────────────────────────── -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-inner">
+      <div class="pricing-text">
+        <span class="section-eyebrow">Take the Scorecard</span>
+        <h2 class="section-headline">Score your operation. Identify your top three risks. In ten minutes.</h2>
+        <p>The Scorecard is built for one purpose: to give you an independent, structured view of where your operation stands — at the kind of price point a manager can approve without a procurement process.</p>
+        <p>If the findings prompt you to take action, you can do that internally with the report as a starting point. Or, if you'd prefer external help, your report includes a recommended next step mapped to your specific situation.</p>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-card-tag">One-time purchase</div>
+        <div class="pricing-card-name">Warehouse Operations Scorecard</div>
+        <div class="pricing-card-sub">Diagnostic tool for UK warehouse operations managers</div>
+
+        <div class="pricing-amount">£99</div>
+        <div class="pricing-amount-unit">One-time · instant access · no subscription</div>
+
+        <ul class="pricing-features">
+          <li>25-question interactive assessment across 6 domains</li>
+          <li>10-page personalised PDF report — instant in-browser</li>
+          <li>Executive summary with all six domain scores</li>
+          <li>Top three risk areas identified and explained</li>
+          <li>Pattern interpretations from 15 years of audit data</li>
+          <li>Personalised next-step recommendation</li>
+          <li>Signed note from Sam — founder, PainKiller Consulting</li>
+        </ul>
+
+        <a href="https://buy.stripe.com/7sYbJ3gi72614dk2Od5kk02" class="pricing-cta" target="_blank" rel="noopener noreferrer">Buy now — £99 →</a>
+        <p class="pricing-card-note">Secure checkout via Stripe · Instant access on payment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST / METHODOLOGY ORIGIN ─────────────────────── -->
+<section class="trust-section">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-quote">
+        <blockquote>"The Scorecard isn't a quiz. It's the same diagnostic structure I'd walk through on day one of a real on-site audit — without me being there to walk through it with you."</blockquote>
+        <cite>
+          <strong>Sam Mustatea</strong>
+          Founder, PainKiller Consulting
+        </cite>
+      </div>
+
+      <div class="trust-points">
+        <ul class="trust-list">
+          <li>
+            <div>
+              <strong>Built from real audit data</strong>
+              The questions and weights reflect 15 years of identifying operational problems across retail distribution, 3PL, manufacturing, aviation, and FMCG warehouses.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Independent — no vendor recommendations</strong>
+              The Scorecard doesn't promote software, equipment, or third-party services. Recommendations are based on operational need, not commercial relationships.
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Honest about what it can and can't do</strong>
+              A self-assessment can't replace floor-level observation. The Scorecard is a starting point — it surfaces what to look at, not how to fix it.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ────────────────────────────────────────────── -->
+<section class="alt-bg">
+  <div class="container-narrow">
+    <span class="section-eyebrow">Common questions</span>
+    <h2 class="section-headline">Before you buy.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How is this different from your £950 on-site audit?</div>
+        <p class="faq-a">The Scorecard is a structured self-assessment that surfaces likely problem areas based on your own answers. The on-site audit involves a full day of floor observation, staff interviews, and process mapping — things a self-assessment fundamentally cannot replicate. Many Scorecard buyers progress to an audit once the report shows them they have something worth investigating. <a href="audit.html">See the on-site audit →</a></p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I use the Scorecard for multiple sites?</div>
+        <p class="faq-a">The £99 covers one operational assessment. If you run multiple sites and want to compare them, complete the Scorecard once per site (each gets its own report). Volume pricing is available for 5+ sites — <a href="mailto:info@painkillerconsulting.co.uk">contact us directly</a>.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my data shared or stored anywhere?</div>
+        <p class="faq-a">No. The Scorecard runs entirely in your browser — your answers never leave your device. We don't store the assessment data, don't email it to ourselves, and don't use it for any other purpose. The PDF report is generated locally on your machine and saved by you. The only thing we know is that you bought the product (via Stripe), not what you answered.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be on-site to complete it?</div>
+        <p class="faq-a">No. The questions can be answered from any location, though some require knowledge of your operation's current state (recent overtime trends, when slotting was last reviewed, etc.). If you're a new operations manager and don't yet know the answers, that itself is a useful diagnostic signal.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the report PDF something I can share with leadership?</div>
+        <p class="faq-a">Yes — and it's designed for exactly that. The 10-page report is formatted to be presentation-ready, with clear scoring, visual benchmarks, and a recommended next step. Several buyers have used it as the basis for internal business cases for operational change.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long do I have access to my report?</div>
+        <p class="faq-a">The PDF is generated and downloaded immediately on completion — you keep it forever. The assessment link itself remains active for 30 days in case you want to retake it or come back to incomplete answers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ──────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <span class="section-eyebrow">Begin your Scorecard</span>
+      <h2 class="final-cta-headline">Ten minutes from now, you could know <em>exactly</em> what your operation is struggling with.</h2>
+      <p class="final-cta-sub">Twenty-five questions. Six dimensions. One scored report. The same diagnostic structure used in £950 on-site audits — at a fraction of the price.</p>
+      <div class="final-cta-actions">
+        <a href="#pricing" class="btn-primary">Take the Scorecard — £99</a>
+        <a href="audit.html" class="btn-text">Or see the full on-site audit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="audit.html">On-Site Audit</a>
+        <a href="scorecard.html">Scorecard</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>
