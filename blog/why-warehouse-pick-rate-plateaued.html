@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Pick Rate Has Plateaued Despite Training and Incentives | PainKiller</title>
+  <meta name="description" content="If you've run training, revised targets and applied performance improvement, and your pick rate still won't move — the problem isn't your people. It's structural. Three root causes, all invisible from the dashboard." />
+  <meta name="theme-color" content="#FAFAF7" />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/blog/why-warehouse-pick-rate-plateaued.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why Your Pick Rate Has Plateaued Despite Training and Incentives" />
+  <meta property="og:description" content="If training and incentives aren't moving the number, the problem isn't your people. Three structural causes, all fixable." />
+  <meta property="og:url" content="https://painkillerconsulting.co.uk/blog/why-warehouse-pick-rate-plateaued.html" />
+  <meta property="og:image" content="https://painkillerconsulting.co.uk/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Pick Rate Has Plateaued Despite Training and Incentives",
+    "description": "If training and incentives aren't moving the pick rate, the problem isn't your people. It's structural. Three root causes covered.",
+    "author": { "@type": "Person", "name": "Sam Mustatea", "url": "https://painkillerconsulting.co.uk/about.html" },
+    "publisher": { "@type": "Organization", "name": "PainKiller Consulting", "url": "https://painkillerconsulting.co.uk" },
+    "url": "https://painkillerconsulting.co.uk/blog/why-warehouse-pick-rate-plateaued.html",
+    "mainEntityOfPage": "https://painkillerconsulting.co.uk/blog/why-warehouse-pick-rate-plateaued.html",
+    "articleSection": "Warehouse Operations",
+    "wordCount": 2500
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why has my warehouse pick rate stopped improving despite training?",
+        "acceptedAnswer": { "@type": "Answer", "text": "When training and incentives don't move the pick rate, the cause is almost always structural rather than human. The three most common causes are outdated slotting (high-velocity SKUs in low-accessibility locations), pick path logic configured for a previous layout, and equipment friction at the start of every pick cycle. None of these are addressed by training the pickers harder." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good pick rate for a UK warehouse?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Industry averages vary widely by warehouse type — typically 60 to 120 picks per hour for manual picking, depending on SKU profile, order mix and travel distance. The more useful question is whether your operation is performing at 80-90% of its own potential ceiling, not how you compare to a generic benchmark. Most underperforming operations are 15-25% below their own theoretical capacity, which is recoverable through structural change rather than headcount." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much pick rate improvement is realistic from process change alone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Pick rate improvements of 15-25% from structural change alone are common when slotting, pick path, and equipment staging are addressed together. This is achievable in 4-12 weeks depending on the size of the operation. Improvements above 25% usually require capital investment in technology or layout change." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .article-container{max-width:720px;margin:0 auto;padding:0 32px;}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+    .breadcrumb{padding:24px 0 0;font-size:0.8rem;color:var(--ink-light);}
+    .breadcrumb a{color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:1px;}
+    .breadcrumb a:hover{color:var(--ink);border-color:var(--ink);}
+    .breadcrumb-sep{margin:0 8px;color:var(--ink-light);}
+    .article-header{padding:48px 0 56px;border-bottom:1px solid var(--rule);}
+    .article-category{display:inline-block;font-size:0.74rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:24px;}
+    .article-category::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .article-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-0.025em;margin-bottom:24px;color:var(--ink);}
+    .article-title em{font-style:italic;color:var(--red);}
+    .article-meta{display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:0.85rem;color:var(--ink-light);padding-top:24px;border-top:1px solid var(--rule);}
+    .article-meta-author{color:var(--ink-mid);font-weight:600;}
+    .article-meta-author::before{content:'By ';color:var(--ink-light);font-weight:400;}
+    .article-meta-sep{color:var(--rule);}
+    .article-body{padding:64px 0 56px;}
+    .lede{font-family:var(--font-serif);font-weight:400;font-size:1.4rem;line-height:1.55;color:var(--ink);letter-spacing:-0.005em;margin-bottom:36px;font-style:italic;}
+    .lede strong{font-style:normal;font-weight:700;color:var(--ink);}
+    .article-body h2{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;line-height:1.25;letter-spacing:-0.02em;margin:48px 0 18px;color:var(--ink);}
+    .article-body h2 em{font-style:italic;color:var(--red);}
+    .article-body h3{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.3;letter-spacing:-0.015em;margin:36px 0 14px;color:var(--ink);}
+    .article-body p{font-size:1.05rem;line-height:1.8;color:var(--ink-mid);margin-bottom:18px;}
+    .article-body p strong{color:var(--ink);font-weight:600;}
+    .article-body p em{color:var(--red);font-style:italic;font-weight:500;}
+    .article-body a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:border-color 0.2s;}
+    .article-body a:hover{border-color:var(--ink);}
+    .article-body ul,.article-body ol{margin:18px 0 24px 0;padding-left:0;list-style:none;}
+    .article-body ul li,.article-body ol li{position:relative;padding:8px 0 8px 28px;font-size:1.02rem;line-height:1.7;color:var(--ink-mid);}
+    .article-body ul li::before{content:'→';color:var(--red);font-weight:700;position:absolute;left:0;top:8px;}
+    .article-body ol{counter-reset:item;}
+    .article-body ol li{counter-increment:item;}
+    .article-body ol li::before{content:counter(item) '.';color:var(--red);font-weight:700;font-family:var(--font-serif);position:absolute;left:0;top:8px;}
+    .callout{background:var(--paper-mid);border-left:3px solid var(--red);padding:24px 28px;margin:32px 0;}
+    .callout-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .callout p{font-size:1rem!important;color:var(--ink)!important;line-height:1.7!important;margin-bottom:0!important;font-style:italic;}
+    .key-stat{background:var(--ink);color:var(--paper);padding:32px 36px;margin:36px 0;border-left:3px solid var(--red);}
+    .key-stat-number{font-family:var(--font-serif);font-weight:700;font-size:3rem;color:var(--red);line-height:1;letter-spacing:-0.03em;margin-bottom:10px;}
+    .key-stat-body{font-size:1rem;color:#CCC;line-height:1.65;}
+    .body-cta{margin:48px 0;padding:36px 36px;background:var(--red-light);border:1px solid rgba(192,57,43,0.2);}
+    .body-cta-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .body-cta-title{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.25;margin-bottom:12px;color:var(--ink);}
+    .body-cta-text{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:18px!important;}
+    .body-cta-btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.88rem;padding:12px 24px;transition:background 0.2s;border:none;}
+    .body-cta-btn:hover{background:#333330;}
+    .faq-section{padding:56px 0;border-top:1px solid var(--rule);background:var(--paper-mid);}
+    .faq-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .faq-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .faq-headline{font-family:var(--font-serif);font-weight:700;font-size:2rem;letter-spacing:-0.02em;line-height:1.2;margin-bottom:40px;}
+    .faq-item{border-top:1px solid var(--rule);padding:24px 0;}
+    .faq-item:last-of-type{border-bottom:1px solid var(--rule);}
+    .faq-q{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:12px;line-height:1.4;}
+    .faq-a{font-size:0.98rem;color:var(--ink-mid);line-height:1.75;}
+    .related-section{padding:64px 0;border-top:1px solid var(--rule);}
+    .related-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .related-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .related-headline{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;letter-spacing:-0.02em;margin-bottom:32px;}
+    .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .related-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;transition:background 0.2s;}
+    .related-card:hover{background:var(--paper-mid);}
+    .related-cat{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .related-title{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;line-height:1.3;color:var(--ink);margin-bottom:12px;}
+    .related-excerpt{font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;flex:1;}
+    .related-arrow{font-size:0.85rem;color:var(--red);font-weight:600;}
+    .final-cta-section{padding:88px 0;background:var(--ink);color:var(--paper);}
+    .final-cta-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+    .final-cta-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .final-cta-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.2;letter-spacing:-0.02em;color:var(--paper);margin-bottom:20px;}
+    .final-cta-headline em{font-style:italic;color:#FFB8AC;}
+    .final-cta-body{font-size:1rem;color:#999;line-height:1.75;margin-bottom:32px;}
+    .final-cta-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+    .btn-primary-red{display:inline-block;background:var(--red);color:white;font-weight:600;font-size:0.92rem;padding:14px 28px;transition:background 0.2s;}
+    .btn-primary-red:hover{background:#A93226;}
+    .btn-text-dark{font-size:0.88rem;font-weight:500;color:#999;border-bottom:1px solid #2A2A28;padding-bottom:2px;}
+    .btn-text-dark:hover{color:var(--paper);border-color:#666;}
+    footer{padding:48px 0;border-top:1px solid var(--rule);background:var(--paper);}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-legal{display:flex;gap:20px;}
+    @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:flex;}.related-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.container,.article-container{padding:0 20px;}.article-header{padding:32px 0 40px;}.article-body{padding:48px 0 40px;}.lede{font-size:1.2rem;}.article-body h2{font-size:1.5rem;margin:36px 0 14px;}.article-body h3{font-size:1.15rem;}.body-cta{padding:28px 24px;}.key-stat{padding:28px;}.key-stat-number{font-size:2.4rem;}}
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="../services.html">Services</a>
+  <a href="../audit.html">Audit</a>
+  <a href="../scorecard.html">Scorecard</a>
+  <a href="../results.html">Results</a>
+  <a href="../tools.html">Tools</a>
+  <a href="../about.html">About</a>
+  <a href="index.html">Field Notes</a>
+  <a href="../book.html">Book a Call</a>
+</div>
+
+<nav><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+  <ul class="nav-links">
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../audit.html">Audit</a></li>
+    <li><a href="../scorecard.html">Scorecard</a></li>
+    <li><a href="../results.html">Results</a></li>
+    <li><a href="index.html" class="active">Field Notes</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../book.html" class="nav-cta">Book Free Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></div></nav>
+
+<div class="article-container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="index.html">Field Notes</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>Why your pick rate has plateaued</span>
+  </nav>
+</div>
+
+<header class="article-header">
+  <div class="article-container">
+    <div class="article-category">Diagnostic guide</div>
+    <h1 class="article-title">Why your pick rate has plateaued <em>despite training and incentives.</em></h1>
+    <div class="article-meta">
+      <span class="article-meta-author">Sam Mustatea, Founder</span>
+      <span class="article-meta-sep">·</span>
+      <span>12 minute read</span>
+      <span class="article-meta-sep">·</span>
+      <span>UK warehouse operations</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="article-container">
+
+    <p class="lede">If you've trained the team, revised the targets, applied performance improvement to your slowest pickers, and the pick rate still hasn't moved in 12 months — <strong>the problem isn't your people.</strong> It's structural. And training your way out of a structural problem is the most expensive thing you can do.</p>
+
+    <p>Pick rate is one of the most misdiagnosed metrics in warehouse operations. When it underperforms, the instinct is almost always to look at the people doing the picking — their training, their motivation, their effort, their consistency. That instinct is wrong, or at least incomplete, more often than not.</p>
+
+    <p>What I see in PainKiller audits, again and again, is operations that have spent 18 months addressing a pick rate problem by training pickers harder, when the actual root cause is something the pickers can't influence — and arguably shouldn't be expected to. The team can pick at 60 items per hour or 90 items per hour; if the operation is structured to make 65 the natural ceiling, no amount of training will move the number meaningfully past it.</p>
+
+    <p>This post is a diagnostic. Three root causes of plateaued pick rate, what each looks like on the floor, and what to actually do about them. None of the three are addressed by training the team harder.</p>
+
+    <h2>First, the diagnostic question that matters most</h2>
+
+    <p>If you remember nothing else from this post, remember this question: <em>"What percentage of total picking time is the team actually picking, versus moving, locating, or waiting?"</em></p>
+
+    <p>The industry data on this is consistent: in most warehouses, <strong>50% or more of total picking time is travel time</strong>. Half. Sometimes more. Which means the picker has roughly half of their shift available for the actual act of picking, and the other half is being spent walking between locations, looking for stock, or waiting for trolleys.</p>
+
+    <div class="key-stat">
+      <div class="key-stat-number">50%+</div>
+      <div class="key-stat-body">Of total picking time in most warehouses is travel time, not actual picking. This means half of your labour cost on pickers is movement — and movement is the thing that's most affected by layout, slotting and equipment design, not by training.</div>
+    </div>
+
+    <p>If you train someone to walk 10% faster, you might save 5% of total picking time. If you cut their travel distance by 30% through structural change, you save 15% of total picking time — and you do it permanently, without the training requiring re-investment every time a new starter joins.</p>
+
+    <h2>Cause 01 · <em>Outdated slotting</em> — your high-velocity SKUs are in the wrong places</h2>
+
+    <p>Slotting is the most common single cause of plateaued pick rate in operations I audit. And it's also the one that's most likely to have been correct at some point, then quietly become wrong as the SKU mix changed without the slotting being revisited.</p>
+
+    <p>The pattern is consistent. The operation was set up two years ago, with a slotting plan based on the SKU velocity at that time. Then the product mix expanded. New SKUs went into whatever locations were free, not into locations that matched their velocity profile. Some old SKUs slowed down without being moved out of prime locations. The cumulative effect is that <em>the highest-velocity items are no longer in the highest-accessibility locations</em>, and the pickers are travelling further than they need to for the bulk of their picks.</p>
+
+    <h3>What outdated slotting looks like on the floor</h3>
+
+    <ul>
+      <li>Pickers regularly walk past low-velocity items in prime locations to reach high-velocity items further away</li>
+      <li>The top 20% of SKUs by velocity aren't concentrated in the most accessible 20% of the warehouse</li>
+      <li>Slotting hasn't been formally reviewed in the last 12 months, despite the SKU range changing significantly</li>
+      <li>If you ask a picker "where are most of your picks?", they describe a path that includes detours through low-velocity zones</li>
+      <li>The pick path heatmap (if you have one) doesn't match the storage layout's accessibility pattern</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>A formal slotting review is not as complex as software vendors will tell you. The basic exercise is:</p>
+
+    <ol>
+      <li>Pull the last 90 days of pick data. Rank SKUs by units picked.</li>
+      <li>Identify the top 20% by velocity (this is usually 60-70% of total picks).</li>
+      <li>Check where those SKUs currently sit. They should be in the most accessible 20% of locations — closest to pick start, at golden zone height, near main aisles.</li>
+      <li>For SKUs that aren't, plan a reslotting cycle. This can be done during quiet periods over 2-4 weeks without major disruption.</li>
+    </ol>
+
+    <p>In our experience, top-20% reslotting alone typically yields 15-22% pick rate improvement within 3-4 weeks — same headcount, no training, no technology.</p>
+
+    <div class="callout">
+      <div class="callout-label">From a real audit</div>
+      <p>One operation I audited had spent 18 months running pick rate training. Their top 80 SKUs had grown from 60% of picks to 78% of picks as the long-tail dropped off, but those 80 SKUs were still scattered across the warehouse in their original locations. We reslotted them in 9 days. Pick rate went up 22% in three weeks. The training had been addressing symptoms of a slotting problem.</p>
+    </div>
+
+    <h2>Cause 02 · <em>Pick path logic</em> — your routing is configured for a warehouse that doesn't exist anymore</h2>
+
+    <p>The second cause is closely related to slotting but operates one layer deeper. Even with correct slotting, the <strong>sequence in which pickers are routed through the warehouse</strong> determines how much travel they do per order. And in most operations, the pick path logic was configured at WMS go-live and has never been revisited.</p>
+
+    <p>This matters because warehouses change shape. New zones get added. Old zones get reorganised. Aisles get reconfigured. Each change quietly invalidates a piece of the original pick path logic — and the WMS keeps routing pickers through the old logic, sending them down aisles in a sequence that no longer minimises travel.</p>
+
+    <h3>What bad pick path logic looks like on the floor</h3>
+
+    <ul>
+      <li>Pickers backtrack through zones they've already passed to complete an order</li>
+      <li>The pick sequence on the device doesn't match the most efficient route through the warehouse (your experienced pickers usually know this and quietly ignore the device)</li>
+      <li>Multi-line orders take significantly longer per line than single-line orders, beyond what travel distance alone explains</li>
+      <li>The WMS batch configuration was set up at go-live and hasn't been adjusted in 2+ years</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>Most modern WMS systems support pick path reconfiguration, but the change has to be made deliberately — it doesn't update itself. The practical sequence is:</p>
+
+    <ol>
+      <li>Spend a shift walking with three different pickers and observing actual routes vs WMS-suggested routes</li>
+      <li>Identify the systematic mismatches — places where the WMS sends pickers a longer way than necessary</li>
+      <li>Work with your WMS administrator (or vendor) to reconfigure the pick path logic to match current layout</li>
+      <li>Run for 2 weeks, measure travel time per pick before and after</li>
+    </ol>
+
+    <p>This is a 1-2 week intervention that typically delivers 5-10% pick rate improvement on top of any slotting fix.</p>
+
+    <div class="body-cta">
+      <div class="body-cta-label">Related</div>
+      <div class="body-cta-title">The 10 Signs Your Warehouse Has a Process Problem</div>
+      <p class="body-cta-text">A free 12-page diagnostic guide covering the most common signs found across PainKiller audits — and what they usually indicate. Plateaued pick rate is one of them. No email required.</p>
+      <a href="../10-signs-warehouse-process-problem.pdf" class="body-cta-btn" target="_blank" rel="noopener noreferrer">Open the guide →</a>
+    </div>
+
+    <h2>Cause 03 · <em>Equipment friction</em> — the first 5 minutes of every shift are wasted</h2>
+
+    <p>The third cause is the smallest of the three in single-pick terms but the most insidious because it operates every single shift, on every single picker. It's the time pickers spend at the start of every shift — and often during shifts — locating trolleys, scanners, and equipment before they can actually start picking.</p>
+
+    <p>In most operations, this loss is invisible because it's hidden in pre-shift setup time, between-task transition time, and the general "background" of operational running. But measured properly, it usually adds up to 6-12 minutes per shift per picker — which, across a team of 30 pickers across two shifts, is 6-12 hours of pure non-productive labour per day.</p>
+
+    <h3>What equipment friction looks like on the floor</h3>
+
+    <ul>
+      <li>Pickers spend 5-10 minutes at the start of each shift locating their trolley, scanner, and any other equipment</li>
+      <li>Equipment is stored centrally and pickers walk to it, then walk to their starting zone</li>
+      <li>Devices need to be located, logged into, and configured at the start of each pick task</li>
+      <li>Returns trolleys and pick trolleys are mixed together, requiring sorting at the start of each cycle</li>
+      <li>If you ask the team "how would you save 10 minutes a shift?", the answer is usually "stop me having to find my kit"</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>This is one of the lowest-effort, highest-return interventions available. Fixed equipment staging:</p>
+
+    <ol>
+      <li>Assign trolleys to specific zones or aisles — they live where they're used</li>
+      <li>Allocate scanners and devices to specific pickers or workstations rather than a central pool</li>
+      <li>Set up zone-start stations with everything a picker needs to start picking immediately</li>
+      <li>Stage equipment ready for the next shift as part of the previous shift's wind-down</li>
+    </ol>
+
+    <p>Most operations see 5-8% pick rate improvement from equipment staging alone — and it's usually deliverable inside two weeks.</p>
+
+    <h2>How to know which cause is dominant in your operation</h2>
+
+    <p>As with overtime, most underperforming operations have at least two of these three causes operating at once — usually slotting and equipment friction together. Pick path logic is the third one that often gets fixed last because it requires WMS work.</p>
+
+    <p>The diagnostic question that tells you fastest: <em>spend half a shift on the floor with a stopwatch.</em> Pick three pickers at random. Time three things for each:</p>
+
+    <ul>
+      <li><strong>Equipment setup time</strong> — from when they clock in to when they actually pick their first item</li>
+      <li><strong>Travel-to-pick ratio</strong> — the proportion of time spent walking versus actually picking, across a sample of 10 picks</li>
+      <li><strong>Backtrack frequency</strong> — how often within a single order they walk back through a zone they've already passed</li>
+    </ul>
+
+    <p>If equipment setup is over 5 minutes, you have equipment friction. If travel ratio is over 50%, you have slotting and/or pick path problems. If backtracks are happening on more than 20% of orders, pick path logic is misaligned with current layout.</p>
+
+    <h2>What's <em>not</em> the answer (no matter what your gut says)</h2>
+
+    <p>Three things that operations directors reach for when pick rate plateaus, none of which usually help:</p>
+
+    <ul>
+      <li><strong>More training.</strong> If training was going to fix it, it would have done so by now. The plateau is the signal that you've exhausted what training can deliver.</li>
+      <li><strong>Tighter performance management on the slow pickers.</strong> Even if the slowest 20% became as fast as the median, the median would stay where it is — and the median is what determines the operation's pick rate.</li>
+      <li><strong>Pick-to-light or voice-pick technology.</strong> These can deliver real gains, but only on top of correct slotting and pick path logic. Investing in technology on bad operational foundations usually disappoints. Fix the foundations first.</li>
+    </ul>
+
+    <h2>If you recognise this in your operation</h2>
+
+    <p>If you've trained your team multiple times, revised targets, and the pick rate has been flat for 12+ months, the most useful next step is to get an outside perspective — because the people closest to the operation are usually too close to see what's actually constraining it.</p>
+
+    <p>Three structured ways to do that:</p>
+
+    <ol>
+      <li><strong>The <a href="../scorecard.html">£99 Scorecard</a></strong> — 25 questions across six operational health domains, including pick rate, slotting, and flow design. 10 minutes, instant 10-page report.</li>
+      <li><strong><a href="../tools.html">The Operations Toolkit</a> (£49)</strong> — includes a slotting review template and a KPI dashboard configured for the metrics that actually diagnose pick rate problems.</li>
+      <li><strong>The <a href="../audit.html">On-Site Audit</a> (from £950)</strong> — for operations where the pick rate has been flat for over 12 months and internal fixes haven't moved it. Half a day on the floor will usually identify the cause definitively.</li>
+    </ol>
+
+  </div>
+</article>
+
+<section class="faq-section">
+  <div class="article-container">
+    <span class="faq-eyebrow">Common questions</span>
+    <h2 class="faq-headline">FAQ on pick rate plateaus.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Why has my warehouse pick rate stopped improving despite training?</div>
+        <p class="faq-a">When training and incentives don't move the pick rate, the cause is almost always structural rather than human. The three most common causes are outdated slotting (high-velocity SKUs in low-accessibility locations), pick path logic configured for a previous layout, and equipment friction at the start of every pick cycle. None of these are addressed by training the pickers harder.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is a good pick rate for a UK warehouse?</div>
+        <p class="faq-a">Industry averages vary widely by warehouse type — typically 60 to 120 picks per hour for manual picking, depending on SKU profile, order mix and travel distance. The more useful question is whether your operation is performing at 80-90% of its own potential ceiling, not how you compare to a generic benchmark. Most underperforming operations are 15-25% below their own theoretical capacity, which is recoverable through structural change rather than headcount.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much pick rate improvement is realistic from process change alone?</div>
+        <p class="faq-a">Pick rate improvements of 15-25% from structural change alone are common when slotting, pick path, and equipment staging are addressed together. This is achievable in 4-12 weeks depending on the size of the operation. Improvements above 25% usually require capital investment in technology or layout change.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should I invest in pick-to-light or voice-picking technology?</div>
+        <p class="faq-a">Picking technology can deliver real gains, but only on top of correct slotting and pick path logic. If your slotting is outdated or your pick path is misconfigured, technology will accelerate a bad process and disappoint. The right sequence is: fix slotting, fix pick path, fix equipment staging — then evaluate whether technology adds value on top of the new baseline.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How often should slotting be reviewed?</div>
+        <p class="faq-a">Formal slotting review should happen at least every 6 months in operations with active SKU expansion, or whenever the top-20 SKU list changes by more than 25%. In stable operations, annually is sufficient. The trigger is SKU mix change, not calendar time — if your product mix has shifted significantly, your slotting is probably already wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="article-container">
+    <span class="related-eyebrow">Related reading</span>
+    <h2 class="related-headline">Other posts you might find useful.</h2>
+    <div class="related-grid">
+      <a href="why-warehouse-overtime-wont-clear.html" class="related-card">
+        <div class="related-cat">Diagnostic guide</div>
+        <div class="related-title">Why your warehouse overtime won't clear (and what actually fixes it)</div>
+        <p class="related-excerpt">The same structural-vs-people diagnosis applied to overtime. Three structural causes, none of which are fixed by adding headcount.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+      <a href="why-goods-in-always-behind.html" class="related-card">
+        <div class="related-cat">Diagnostic guide</div>
+        <div class="related-title">Why your goods-in is always behind, regardless of staffing</div>
+        <p class="related-excerpt">Goods-in backlogs ripple into pick rate and overtime. The cause is almost never staffing — it's process design that treats every supplier the same.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta-section">
+  <div class="article-container">
+    <span class="final-cta-eyebrow">Apply this to your operation</span>
+    <h2 class="final-cta-headline">Reading is useful. <em>Applying it is more useful.</em></h2>
+    <p class="final-cta-body">If pick rate is the problem you're living with, the next step is figuring out which of the three structural causes applies to your operation specifically. The £99 Scorecard covers slotting, flow design, and KPI structure across six domains.</p>
+    <div class="final-cta-actions">
+      <a href="../scorecard.html" class="btn-primary-red">Take the Scorecard — £99 →</a>
+      <a href="../book.html" class="btn-text-dark">Or book a free 20-min call →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../services.html">Services</a>
+        <a href="../audit.html">On-Site Audit</a>
+        <a href="../scorecard.html">Scorecard</a>
+        <a href="../results.html">Results</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="index.html">Field Notes</a>
+        <a href="../book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <div class="footer-legal">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Running an Aldi RDC Through Covid Taught Me About Resilient Operations | PainKiller</title>
+  <meta name="description" content="Supplying 110 supermarkets, 16 hours a day, with staff sickness taking out whole shifts and demand patterns breaking overnight. Five lessons about operational resilience that hold up in normal trading too." />
+  <meta name="theme-color" content="#FAFAF7" />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/blog/aldi-rdc-covid-lessons-resilient-operations.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What Running an Aldi RDC Through Covid Taught Me About Resilient Operations" />
+  <meta property="og:description" content="Five lessons from supplying 110 supermarkets through the Covid disruption — and what they mean for normal trading." />
+  <meta property="og:url" content="https://painkillerconsulting.co.uk/blog/aldi-rdc-covid-lessons-resilient-operations.html" />
+  <meta property="og:image" content="https://painkillerconsulting.co.uk/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Running an Aldi RDC Through Covid Taught Me About Resilient Operations",
+    "description": "Five lessons from supplying 110 supermarkets through the Covid disruption — and what they mean for normal trading.",
+    "author": { "@type": "Person", "name": "Sam Mustatea", "url": "https://painkillerconsulting.co.uk/about.html" },
+    "publisher": { "@type": "Organization", "name": "PainKiller Consulting", "url": "https://painkillerconsulting.co.uk" },
+    "url": "https://painkillerconsulting.co.uk/blog/aldi-rdc-covid-lessons-resilient-operations.html",
+    "mainEntityOfPage": "https://painkillerconsulting.co.uk/blog/aldi-rdc-covid-lessons-resilient-operations.html",
+    "articleSection": "Warehouse Operations",
+    "wordCount": 2400
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .article-container{max-width:720px;margin:0 auto;padding:0 32px;}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+    .breadcrumb{padding:24px 0 0;font-size:0.8rem;color:var(--ink-light);}
+    .breadcrumb a{color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:1px;}
+    .breadcrumb a:hover{color:var(--ink);border-color:var(--ink);}
+    .breadcrumb-sep{margin:0 8px;color:var(--ink-light);}
+    .article-header{padding:48px 0 56px;border-bottom:1px solid var(--rule);background:var(--ink);color:var(--paper);}
+    .article-header .breadcrumb,.article-header .breadcrumb a,.article-header .breadcrumb span{color:#888!important;}
+    .article-header .breadcrumb a{border-color:#333;}
+    .article-header .breadcrumb a:hover{color:var(--paper);border-color:#666;}
+    .article-category{display:inline-block;font-size:0.74rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#FFB8AC;margin-bottom:24px;}
+    .article-category::before{content:'';display:inline-block;width:20px;height:1.5px;background:#FFB8AC;vertical-align:middle;margin-right:10px;}
+    .article-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-0.025em;margin-bottom:24px;color:var(--paper);}
+    .article-title em{font-style:italic;color:#FFB8AC;}
+    .article-meta{display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:0.85rem;color:#888;padding-top:24px;border-top:1px solid #2A2A28;}
+    .article-meta-author{color:#CCC;font-weight:600;}
+    .article-meta-author::before{content:'By ';color:#888;font-weight:400;}
+    .article-meta-sep{color:#333;}
+    .article-body{padding:64px 0 56px;}
+    .lede{font-family:var(--font-serif);font-weight:400;font-size:1.4rem;line-height:1.55;color:var(--ink);letter-spacing:-0.005em;margin-bottom:36px;font-style:italic;}
+    .lede strong{font-style:normal;font-weight:700;color:var(--ink);}
+    .article-body h2{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;line-height:1.25;letter-spacing:-0.02em;margin:48px 0 18px;color:var(--ink);}
+    .article-body h2 em{font-style:italic;color:var(--red);}
+    .article-body h3{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.3;letter-spacing:-0.015em;margin:36px 0 14px;color:var(--ink);}
+    .article-body p{font-size:1.05rem;line-height:1.8;color:var(--ink-mid);margin-bottom:18px;}
+    .article-body p strong{color:var(--ink);font-weight:600;}
+    .article-body p em{color:var(--red);font-style:italic;font-weight:500;}
+    .article-body a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:border-color 0.2s;}
+    .article-body a:hover{border-color:var(--ink);}
+    .article-body ul,.article-body ol{margin:18px 0 24px 0;padding-left:0;list-style:none;}
+    .article-body ul li,.article-body ol li{position:relative;padding:8px 0 8px 28px;font-size:1.02rem;line-height:1.7;color:var(--ink-mid);}
+    .article-body ul li::before{content:'→';color:var(--red);font-weight:700;position:absolute;left:0;top:8px;}
+    .article-body ol{counter-reset:item;}
+    .article-body ol li{counter-increment:item;}
+    .article-body ol li::before{content:counter(item) '.';color:var(--red);font-weight:700;font-family:var(--font-serif);position:absolute;left:0;top:8px;}
+    .pull-quote{font-family:var(--font-serif);font-style:italic;font-size:1.6rem;line-height:1.4;letter-spacing:-0.015em;color:var(--ink);padding:32px 0;margin:36px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center;}
+    .pull-quote span{display:block;font-family:var(--font-sans);font-style:normal;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-top:16px;}
+    .lesson-card{background:var(--paper-mid);border-left:3px solid var(--red);padding:32px 36px;margin:36px 0;}
+    .lesson-num{font-family:var(--font-serif);font-weight:700;font-size:0.85rem;color:var(--red);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
+    .lesson-title{font-family:var(--font-serif);font-weight:700;font-size:1.4rem;color:var(--ink);letter-spacing:-0.015em;line-height:1.3;margin-bottom:14px;}
+    .lesson-card p{margin-bottom:14px!important;}
+    .lesson-card p:last-child{margin-bottom:0!important;}
+    .key-stat{background:var(--ink);color:var(--paper);padding:32px 36px;margin:36px 0;border-left:3px solid var(--red);}
+    .key-stat-number{font-family:var(--font-serif);font-weight:700;font-size:3rem;color:var(--red);line-height:1;letter-spacing:-0.03em;margin-bottom:10px;}
+    .key-stat-body{font-size:1rem;color:#CCC;line-height:1.65;}
+    .body-cta{margin:48px 0;padding:36px 36px;background:var(--red-light);border:1px solid rgba(192,57,43,0.2);}
+    .body-cta-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .body-cta-title{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.25;margin-bottom:12px;color:var(--ink);}
+    .body-cta-text{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:18px!important;}
+    .body-cta-btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.88rem;padding:12px 24px;transition:background 0.2s;border:none;}
+    .body-cta-btn:hover{background:#333330;}
+    .related-section{padding:64px 0;border-top:1px solid var(--rule);}
+    .related-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .related-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .related-headline{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;letter-spacing:-0.02em;margin-bottom:32px;}
+    .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .related-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;transition:background 0.2s;}
+    .related-card:hover{background:var(--paper-mid);}
+    .related-cat{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .related-title{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;line-height:1.3;color:var(--ink);margin-bottom:12px;}
+    .related-excerpt{font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;flex:1;}
+    .related-arrow{font-size:0.85rem;color:var(--red);font-weight:600;}
+    .final-cta-section{padding:88px 0;background:var(--paper-mid);border-top:1px solid var(--rule);}
+    .final-cta-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+    .final-cta-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .final-cta-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);margin-bottom:20px;}
+    .final-cta-headline em{font-style:italic;color:var(--red);}
+    .final-cta-body{font-size:1rem;color:var(--ink-mid);line-height:1.75;margin-bottom:32px;}
+    .final-cta-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+    .btn-primary{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.92rem;padding:14px 28px;transition:background 0.2s;}
+    .btn-primary:hover{background:#333330;}
+    .btn-text{font-size:0.88rem;font-weight:500;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;}
+    .btn-text:hover{color:var(--ink);border-color:var(--ink);}
+    footer{padding:48px 0;border-top:1px solid var(--rule);background:var(--paper);}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-legal{display:flex;gap:20px;}
+    @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:flex;}.related-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.container,.article-container{padding:0 20px;}.article-header{padding:32px 0 40px;}.article-body{padding:48px 0 40px;}.lede{font-size:1.2rem;}.article-body h2{font-size:1.5rem;margin:36px 0 14px;}.article-body h3{font-size:1.15rem;}.lesson-card{padding:28px 24px;}.pull-quote{font-size:1.3rem;}.body-cta{padding:28px 24px;}.key-stat{padding:28px;}.key-stat-number{font-size:2.4rem;}}
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="../services.html">Services</a>
+  <a href="../audit.html">Audit</a>
+  <a href="../scorecard.html">Scorecard</a>
+  <a href="../results.html">Results</a>
+  <a href="../tools.html">Tools</a>
+  <a href="../about.html">About</a>
+  <a href="index.html">Field Notes</a>
+  <a href="../book.html">Book a Call</a>
+</div>
+
+<nav><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+  <ul class="nav-links">
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../audit.html">Audit</a></li>
+    <li><a href="../scorecard.html">Scorecard</a></li>
+    <li><a href="../results.html">Results</a></li>
+    <li><a href="index.html" class="active">Field Notes</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../book.html" class="nav-cta">Book Free Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></div></nav>
+
+<header class="article-header">
+  <div class="article-container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="index.html">Field Notes</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>What running an Aldi RDC through Covid taught me</span>
+    </nav>
+    <div class="article-category">From the field</div>
+    <h1 class="article-title">What running an Aldi RDC through Covid <em>taught me about resilient operations.</em></h1>
+    <div class="article-meta">
+      <span class="article-meta-author">Sam Mustatea, Founder</span>
+      <span class="article-meta-sep">·</span>
+      <span>12 minute read</span>
+      <span class="article-meta-sep">·</span>
+      <span>From the field</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="article-container">
+
+    <p class="lede">110 supermarkets. 16 hours a day. Staff sickness taking out whole shifts at a time. Demand patterns that broke overnight and stayed broken for months. <strong>I learned more about operational resilience in those nine months than in the previous nine years</strong> — and most of it holds up in normal trading too.</p>
+
+    <p>This post isn't a war story. I have plenty of those, but they're not particularly useful to an operations director trying to do their job well in 2026. What is useful is the operational lessons that came out of running a regional distribution centre through a period when nothing about the operation worked the way it had been designed to work, and the only choices were either to find new ways to make it work or to fail in front of 110 stores that were depending on us to deliver.</p>
+
+    <p>What follows is five lessons that emerged from that period, told with the benefit of about five years of hindsight. They're not Covid-specific. They're things that became visible because the operation was under enough stress to make them visible, but they were true the whole time. They're just easier to ignore in normal trading.</p>
+
+    <p>If you run a UK warehouse operation, at any scale, in any sector — these are the operational properties that distinguish the operations that survive bad weeks from the ones that buckle.</p>
+
+    <div class="lesson-card">
+      <div class="lesson-num">Lesson 01</div>
+      <div class="lesson-title">Process is what's left when the people you trained have all gone home sick.</div>
+      <p>The first thing Covid did to operations was strip out the people who knew how things worked. Not in a planned way, with handover and replacement. Suddenly, at random, with no notice. A team leader would be off for two weeks. Then another. Then three of their direct reports. The institutional knowledge of how the operation actually ran — as opposed to how it was documented to run — was being subtracted in chunks.</p>
+      <p>What I learned, painfully, is that <strong>the operations that survived this were the ones where the process was actually written down</strong>. Not the ones where the process was "in everyone's head" or "we've always done it this way." The latter operations failed quickly, because "we've always done it this way" turned out to mean "three specific people knew how to do it, and they're all off."</p>
+      <p>In normal trading, the difference between a properly documented process and an institutionally-known one is invisible. In stress, it's everything. <em>If your operation depends on five specific people knowing how things work, you don't have a process — you have a fragility.</em></p>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-num">Lesson 02</div>
+      <div class="lesson-title">Most operations are over-optimised for normal and under-optimised for variance.</div>
+      <p>The second lesson is one that I've since seen in almost every operation I've audited, including ones that have never had a crisis. Most warehouse operations are tuned tightly to their normal volume profile. They can handle the average week elegantly. They struggle with the bad week.</p>
+      <p>What this looks like in practice: the operation is staffed to handle Monday's volume, with maybe 10% headroom. When Monday is genuinely 20% higher than expected, the operation falls behind. Wednesday's volume hits while Monday is still being cleared. Thursday compounds. By Friday, you're running overtime, errors are climbing, and the team is exhausted — not because the average volume changed, but because the variance broke the tight tuning.</p>
+      <p>The Covid version was extreme — variance of 200-300% on some product lines — but the principle is universal. <strong>Operations that work well over time are tuned for variance, not for averages.</strong> They have surge capacity in critical zones. They have slack in scheduling. They have process steps that flex rather than queue. Operations that look efficient on a good week are usually fragile on a bad one.</p>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-num">Lesson 03</div>
+      <div class="lesson-title">The shift handover is the most important 10 minutes of the day.</div>
+      <p>I've written about this elsewhere — it's <a href="why-warehouse-overtime-wont-clear.html">the most common single cause of sustained overtime I see in audits</a> — but Covid made it brutally obvious. With sickness taking out shift supervisors and team leaders at random, the only thing that kept the late shift from inheriting chaos every day was the discipline of the handover.</p>
+      <p>Before Covid, our handover was about 15 minutes, fairly informal, mostly verbal. After the third week of someone-different-running-the-shift-every-day, we rebuilt it. Written log. Standard structure. Five minutes, every transition, no exceptions. The single change that produced the biggest reduction in cross-shift problems for the rest of the period.</p>
+      <p>What I take from that, applied to normal operations: <em>the handover is where the previous shift's problems either get absorbed by the next shift or get left for the next shift to deal with.</em> If it's not written down and structured, the absorption defaults to the people, and the people forget, and the problems compound.</p>
+    </div>
+
+    <div class="pull-quote">
+      "Operations that look efficient on a good week are usually fragile on a bad one."
+      <span>Five years on the floor at Aldi · Covid era</span>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-num">Lesson 04</div>
+      <div class="lesson-title">Volume forecasts are useful until they're not. Then they become dangerous.</div>
+      <p>Pre-Covid, our forecasting was solid. We knew what was coming. We staffed accordingly. The plan and the floor mostly agreed.</p>
+      <p>Then March 2020 happened, and the forecast became actively misleading. Volume patterns broke overnight. Categories that were stable for years became volatile. The forecast was still being produced and still being used to plan staffing, but the underlying assumptions it was built on had become wrong without anyone updating it.</p>
+      <p>The lesson — which I've since applied to every operation I've worked with — is that <strong>a forecast is only useful when the variance between forecast and actual is regularly checked, and the check actually influences planning.</strong> When the forecast becomes a number that's produced, circulated, and not interrogated, it goes from being a tool to being a hazard. The operation runs on assumptions that nobody has validated.</p>
+      <p>This is part of why the <em>forecast-vs-actual loop</em> is one of the highest-impact interventions in PainKiller audits. Most operations are running forecasts that haven't been pressure-tested against reality for months. The Covid version of this was extreme; the normal-trading version is just slower-moving and more invisible.</p>
+    </div>
+
+    <div class="lesson-card">
+      <div class="lesson-num">Lesson 05</div>
+      <div class="lesson-title">The team are the asset. Treat the team like the asset.</div>
+      <p>This is the lesson that took the longest to fully land, and the one I'd argue is the most generalisable to normal operations.</p>
+      <p>During the worst stretches of Covid, we kept that RDC running because the team kept showing up. People came back from being ill to cover sickness. Team leaders worked double shifts to keep stores supplied. People did jobs they hadn't been trained for, learned them on the job, and made it work. Nobody had to ask them. They just did it.</p>
+      <p>What I learned from that — and what I now look for in every audit — is that <strong>the relationship between an operations team and an operation is something most directors don't actively manage, and it shows.</strong> The teams that show up when things are hard are the teams that have been treated as people, not as labour, in normal times. The teams that turn over fast and disengage when there's pressure are the teams that have been treated transactionally.</p>
+      <p>The operational implication is that <em>retention, engagement, and operational performance are not separate problems.</em> They're the same problem viewed through different lenses. The operations directors who run resilient sites are the ones who understand this and act on it long before there's a crisis.</p>
+    </div>
+
+    <h2>What this means for your operation now (no crisis required)</h2>
+
+    <p>Five years on, with a lot of warehouse audits behind me, here's what I take from all of this for operations directors running UK warehouses today:</p>
+
+    <ol>
+      <li><strong>Document your process properly.</strong> Not in a binder that nobody opens. As live, current, accessible material that someone new could read on day one and understand how things actually work. If the answer to "how do we do X here" is "ask Steve," your operation is one Steve away from failing.</li>
+      <li><strong>Build for variance, not averages.</strong> Look at your bad weeks, not your good ones, when you're designing capacity. If your operation only works at average volume, you have a problem that hasn't expressed itself yet.</li>
+      <li><strong>Take the handover seriously.</strong> Written, structured, five minutes, every transition. The cheapest, fastest operational improvement available to most warehouses.</li>
+      <li><strong>Pressure-test the forecast weekly.</strong> Forecast vs actual, every week, with someone responsible for asking "why was this wrong" rather than "what's the next forecast." A forecast nobody interrogates is worse than no forecast.</li>
+      <li><strong>Manage the team relationship deliberately.</strong> Retention and engagement are operational metrics, not HR metrics. The directors who treat them that way run sites that perform better, especially when things are hard.</li>
+    </ol>
+
+    <div class="body-cta">
+      <div class="body-cta-label">Apply this to your operation</div>
+      <div class="body-cta-title">The 10 Signs Your Warehouse Has a Process Problem</div>
+      <p class="body-cta-text">A free 12-page diagnostic guide built from patterns observed across PainKiller audits. Covers the operational signals that distinguish resilient operations from fragile ones. No email required.</p>
+      <a href="../10-signs-warehouse-process-problem.pdf" class="body-cta-btn" target="_blank" rel="noopener noreferrer">Open the guide →</a>
+    </div>
+
+    <h2>A final thought</h2>
+
+    <p>The thing about resilience is that it's invisible until it's needed. The operations that survived Covid weren't the ones that "responded brilliantly" — they were the ones that had quietly built resilient operating models for years before, often without realising it was resilience they were building. They had written processes. They had handover discipline. They had teams who would show up.</p>
+
+    <p>The operations that didn't make it through, or that made it through expensively, weren't worse-managed. They were just tuned tighter to normal trading, with no margin for variance and no documentation to fall back on. They were efficient on paper. They just weren't robust.</p>
+
+    <p>If I had one thing to say to operations directors now, with hindsight: <em>resilience is a property you build in normal trading, not in a crisis.</em> By the time you need it, it's too late to build. The interventions that produce it are unglamorous — process documentation, handover discipline, forecast loops, team relationship work. They're also the things that pay off every other week, not just during the bad ones.</p>
+
+  </div>
+</article>
+
+<section class="related-section">
+  <div class="article-container">
+    <span class="related-eyebrow">Related reading</span>
+    <h2 class="related-headline">Other field notes you might find useful.</h2>
+    <div class="related-grid">
+      <a href="why-warehouse-overtime-wont-clear.html" class="related-card">
+        <div class="related-cat">Diagnostic guide</div>
+        <div class="related-title">Why your warehouse overtime won't clear (and what actually fixes it)</div>
+        <p class="related-excerpt">The structural diagnosis. Three causes of sustained overtime, none of which are fixed by adding headcount.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+      <a href="reduce-warehouse-overtime-guide.html" class="related-card">
+        <div class="related-cat">Complete guide</div>
+        <div class="related-title">The complete guide to reducing warehouse overtime (without adding headcount)</div>
+        <p class="related-excerpt">A step-by-step framework for diagnosing and reducing sustained overtime — handover, planning loop, flow design.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta-section">
+  <div class="article-container">
+    <span class="final-cta-eyebrow">Apply this to your operation</span>
+    <h2 class="final-cta-headline">If any of this is familiar — <em>start with the diagnostic.</em></h2>
+    <p class="final-cta-body">The £99 Scorecard covers the five operational resilience properties above across 25 questions in six domains. 10 minutes, instant 10-page report identifying your top three risk areas. Same methodology as our on-site audits, applied to your specific operation.</p>
+    <div class="final-cta-actions">
+      <a href="../scorecard.html" class="btn-primary">Take the Scorecard — £99 →</a>
+      <a href="../book.html" class="btn-text">Or book a free 20-min call →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../services.html">Services</a>
+        <a href="../audit.html">On-Site Audit</a>
+        <a href="../scorecard.html">Scorecard</a>
+        <a href="../results.html">Results</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="index.html">Field Notes</a>
+        <a href="../book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <div class="footer-legal">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>

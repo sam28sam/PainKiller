@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Goods-In Is Always Behind, Regardless of Staffing | PainKiller</title>
+  <meta name="description" content="Goods-in backlogs ripple into every other part of the operation — picks chase missing stock, errors climb, overtime follows. The cause is almost never staffing. A diagnostic for UK operations directors." />
+  <meta name="theme-color" content="#FAFAF7" />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/blog/why-goods-in-always-behind.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why Your Goods-In Is Always Behind, Regardless of Staffing" />
+  <meta property="og:description" content="Goods-in backlogs are almost never a staffing problem. Three structural causes — and what each one looks like on the floor." />
+  <meta property="og:url" content="https://painkillerconsulting.co.uk/blog/why-goods-in-always-behind.html" />
+  <meta property="og:image" content="https://painkillerconsulting.co.uk/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Goods-In Is Always Behind, Regardless of Staffing",
+    "description": "Goods-in backlogs are almost never a staffing problem. Three structural causes covered in detail.",
+    "author": { "@type": "Person", "name": "Sam Mustatea", "url": "https://painkillerconsulting.co.uk/about.html" },
+    "publisher": { "@type": "Organization", "name": "PainKiller Consulting", "url": "https://painkillerconsulting.co.uk" },
+    "url": "https://painkillerconsulting.co.uk/blog/why-goods-in-always-behind.html",
+    "mainEntityOfPage": "https://painkillerconsulting.co.uk/blog/why-goods-in-always-behind.html",
+    "articleSection": "Warehouse Operations",
+    "wordCount": 2400
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my warehouse goods-in always behind?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Goods-in backlogs are rarely caused by understaffing. The three most common structural causes are over-engineered checking processes (treating all suppliers as equal-risk), putaway authorisation bottlenecks (a single sign-off step that creates queuing), and dock allocation that doesn't match delivery patterns. Adding staff to goods-in usually makes the queue at the bottleneck worse, not better." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should goods-in to shelf take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Industry benchmarks vary by sector, but for most UK warehouse operations, a well-functioning goods-in process should deliver stock to shelf within 4-8 hours of arrival for standard items, and within 24 hours at the absolute outside. If your goods-in to shelf time is consistently above 24 hours, the bottleneck is almost certainly process design rather than capacity." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will adding more goods-in staff clear the backlog?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In most cases, no. If the bottleneck is structural — putaway authorisation, dock allocation, or over-engineered checking — adding staff creates more people queuing at the same constraint. The backlog stays the same but the labour cost goes up. The right sequence is to identify the structural cause first, fix it, then assess whether staffing levels still need to change." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .article-container{max-width:720px;margin:0 auto;padding:0 32px;}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+    .breadcrumb{padding:24px 0 0;font-size:0.8rem;color:var(--ink-light);}
+    .breadcrumb a{color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:1px;}
+    .breadcrumb a:hover{color:var(--ink);border-color:var(--ink);}
+    .breadcrumb-sep{margin:0 8px;color:var(--ink-light);}
+    .article-header{padding:48px 0 56px;border-bottom:1px solid var(--rule);}
+    .article-category{display:inline-block;font-size:0.74rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:24px;}
+    .article-category::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .article-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4vw,3.2rem);line-height:1.12;letter-spacing:-0.025em;margin-bottom:24px;color:var(--ink);}
+    .article-title em{font-style:italic;color:var(--red);}
+    .article-meta{display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:0.85rem;color:var(--ink-light);padding-top:24px;border-top:1px solid var(--rule);}
+    .article-meta-author{color:var(--ink-mid);font-weight:600;}
+    .article-meta-author::before{content:'By ';color:var(--ink-light);font-weight:400;}
+    .article-meta-sep{color:var(--rule);}
+    .article-body{padding:64px 0 56px;}
+    .lede{font-family:var(--font-serif);font-weight:400;font-size:1.4rem;line-height:1.55;color:var(--ink);letter-spacing:-0.005em;margin-bottom:36px;font-style:italic;}
+    .lede strong{font-style:normal;font-weight:700;color:var(--ink);}
+    .article-body h2{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;line-height:1.25;letter-spacing:-0.02em;margin:48px 0 18px;color:var(--ink);}
+    .article-body h2 em{font-style:italic;color:var(--red);}
+    .article-body h3{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.3;letter-spacing:-0.015em;margin:36px 0 14px;color:var(--ink);}
+    .article-body p{font-size:1.05rem;line-height:1.8;color:var(--ink-mid);margin-bottom:18px;}
+    .article-body p strong{color:var(--ink);font-weight:600;}
+    .article-body p em{color:var(--red);font-style:italic;font-weight:500;}
+    .article-body a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:border-color 0.2s;}
+    .article-body a:hover{border-color:var(--ink);}
+    .article-body ul,.article-body ol{margin:18px 0 24px 0;padding-left:0;list-style:none;}
+    .article-body ul li,.article-body ol li{position:relative;padding:8px 0 8px 28px;font-size:1.02rem;line-height:1.7;color:var(--ink-mid);}
+    .article-body ul li::before{content:'→';color:var(--red);font-weight:700;position:absolute;left:0;top:8px;}
+    .article-body ol{counter-reset:item;}
+    .article-body ol li{counter-increment:item;}
+    .article-body ol li::before{content:counter(item) '.';color:var(--red);font-weight:700;font-family:var(--font-serif);position:absolute;left:0;top:8px;}
+    .callout{background:var(--paper-mid);border-left:3px solid var(--red);padding:24px 28px;margin:32px 0;}
+    .callout-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .callout p{font-size:1rem!important;color:var(--ink)!important;line-height:1.7!important;margin-bottom:0!important;font-style:italic;}
+    .key-stat{background:var(--ink);color:var(--paper);padding:32px 36px;margin:36px 0;border-left:3px solid var(--red);}
+    .key-stat-number{font-family:var(--font-serif);font-weight:700;font-size:3rem;color:var(--red);line-height:1;letter-spacing:-0.03em;margin-bottom:10px;}
+    .key-stat-body{font-size:1rem;color:#CCC;line-height:1.65;}
+    .body-cta{margin:48px 0;padding:36px 36px;background:var(--red-light);border:1px solid rgba(192,57,43,0.2);}
+    .body-cta-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .body-cta-title{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;line-height:1.25;margin-bottom:12px;color:var(--ink);}
+    .body-cta-text{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:18px!important;}
+    .body-cta-btn{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.88rem;padding:12px 24px;transition:background 0.2s;border:none;}
+    .body-cta-btn:hover{background:#333330;}
+    .faq-section{padding:56px 0;border-top:1px solid var(--rule);background:var(--paper-mid);}
+    .faq-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .faq-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .faq-headline{font-family:var(--font-serif);font-weight:700;font-size:2rem;letter-spacing:-0.02em;line-height:1.2;margin-bottom:40px;}
+    .faq-item{border-top:1px solid var(--rule);padding:24px 0;}
+    .faq-item:last-of-type{border-bottom:1px solid var(--rule);}
+    .faq-q{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:12px;line-height:1.4;}
+    .faq-a{font-size:0.98rem;color:var(--ink-mid);line-height:1.75;}
+    .related-section{padding:64px 0;border-top:1px solid var(--rule);}
+    .related-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .related-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .related-headline{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;letter-spacing:-0.02em;margin-bottom:32px;}
+    .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .related-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;transition:background 0.2s;}
+    .related-card:hover{background:var(--paper-mid);}
+    .related-cat{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .related-title{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;line-height:1.3;color:var(--ink);margin-bottom:12px;}
+    .related-excerpt{font-size:0.88rem;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;flex:1;}
+    .related-arrow{font-size:0.85rem;color:var(--red);font-weight:600;}
+    .final-cta-section{padding:88px 0;background:var(--ink);color:var(--paper);}
+    .final-cta-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+    .final-cta-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .final-cta-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.2;letter-spacing:-0.02em;color:var(--paper);margin-bottom:20px;}
+    .final-cta-headline em{font-style:italic;color:#FFB8AC;}
+    .final-cta-body{font-size:1rem;color:#999;line-height:1.75;margin-bottom:32px;}
+    .final-cta-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+    .btn-primary-red{display:inline-block;background:var(--red);color:white;font-weight:600;font-size:0.92rem;padding:14px 28px;transition:background 0.2s;}
+    .btn-primary-red:hover{background:#A93226;}
+    .btn-text-dark{font-size:0.88rem;font-weight:500;color:#999;border-bottom:1px solid #2A2A28;padding-bottom:2px;}
+    .btn-text-dark:hover{color:var(--paper);border-color:#666;}
+    footer{padding:48px 0;border-top:1px solid var(--rule);background:var(--paper);}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-legal{display:flex;gap:20px;}
+    @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:flex;}.related-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.container,.article-container{padding:0 20px;}.article-header{padding:32px 0 40px;}.article-body{padding:48px 0 40px;}.lede{font-size:1.2rem;}.article-body h2{font-size:1.5rem;margin:36px 0 14px;}.article-body h3{font-size:1.15rem;}.body-cta{padding:28px 24px;}.key-stat{padding:28px;}.key-stat-number{font-size:2.4rem;}}
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="../index.html">Home</a>
+  <a href="../services.html">Services</a>
+  <a href="../audit.html">Audit</a>
+  <a href="../scorecard.html">Scorecard</a>
+  <a href="../results.html">Results</a>
+  <a href="../tools.html">Tools</a>
+  <a href="../about.html">About</a>
+  <a href="index.html">Field Notes</a>
+  <a href="../book.html">Book a Call</a>
+</div>
+
+<nav><div class="container"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+  <ul class="nav-links">
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../audit.html">Audit</a></li>
+    <li><a href="../scorecard.html">Scorecard</a></li>
+    <li><a href="../results.html">Results</a></li>
+    <li><a href="index.html" class="active">Field Notes</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../book.html" class="nav-cta">Book Free Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></div></nav>
+
+<div class="article-container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="index.html">Field Notes</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>Why your goods-in is always behind</span>
+  </nav>
+</div>
+
+<header class="article-header">
+  <div class="article-container">
+    <div class="article-category">Diagnostic guide</div>
+    <h1 class="article-title">Why your goods-in is always behind, <em>regardless of staffing.</em></h1>
+    <div class="article-meta">
+      <span class="article-meta-author">Sam Mustatea, Founder</span>
+      <span class="article-meta-sep">·</span>
+      <span>11 minute read</span>
+      <span class="article-meta-sep">·</span>
+      <span>UK warehouse operations</span>
+    </div>
+  </div>
+</header>
+
+<article class="article-body">
+  <div class="article-container">
+
+    <p class="lede">Goods-in backlogs ripple into every other part of the warehouse — picks chase missing stock, errors climb, overtime follows. <strong>And the cause is almost never staffing.</strong> Three structural patterns explain most goods-in problems we see in PainKiller audits, and adding more people to goods-in usually makes the queue worse, not better.</p>
+
+    <p>If goods-in is your bottleneck, you already know the symptoms. Stock arrives and waits. Picks fail because the inventory isn't on the system yet. Replenishment stalls. Customer fulfilment slips. The goods-in team works flat out — they're not slow or lazy — but the backlog never quite clears, even on a quiet week.</p>
+
+    <p>The natural response is to staff up. Add two people to goods-in, the thinking goes, and the backlog clears. It almost never does. The new people queue at the same bottleneck the existing team are queueing at, the cost of the operation goes up, and the throughput stays roughly the same.</p>
+
+    <p>This post is a diagnostic. Three structural causes of persistent goods-in backlog, what each looks like on the floor, and what actually fixes them. Most operations have at least two of the three running at once.</p>
+
+    <h2>The cost of a persistent goods-in problem</h2>
+
+    <p>Before we get to the causes, it's worth being honest about what a goods-in backlog actually costs — because it's usually much more than the goods-in team's overtime. Goods-in is upstream of everything. When it backs up, the costs ripple downstream:</p>
+
+    <ul>
+      <li>Pickers walk to locations where the stock hasn't been put away yet, wasting travel time</li>
+      <li>Customer orders fulfil short because the system shows stock that hasn't been processed</li>
+      <li>Replenishment can't run because the upstream inventory isn't visible</li>
+      <li>Cycle counts become unreliable because actual stock and system stock diverge</li>
+      <li>Receiving area gets congested, slowing every subsequent delivery</li>
+    </ul>
+
+    <p>Most operations are paying for the goods-in problem multiple times across multiple cost lines, without ever totalling it up. The real cost of a chronic goods-in backlog in a medium-sized warehouse is usually 4-8 times the overtime number the goods-in team is generating.</p>
+
+    <h2>Cause 01 · <em>Over-engineered checking</em> — you're treating every supplier as equally risky</h2>
+
+    <p>This is the most common cause of goods-in backlog in operations I audit, and it's usually invisible to the operations director because the checking process feels rigorous and therefore safe.</p>
+
+    <p>The pattern is this: every delivery, regardless of source, goes through the same full check. Every line item counted. Every condition assessment. Every paperwork verification. The process was designed when the supplier base was less mature, or when there was a specific quality incident that justified universal scrutiny, and it never got revisited as the supplier relationships matured.</p>
+
+    <p>What this produces is a checking process that's appropriate for the riskiest 10% of suppliers and excessive for the other 90%. The team spends the same time checking a reliable, high-volume supplier as they do checking a new or problematic one. The bottleneck isn't capacity — it's that the checking process is doing more work than the risk profile actually requires.</p>
+
+    <h3>What over-engineered checking looks like on the floor</h3>
+
+    <ul>
+      <li>All deliveries follow the same checking procedure regardless of supplier history or risk profile</li>
+      <li>Trusted, high-volume suppliers are checked at the same intensity as new or problematic ones</li>
+      <li>The checking process hasn't been formally reviewed in 2+ years</li>
+      <li>Discrepancy rates by supplier vary widely, but the checking intensity doesn't reflect this</li>
+      <li>The goods-in team can't articulate which suppliers are higher or lower risk — everyone's the same</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>A tiered checking model based on supplier risk profile:</p>
+
+    <ol>
+      <li>Pull the last 6 months of discrepancy data by supplier. Rank suppliers by error rate (lines wrong, paperwork issues, condition problems)</li>
+      <li>Define three tiers — typically Trusted (under 1% discrepancy rate), Standard, and Enhanced (over 3% discrepancy or new/probationary)</li>
+      <li>Apply lighter-touch checking to Trusted (sample-based, fast pass), full checking to Standard, intensive to Enhanced</li>
+      <li>Review tier assignments quarterly — suppliers move between tiers based on actual performance</li>
+    </ol>
+
+    <p>Most operations see 20-35% reduction in average check time per delivery from tiered checking alone — and the actual quality outcome usually improves because the team's attention is concentrated where the risk actually sits.</p>
+
+    <div class="callout">
+      <div class="callout-label">From a real audit</div>
+      <p>One operation I audited was checking every line item from a supplier that hadn't had a discrepancy in 18 months. The check took 40 minutes per delivery. The supplier delivered four times a week. That's nearly three hours a week being spent on a check that wasn't catching anything, because there wasn't anything to catch. Moved to sample checking, the team got that time back permanently.</p>
+    </div>
+
+    <h2>Cause 02 · <em>Putaway authorisation</em> — a single sign-off is queuing your whole operation</h2>
+
+    <p>This is the most insidious cause because it's usually a single process step that looks unimportant from the outside but is queuing the entire operation behind it. Putaway authorisation — the formal sign-off that says checked goods can be moved to their storage location — typically takes a single supervisor seconds to do per consignment. But when the supervisor isn't available, or is doing something else, or has a queue of other tasks, the goods wait.</p>
+
+    <p>And while the goods wait, they sit in the receiving area, take up space, prevent the next delivery from being unloaded efficiently, and create congestion. The 30 seconds of supervisor time creates 45-90 minutes of stock waiting per affected consignment.</p>
+
+    <div class="key-stat">
+      <div class="key-stat-number">45–90min</div>
+      <div class="key-stat-body">Typical time goods wait between checking complete and being moved to storage when putaway authorisation is concentrated in a single role. Across a typical day, this single bottleneck can absorb 30-40% of total goods-in capacity.</div>
+    </div>
+
+    <h3>What putaway authorisation bottleneck looks like on the floor</h3>
+
+    <ul>
+      <li>Checked goods sit in a staging area waiting for sign-off, often for 30+ minutes</li>
+      <li>The bottleneck is one specific person — usually a goods-in supervisor or team leader</li>
+      <li>When that person is in a meeting, on a break, or off, the backlog accelerates</li>
+      <li>The sign-off task is mostly procedural — the supervisor isn't catching anything that wasn't already flagged</li>
+      <li>If you ask the team where the queue happens, they all point to the same step</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>The fix is usually to delegate sign-off authority for standard, low-risk consignments to team leaders or to the checking operatives themselves, with the supervisor's involvement reserved for exceptions:</p>
+
+    <ol>
+      <li>Define what constitutes a "standard" consignment (no discrepancies, trusted supplier tier, standard SKUs)</li>
+      <li>Authorise team leaders or experienced operatives to sign off standard consignments</li>
+      <li>Retain supervisor sign-off only for exceptions — discrepancies, new suppliers, non-standard items</li>
+      <li>Track exception rates monthly — if exceptions are rising, investigate cause</li>
+    </ol>
+
+    <p>This is one of the highest-ROI single interventions in goods-in. Most operations see putaway delays reduce by 60-80% within 2-3 weeks, with no additional staffing and no change to quality outcomes.</p>
+
+    <div class="body-cta">
+      <div class="body-cta-label">Related</div>
+      <div class="body-cta-title">The 10 Signs Your Warehouse Has a Process Problem</div>
+      <p class="body-cta-text">A free 12-page diagnostic guide built from PainKiller audit patterns. Goods-in backlog is sign #3. No email required.</p>
+      <a href="../10-signs-warehouse-process-problem.pdf" class="body-cta-btn" target="_blank" rel="noopener noreferrer">Open the guide →</a>
+    </div>
+
+    <h2>Cause 03 · <em>Dock and staffing mismatch</em> — your operation is structured for a different delivery profile</h2>
+
+    <p>The third cause is about timing rather than process. Most warehouse operations have a delivery profile — the times of day when most goods actually arrive — and a staffing profile — when the goods-in team is working. In a lot of operations, these two profiles don't match, and the mismatch generates artificial backlogs that look like understaffing.</p>
+
+    <p>The typical pattern is that goods-in staffing is weighted to the morning shift (because that's when the warehouse opens, and that's when planning intuition says deliveries should come in), but the majority of deliveries actually arrive in the afternoon (driven by carrier route planning, which the warehouse doesn't control). The morning team is under-utilised. The afternoon team is overwhelmed. The backlog accumulates in the afternoon and rolls into the next day.</p>
+
+    <p>The dock side of this is connected. If you have multiple loading docks and they're allocated on first-come-first-served, you create vehicle queuing that delays unloading start times by 15-30 minutes per delivery on busy days. Multiply by 20-40 deliveries a day, and the cumulative delay is substantial.</p>
+
+    <h3>What dock and staffing mismatch looks like on the floor</h3>
+
+    <ul>
+      <li>Morning shift has spare capacity; afternoon shift is consistently overwhelmed</li>
+      <li>Delivery vehicles queue outside or in the yard waiting for dock allocation</li>
+      <li>The actual delivery profile (when goods arrive) hasn't been formally mapped against the staffing profile in 12+ months</li>
+      <li>Carrier or supplier feedback mentions long waiting times at your dock</li>
+      <li>The backlog consistently accumulates in the afternoon and rolls into the next day</li>
+    </ul>
+
+    <h3>What actually fixes it</h3>
+
+    <p>The fix is two-part — match staffing to delivery profile, and sequence dock allocation:</p>
+
+    <ol>
+      <li>Map the actual delivery arrival profile across a typical week. When do most goods arrive?</li>
+      <li>Reweight goods-in staffing to match — typically this means more capacity in the afternoon and less in the early morning</li>
+      <li>Introduce dock booking or sequencing to prevent vehicle queuing — slots can be allocated by appointment, by supplier, or by delivery type</li>
+      <li>Track unload-start latency (vehicle arrival to unloading start) as a weekly KPI</li>
+    </ol>
+
+    <p>Dock scheduling is genuinely an area where technology can help — there are dedicated platforms that handle this well. <a href="https://docksync.com" target="_blank" rel="noopener noreferrer">DockSync</a> is one example built specifically for UK warehouse operations.</p>
+
+    <h2>How to know which cause is dominant in yours</h2>
+
+    <p>The diagnostic question that tells you fastest is this: <em>"Where do goods physically sit when they're waiting?"</em></p>
+
+    <ul>
+      <li>If they sit at the checking station for a long time, you have a checking bottleneck (cause 01)</li>
+      <li>If they sit in a "checked" staging area waiting to be moved, you have a putaway authorisation bottleneck (cause 02)</li>
+      <li>If vehicles wait outside the building before unloading, you have a dock/staffing mismatch (cause 03)</li>
+    </ul>
+
+    <p>Most operations have at least two of these operating at once. The good news is that all three are fixable without capital investment and without adding staff — they're process changes, and most can be implemented in 2-6 weeks.</p>
+
+    <h2>What's <em>not</em> the answer</h2>
+
+    <p>Three things operations directors reach for when goods-in is backed up, none of which usually solve it:</p>
+
+    <ul>
+      <li><strong>Adding goods-in headcount.</strong> If the bottleneck is structural, more people queue at the same constraint. The cost goes up, the throughput doesn't.</li>
+      <li><strong>Capital investment in new goods-in equipment.</strong> Same logic — new equipment running on the same process design produces the same bottleneck pattern. Fix the process first, then assess whether equipment investment still makes sense.</li>
+      <li><strong>Pressuring suppliers to deliver "more efficiently."</strong> Carriers control their routes, and most suppliers can't change their delivery profile to match yours. The fix has to be on your side.</li>
+    </ul>
+
+    <h2>If you recognise this in your operation</h2>
+
+    <p>If goods-in has been a chronic problem in your operation and the staffing fixes haven't moved the backlog, the most useful next step is to identify which of the three structural causes is operating in your specific case. Three ways to do that:</p>
+
+    <ol>
+      <li><strong>The <a href="../scorecard.html">£99 Scorecard</a></strong> — covers goods-in, putaway, and dock allocation across the 25-question diagnostic. 10 minutes, instant report.</li>
+      <li><strong><a href="../tools.html">The Operations Toolkit</a> (£49)</strong> — includes a goods-in process template and a supplier risk tiering framework.</li>
+      <li><strong>The <a href="../audit.html">On-Site Audit</a> (from £950)</strong> — for operations where the backlog has been running for months and internal fixes haven't moved it. Half a day on the floor usually identifies the cause definitively.</li>
+    </ol>
+
+  </div>
+</article>
+
+<section class="faq-section">
+  <div class="article-container">
+    <span class="faq-eyebrow">Common questions</span>
+    <h2 class="faq-headline">FAQ on goods-in backlogs.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Why is my warehouse goods-in always behind?</div>
+        <p class="faq-a">Goods-in backlogs are rarely caused by understaffing. The three most common structural causes are over-engineered checking processes (treating all suppliers as equal-risk), putaway authorisation bottlenecks (a single sign-off step that creates queuing), and dock allocation that doesn't match delivery patterns. Adding staff to goods-in usually makes the queue at the bottleneck worse, not better.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long should goods-in to shelf take?</div>
+        <p class="faq-a">Industry benchmarks vary by sector, but for most UK warehouse operations, a well-functioning goods-in process should deliver stock to shelf within 4-8 hours of arrival for standard items, and within 24 hours at the absolute outside. If your goods-in to shelf time is consistently above 24 hours, the bottleneck is almost certainly process design rather than capacity.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will adding more goods-in staff clear the backlog?</div>
+        <p class="faq-a">In most cases, no. If the bottleneck is structural — putaway authorisation, dock allocation, or over-engineered checking — adding staff creates more people queuing at the same constraint. The backlog stays the same but the labour cost goes up. The right sequence is to identify the structural cause first, fix it, then assess whether staffing levels still need to change.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should I invest in goods-in equipment to clear the backlog?</div>
+        <p class="faq-a">Not before fixing the process. If the bottleneck is structural — checking intensity, putaway authorisation, or dock allocation — new equipment running on the same process will produce the same bottleneck pattern. We've seen operations spend £200k+ on goods-in equipment that didn't fix the problem because the actual constraint was a single sign-off step. Fix the process first, then evaluate equipment.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is dock scheduling software worth investing in?</div>
+        <p class="faq-a">Often yes, particularly for warehouses with 15+ deliveries a day and multiple loading docks. The right tool eliminates vehicle queuing, smooths the delivery profile, and makes dock capacity visible. Dock scheduling is one of the few areas where technology genuinely solves the problem rather than accelerating a bad process. DockSync is one example built specifically for UK warehouse operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="article-container">
+    <span class="related-eyebrow">Related reading</span>
+    <h2 class="related-headline">Other posts in this cluster.</h2>
+    <div class="related-grid">
+      <a href="why-warehouse-overtime-wont-clear.html" class="related-card">
+        <div class="related-cat">Diagnostic guide</div>
+        <div class="related-title">Why your warehouse overtime won't clear (and what actually fixes it)</div>
+        <p class="related-excerpt">Goods-in backlogs feed overtime. The structural diagnosis applied to the overtime line — three causes, none fixed by adding headcount.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+      <a href="why-warehouse-pick-rate-plateaued.html" class="related-card">
+        <div class="related-cat">Diagnostic guide</div>
+        <div class="related-title">Why your pick rate has plateaued despite training and incentives</div>
+        <p class="related-excerpt">Goods-in backlogs drag pick rate down because pickers chase missing stock. Three structural causes of plateaued pick rate.</p>
+        <div class="related-arrow">Read →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta-section">
+  <div class="article-container">
+    <span class="final-cta-eyebrow">Apply this to your operation</span>
+    <h2 class="final-cta-headline">Goods-in backlogs don't fix themselves. <em>And throwing staff at them costs you twice.</em></h2>
+    <p class="final-cta-body">If goods-in is the problem in your operation, the £99 Scorecard will identify which structural cause is operating in your specific case. 10 minutes, instant 10-page scored report covering goods-in, putaway, and dock allocation.</p>
+    <div class="final-cta-actions">
+      <a href="../scorecard.html" class="btn-primary-red">Take the Scorecard — £99 →</a>
+      <a href="../book.html" class="btn-text-dark">Or book a free 20-min call →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="../services.html">Services</a>
+        <a href="../audit.html">On-Site Audit</a>
+        <a href="../scorecard.html">Scorecard</a>
+        <a href="../results.html">Results</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../about.html">About</a>
+        <a href="index.html">Field Notes</a>
+        <a href="../book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <div class="footer-legal">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>
