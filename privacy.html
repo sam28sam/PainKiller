@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PainKiller Consulting</title>
+  <meta name="description" content="How PainKiller Consulting collects, uses, and protects your personal information. UK GDPR compliant." />
+  <meta name="theme-color" content="#FAFAF7" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/privacy.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;--paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;--rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;--font-serif:'Playfair Display',Georgia,serif;--font-sans:'DM Sans',system-ui,sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .legal-container{max-width:760px;margin:0 auto;padding:0 32px;}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+
+    .legal-header{padding:56px 0 48px;border-bottom:1px solid var(--rule);}
+    .legal-eyebrow{display:inline-block;font-size:0.74rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .legal-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .legal-title{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.2rem,4vw,3rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:18px;color:var(--ink);}
+    .legal-updated{font-size:0.85rem;color:var(--ink-light);font-style:italic;}
+
+    .legal-body{padding:56px 0 72px;}
+    .legal-intro{font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:1.2rem;line-height:1.6;color:var(--ink);margin-bottom:40px;letter-spacing:-0.005em;}
+    .legal-body h2{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;line-height:1.25;letter-spacing:-0.015em;margin:48px 0 16px;color:var(--ink);}
+    .legal-body h3{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;line-height:1.3;margin:28px 0 12px;color:var(--ink);}
+    .legal-body p{font-size:1rem;line-height:1.75;color:var(--ink-mid);margin-bottom:16px;}
+    .legal-body p strong{color:var(--ink);font-weight:600;}
+    .legal-body a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;}
+    .legal-body a:hover{border-color:var(--ink);}
+    .legal-body ul{margin:16px 0 20px 0;padding-left:0;list-style:none;}
+    .legal-body ul li{position:relative;padding:6px 0 6px 24px;font-size:0.98rem;line-height:1.7;color:var(--ink-mid);}
+    .legal-body ul li::before{content:'→';color:var(--red);font-weight:700;position:absolute;left:0;top:6px;}
+    .legal-body ul li strong{color:var(--ink);font-weight:600;}
+
+    .data-table{width:100%;border-collapse:collapse;margin:24px 0;border:1px solid var(--rule);}
+    .data-table th{text-align:left;padding:14px 18px;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);background:var(--paper-mid);border-bottom:1px solid var(--rule);}
+    .data-table td{padding:18px;border-bottom:1px solid var(--rule);font-size:0.92rem;color:var(--ink-mid);line-height:1.6;vertical-align:top;}
+    .data-table td:first-child{font-weight:600;color:var(--ink);width:35%;}
+    .data-table tr:last-child td{border-bottom:none;}
+
+    .contact-card{background:var(--paper-mid);border:1px solid var(--rule);padding:28px 32px;margin:32px 0;}
+    .contact-card-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:12px;}
+    .contact-card-title{font-family:var(--font-serif);font-weight:700;font-size:1.2rem;color:var(--ink);margin-bottom:10px;line-height:1.3;}
+    .contact-card p{font-size:0.95rem!important;margin-bottom:8px!important;}
+
+    .related-pages{padding:48px 0;background:var(--paper-mid);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+    .related-pages-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .related-pages-label::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .related-pages-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:20px;}
+    .related-page{background:var(--paper);padding:24px 28px;display:block;transition:background 0.2s;}
+    .related-page:hover{background:var(--paper-mid);}
+    .related-page-title{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:6px;}
+    .related-page-desc{font-size:0.85rem;color:var(--ink-mid);line-height:1.6;}
+
+    footer{padding:48px 0;border-top:1px solid var(--rule);background:var(--paper);}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-legal{display:flex;gap:20px;}
+
+    @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:flex;}.related-pages-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.container,.legal-container{padding:0 20px;}.legal-header{padding:40px 0 32px;}.legal-body{padding:40px 0 56px;}.legal-intro{font-size:1.1rem;}.legal-body h2{font-size:1.3rem;}.data-table th,.data-table td{padding:12px;font-size:0.85rem;}.data-table td:first-child{width:auto;}}
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="audit.html">Audit</a>
+  <a href="scorecard.html">Scorecard</a>
+  <a href="results.html">Results</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="blog/">Field Notes</a>
+  <a href="book.html">Book a Call</a>
+</div>
+
+<nav><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="audit.html">Audit</a></li>
+    <li><a href="scorecard.html">Scorecard</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="blog/">Field Notes</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div></div></nav>
+
+<header class="legal-header">
+  <div class="legal-container">
+    <span class="legal-eyebrow">Privacy Policy</span>
+    <h1 class="legal-title">How we collect, use, and protect your information.</h1>
+    <p class="legal-updated">Last updated: 28 May 2026 · UK GDPR &amp; Data Protection Act 2018 compliant</p>
+  </div>
+</header>
+
+<main class="legal-body">
+  <div class="legal-container">
+
+    <p class="legal-intro">This is a plain-English privacy policy. It explains what data PainKiller Consulting collects when you use this website, why we collect it, how we look after it, and the rights you have over it.</p>
+
+    <h2>Who we are</h2>
+    <p>PainKiller Consulting is a UK warehouse operations consultancy operated as a sole trader by Sam Mustatea, trading as PainKiller Consulting ("we", "us", "our"). This privacy policy applies to the website painkillerconsulting.co.uk and any services we provide.</p>
+    <p>For the purposes of UK GDPR and the Data Protection Act 2018, PainKiller Consulting is the <strong>data controller</strong> for any personal information you provide to us.</p>
+
+    <h2>What personal information we collect</h2>
+    <p>We only collect personal information that you actively provide, plus standard technical information about how you interact with the website. We don't buy data, scrape data, or collect information about you from third parties.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Type of information</th><th>How we collect it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Contact details (name, email, phone)</td>
+          <td>When you submit a contact form, book a call, or enquire about a service via Tally or Calendly</td>
+        </tr>
+        <tr>
+          <td>Operational context about your business</td>
+          <td>When you describe your warehouse operation, challenges, or goals in a form or email</td>
+        </tr>
+        <tr>
+          <td>Payment information</td>
+          <td>Processed directly by Stripe — we don't see or store card details</td>
+        </tr>
+        <tr>
+          <td>Email correspondence</td>
+          <td>Any emails you send us, retained in our email system</td>
+        </tr>
+        <tr>
+          <td>Technical data (IP, browser, device)</td>
+          <td>Standard server logs and (in future) Google Analytics if enabled</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Why we collect it (our lawful basis)</h2>
+    <p>Under UK GDPR we can only process your personal information if we have a lawful reason to do so. Here are the reasons we use:</p>
+
+    <h3>Performance of a contract</h3>
+    <p>When you buy a service from us, we need your information to deliver that service — communicating about scheduling, sending audit findings, processing payment, etc.</p>
+
+    <h3>Legitimate interests</h3>
+    <p>When you submit an enquiry, we use your information to respond to it. This is in our legitimate interest (running the business) and yours (getting a reply).</p>
+
+    <h3>Consent</h3>
+    <p>If we ever ask to send you marketing emails or add you to a newsletter, this is based on your explicit consent and you can withdraw it at any time.</p>
+
+    <h3>Legal obligations</h3>
+    <p>We may need to retain certain records — for example invoices and contracts — to meet UK tax and accounting law (HMRC typically requires retention for six years).</p>
+
+    <h2>How long we keep it</h2>
+    <ul>
+      <li><strong>Enquiries that don't result in a contract:</strong> 12 months from the last meaningful contact, then deleted</li>
+      <li><strong>Client records (contracts, invoices, audit reports):</strong> 6 years from the end of the engagement, as required by UK tax law</li>
+      <li><strong>Email correspondence:</strong> Retained as part of the above, then archived or deleted</li>
+      <li><strong>Form submissions in Tally:</strong> Retained while the enquiry is active, exported to our records, then deleted from Tally</li>
+      <li><strong>Payment records (Stripe):</strong> Retained by Stripe per their own policy and by us for accounting purposes (6 years)</li>
+    </ul>
+
+    <h2>Who we share it with</h2>
+    <p>We share information only with carefully-chosen third parties who help us run the business. We don't sell or rent your personal information to anyone. The third parties we currently use are:</p>
+
+    <ul>
+      <li><strong>Tally Forms</strong> — for form submissions and contact enquiries. Tally is a GDPR-compliant form platform based in the EU.</li>
+      <li><strong>Calendly</strong> — for diagnostic call booking. Calendly is a US-based platform with appropriate UK/EU data transfer safeguards in place.</li>
+      <li><strong>Stripe</strong> — for payment processing. Stripe is PCI-DSS compliant and handles card data directly so we never see it.</li>
+      <li><strong>GitHub Pages</strong> — for hosting the website itself.</li>
+      <li><strong>Email provider</strong> — for sending and receiving correspondence with you.</li>
+      <li><strong>Google Analytics (planned)</strong> — we may enable Google Analytics in future to understand how the website is used. Where enabled, this will be disclosed in our cookies policy and you will be able to opt out.</li>
+    </ul>
+
+    <p>If any of these change, we'll update this policy. We may also be required to disclose information if compelled by UK law — for example, to HMRC, the courts, or the Information Commissioner's Office (ICO).</p>
+
+    <h2>International transfers</h2>
+    <p>Some of the third-party services we use (such as Calendly and Stripe) are based in the United States or transfer data internationally. Where this happens, we rely on appropriate safeguards under UK GDPR — typically the UK International Data Transfer Agreement, EU Standard Contractual Clauses, or adequacy decisions where applicable.</p>
+
+    <h2>How we look after your information</h2>
+    <p>We take reasonable technical and organisational measures to protect your personal information. This includes using providers with strong security practices (Tally, Stripe, Calendly, GitHub all maintain industry-standard security), keeping the number of people who access your data to a minimum (in practice, this is Sam), and securing email and device access with strong passwords and two-factor authentication.</p>
+    <p>That said, no method of transmission or storage is 100% secure. If a data breach occurred that posed a risk to your rights, we would notify you and the ICO within 72 hours as required by UK GDPR.</p>
+
+    <h2>Your rights</h2>
+    <p>Under UK GDPR you have a number of rights over your personal information. You can exercise any of these by emailing us at <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a>:</p>
+
+    <ul>
+      <li><strong>Right to access</strong> — Ask for a copy of the personal information we hold about you</li>
+      <li><strong>Right to rectification</strong> — Ask us to correct anything inaccurate</li>
+      <li><strong>Right to erasure ("right to be forgotten")</strong> — Ask us to delete your information, subject to our legal obligations to retain certain records</li>
+      <li><strong>Right to restrict processing</strong> — Ask us to stop using your information in certain ways</li>
+      <li><strong>Right to data portability</strong> — Ask for your information in a format you can transfer to another provider</li>
+      <li><strong>Right to object</strong> — Object to us processing your information for specific purposes</li>
+      <li><strong>Right to withdraw consent</strong> — Where we relied on your consent, withdraw it at any time</li>
+    </ul>
+
+    <p>We aim to respond to all requests within one month. There is no charge for exercising your rights, except in very limited circumstances where requests are excessive or repeated.</p>
+
+    <h2>Cookies</h2>
+    <p>This website currently uses minimal cookies. For full details — what we use and what we may use in future — see our <a href="cookies.html">Cookies Policy</a>.</p>
+
+    <h2>Children</h2>
+    <p>Our services are aimed at UK business operations and we do not knowingly collect personal information from anyone under 18. If we become aware that we have collected information from a child, we will delete it.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this privacy policy from time to time. The "last updated" date at the top of the page reflects the most recent change. If we make material changes, we'll do our best to notify anyone affected — for example, current clients.</p>
+
+    <div class="contact-card">
+      <div class="contact-card-label">Contact</div>
+      <div class="contact-card-title">Questions, complaints, or requests about your data</div>
+      <p>The fastest way to reach us is by email. We respond to all data protection enquiries within 5 working days, and to formal subject access requests within the one-month statutory window.</p>
+      <p><strong>Email:</strong> <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a></p>
+      <p style="font-size:0.85rem!important;color:var(--ink-light)!important;margin-top:14px!important;">If you're unhappy with our response, you have the right to complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a> or on 0303 123 1113.</p>
+    </div>
+
+  </div>
+</main>
+
+<section class="related-pages">
+  <div class="legal-container">
+    <div class="related-pages-label">Related</div>
+    <div class="related-pages-grid">
+      <a href="terms.html" class="related-page">
+        <div class="related-page-title">Terms &amp; Conditions</div>
+        <div class="related-page-desc">The terms that govern your use of this website and our services.</div>
+      </a>
+      <a href="cookies.html" class="related-page">
+        <div class="related-page-title">Cookies Policy</div>
+        <div class="related-page-desc">What cookies we use, what they do, and how to manage them.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="audit.html">On-Site Audit</a>
+        <a href="scorecard.html">Scorecard</a>
+        <a href="results.html">Results</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About</a>
+        <a href="blog/">Field Notes</a>
+        <a href="book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+</body>
+</html>
