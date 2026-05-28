@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transformation Programme — PainKiller Consulting</title>
+  <meta name="description" content="A 90-day hands-on transformation engagement for UK warehouse operations. Sam Mustatea embedded in the operation, executing the changes an audit identified. £4,500/month for three months." />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/transformation.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;
+      --paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;
+      --rule:#DDDDD6;--red:#C0392B;--red-light:#F5EAE9;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .container-narrow{max-width:780px;margin:0 auto;padding:0 32px;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);}
+    .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
+    .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
+    .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
+
+    /* HERO */
+    .hero{padding:88px 0 96px;border-bottom:1px solid var(--rule);}
+    .hero-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:24px;}
+    .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .hero-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.08;letter-spacing:-0.025em;margin-bottom:24px;}
+    .hero-headline em{font-style:italic;color:var(--red);}
+    .hero-sub{font-size:1.12rem;color:var(--ink-mid);line-height:1.7;margin-bottom:36px;max-width:680px;}
+    .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:28px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:36px;}
+    .meta-item{}
+    .meta-number{font-family:var(--font-serif);font-weight:700;font-size:1.8rem;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:4px;}
+    .meta-number span{font-size:1rem;color:var(--ink-light);font-weight:400;}
+    .meta-label{font-size:0.78rem;color:var(--ink-light);letter-spacing:0.04em;line-height:1.5;}
+    .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .btn-primary{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.95rem;letter-spacing:0.02em;padding:16px 32px;transition:all 0.2s;border:1px solid var(--ink);}
+    .btn-primary:hover{background:#333330;border-color:#333330;}
+    .btn-text{font-size:0.92rem;font-weight:500;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;}
+    .btn-text:hover{color:var(--ink);border-color:var(--ink);}
+
+    /* SECTIONS */
+    section{padding:96px 0;border-bottom:1px solid var(--rule);}
+    .alt-bg{background:var(--paper-mid);}
+    .section-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .section-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,3.6vw,3rem);line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px;}
+    .section-headline em{font-style:italic;color:var(--red);}
+    .section-intro{font-size:1.08rem;color:var(--ink-mid);line-height:1.7;max-width:680px;margin-bottom:48px;}
+
+    /* WHAT IT IS / ISN'T */
+    .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px;}
+    .what-list{list-style:none;border-top:1px solid var(--rule);}
+    .what-list li{padding:18px 0;border-bottom:1px solid var(--rule);display:flex;gap:18px;font-size:0.98rem;color:var(--ink-mid);line-height:1.6;}
+    .what-list.yes li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:700;}
+    .what-list.no li::before{content:'—';color:var(--ink-light);flex-shrink:0;}
+    .what-column h3{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;margin-bottom:20px;color:var(--ink);}
+    .what-column.no h3{color:var(--ink-light);}
+
+    /* PHASES — THE 90 DAYS */
+    .phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:48px;}
+    .phase-card{background:var(--paper);padding:40px 32px;display:flex;flex-direction:column;gap:14px;}
+    .phase-days{font-family:var(--font-serif);font-weight:700;font-size:0.95rem;color:var(--red);letter-spacing:0.04em;text-transform:uppercase;line-height:1;}
+    .phase-title{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.25;}
+    .phase-body{font-size:0.93rem;color:var(--ink-mid);line-height:1.7;}
+    .phase-deliverables{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule);}
+    .phase-deliv-label{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:10px;}
+    .phase-deliverables ul{list-style:none;font-size:0.85rem;color:var(--ink-mid);line-height:1.65;}
+    .phase-deliverables li{padding:3px 0;}
+    .phase-deliverables li::before{content:'· ';color:var(--red);font-weight:700;}
+
+    /* INCLUDED */
+    .included-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:48px;}
+    .included-item{background:var(--paper);padding:32px 28px;display:flex;gap:20px;align-items:flex-start;}
+    .included-num{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--paper-dark);line-height:1;flex-shrink:0;width:38px;letter-spacing:-0.03em;}
+    .included-label{font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:8px;}
+    .included-desc{font-size:0.9rem;color:var(--ink-mid);line-height:1.65;}
+
+    /* INVESTMENT */
+    .investment{background:var(--ink);color:var(--paper);border-bottom:none;}
+    .investment .section-eyebrow{color:var(--red);}
+    .investment .section-headline{color:var(--paper);}
+    .investment-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;}
+    .investment-text{}
+    .investment-text p{font-size:1.05rem;color:#999;line-height:1.75;margin-bottom:18px;}
+    .investment-text p strong{color:var(--paper);font-weight:600;}
+    .investment-terms{list-style:none;border-top:1px solid #2A2A28;margin-top:24px;}
+    .investment-terms li{padding:14px 0;border-bottom:1px solid #2A2A28;font-size:0.92rem;color:#999;display:flex;gap:14px;line-height:1.55;}
+    .investment-terms li::before{content:'✓';color:var(--red);flex-shrink:0;font-weight:700;}
+    .investment-card{border:1px solid #2A2A28;padding:48px 40px;}
+    .investment-card-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+    .investment-amount{font-family:var(--font-serif);font-weight:700;font-size:4rem;color:var(--paper);letter-spacing:-0.04em;line-height:1;margin-bottom:6px;}
+    .investment-unit{font-size:0.95rem;color:#666;margin-bottom:32px;}
+    .investment-total{padding-top:24px;border-top:1px solid #2A2A28;}
+    .investment-total-label{font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:6px;}
+    .investment-total-num{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;color:var(--paper);letter-spacing:-0.02em;}
+    .investment-total-num span{color:#666;font-size:0.85rem;font-weight:400;letter-spacing:0;margin-left:6px;}
+
+    /* WHO IT'S FOR */
+    .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px;}
+    .fit-column h3{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;margin-bottom:20px;color:var(--ink);}
+    .fit-column.no h3{color:var(--ink-light);}
+    .fit-list{list-style:none;border-top:1px solid var(--rule);}
+    .fit-list li{padding:18px 0;border-bottom:1px solid var(--rule);display:flex;gap:18px;font-size:0.98rem;color:var(--ink-mid);line-height:1.6;}
+    .fit-list.yes li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:700;}
+    .fit-list.no li::before{content:'—';color:var(--ink-light);flex-shrink:0;}
+    .fit-note{margin-top:18px;padding:18px 22px;background:var(--paper-mid);border-left:3px solid var(--red);font-size:0.9rem;color:var(--ink-mid);line-height:1.65;}
+    .fit-note a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--rule);}
+
+    /* HOW IT BEGINS */
+    .begins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:48px;}
+    .begins-step{background:var(--paper);padding:36px 28px;}
+    .begins-num{font-family:var(--font-serif);font-weight:700;font-size:2.8rem;color:var(--paper-dark);line-height:1;margin-bottom:18px;letter-spacing:-0.04em;}
+    .begins-title{font-family:var(--font-serif);font-weight:700;font-size:1.25rem;color:var(--ink);margin-bottom:12px;letter-spacing:-0.01em;line-height:1.3;}
+    .begins-body{font-size:0.9rem;color:var(--ink-mid);line-height:1.7;}
+
+    /* ENQUIRY FORM */
+    .enquiry{padding:96px 0;}
+    .enquiry-eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:16px;}
+    .enquiry-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .enquiry-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-0.02em;line-height:1.2;margin-bottom:18px;}
+    .enquiry-sub{font-size:1rem;color:var(--ink-mid);line-height:1.7;margin-bottom:36px;max-width:640px;}
+    .form-wrap{border:1px solid var(--rule);background:var(--paper);min-height:600px;padding:8px;}
+
+    /* FOOTER */
+    footer{padding:56px 0;}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
+    .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
+    .footer-logo span{color:var(--red);}
+    .footer-tagline{font-size:0.8rem;color:var(--ink-light);}
+    .footer-links{display:flex;flex-direction:column;gap:10px;}
+    .footer-links a{font-size:0.83rem;color:var(--ink-mid);}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-contact{font-size:0.83rem;color:var(--ink-mid);line-height:1.8;}
+    .footer-contact a{border-bottom:1px solid var(--rule);}
+    .footer-bottom{border-top:1px solid var(--rule);margin-top:40px;padding-top:24px;font-size:0.75rem;color:var(--ink-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .footer-legal{display:flex;gap:20px;}
+
+    @media(max-width:900px){
+      .nav-links{display:none;}.nav-hamburger{display:flex;}
+      .hero{padding:64px 0 72px;}
+      .hero-meta{grid-template-columns:1fr 1fr;}
+      .what-grid,.fit-grid{grid-template-columns:1fr;gap:48px;}
+      .phases-grid,.begins-grid{grid-template-columns:1fr;}
+      .included-grid{grid-template-columns:1fr;}
+      .investment-inner{grid-template-columns:1fr;gap:48px;}
+      section{padding:64px 0;}
+    }
+    @media(max-width:600px){
+      .container,.container-narrow{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .hero-meta{grid-template-columns:1fr;}
+      .investment-card{padding:36px 28px;}
+      .investment-amount{font-size:3.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="audit.html">Audit</a>
+  <a href="scorecard.html">Scorecard</a>
+  <a href="results.html">Results</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="book.html">Book a Call</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="audit.html">Audit</a></li>
+      <li><a href="scorecard.html">Scorecard</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Transformation Programme</span>
+    <h1 class="hero-headline">After the audit identifies what's wrong, <em>transformation actually fixes it.</em></h1>
+    <p class="hero-sub">A 90-day hands-on engagement. Sam Mustatea embedded in your operation two to three days per week, executing the changes an audit identified. Not a PowerPoint deck. Not a quarterly review. Real implementation, with the operations director on the inside and the consultant on the floor.</p>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-number">90<span> days</span></div>
+        <div class="meta-label">Engagement length</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-number">2–3<span> days/wk</span></div>
+        <div class="meta-label">On-site presence</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-number">£4,500<span>/mo</span></div>
+        <div class="meta-label">Monthly fee</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-number">£13,500</div>
+        <div class="meta-label">Total commitment</div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#enquiry" class="btn-primary">Submit enquiry →</a>
+      <a href="audit.html" class="btn-text">Or start with the audit first →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT THIS IS / ISN'T ─────────────────────── -->
+<section>
+  <div class="container">
+    <span class="section-eyebrow">What this actually is</span>
+    <h2 class="section-headline">A clear definition matters here — because most "transformation consulting" isn't.</h2>
+    <p class="section-intro">There's a lot of warehouse consultancy that calls itself transformation. Most of it is decks, frameworks, and quarterly reviews. This isn't that. The structure below makes the difference explicit.</p>
+
+    <div class="what-grid">
+      <div class="what-column">
+        <h3>What you get</h3>
+        <ul class="what-list yes">
+          <li>Sam on the floor 2–3 days per week, for 12 weeks</li>
+          <li>Direct execution of audit findings — restructured shifts, reslotted product, redesigned processes</li>
+          <li>Coaching of your supervisors and team leaders, embedded in their actual work</li>
+          <li>Weekly 1-hour review call with you and your leadership, focused on what's changing and what's not</li>
+          <li>Monthly written progress report — what's been implemented, what's pending, what's blocked, with named owners</li>
+          <li>Phone access between site days for urgent issues</li>
+          <li>A handover document at the end so your team owns the operating model going forward</li>
+        </ul>
+      </div>
+      <div class="what-column no">
+        <h3>What you don't get</h3>
+        <ul class="what-list no">
+          <li>Decks. There are no PowerPoint presentations in this engagement.</li>
+          <li>Big-firm jargon, frameworks-with-acronyms, or quarterly reviews that don't change anything</li>
+          <li>Detached recommendations. Sam isn't writing reports for you to action later — he's doing the work alongside your team</li>
+          <li>An offshored implementation team. This is Sam, in your warehouse, for three months</li>
+          <li>A subscription that drifts. The programme runs 90 days and ends. Continuation, if useful, becomes a retainer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE 90 DAYS ─────────────────────────────── -->
+<section class="alt-bg">
+  <div class="container">
+    <span class="section-eyebrow">The 90-day shape</span>
+    <h2 class="section-headline">Three phases. Each with a clear purpose, deliverable, and end-state.</h2>
+    <p class="section-intro">The shape of the engagement is the same regardless of starting condition. The work within each phase is tailored to your specific findings.</p>
+
+    <div class="phases-grid">
+      <div class="phase-card">
+        <div class="phase-days">Days 1–30 · Stabilise</div>
+        <h3 class="phase-title">Stop the bleeding. Fix the visible damage first.</h3>
+        <p class="phase-body">Quick wins from the audit get executed. Shift handovers tightened. Critical bottlenecks unblocked. KPI dashboards rebuilt so leadership can see what's actually happening. Most operations see measurable improvement inside the first 30 days — not because the deep work is done, but because the obvious dysfunction is removed.</p>
+        <div class="phase-deliverables">
+          <div class="phase-deliv-label">Phase 1 deliverables</div>
+          <ul>
+            <li>Quick wins implemented</li>
+            <li>Live KPI dashboard operational</li>
+            <li>Stabilisation report delivered to leadership</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-days">Days 31–60 · Implement</div>
+        <h3 class="phase-title">The deep work. Restructure what's structurally wrong.</h3>
+        <p class="phase-body">The bigger items from the audit are tackled — slotting redesigned, shift structures revised, goods-in flow rebuilt. This is the most intensive phase because it's the work that takes weeks to implement, not days. Sam is on-site more often during this phase. The operation may feel less smooth before it feels better.</p>
+        <div class="phase-deliverables">
+          <div class="phase-deliv-label">Phase 2 deliverables</div>
+          <ul>
+            <li>Core process redesigns live</li>
+            <li>Supervisor capability uplifted through 1-on-1 coaching</li>
+            <li>Mid-engagement review with leadership</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-days">Days 61–90 · Embed</div>
+        <h3 class="phase-title">Make it stick. Hand it over to your team.</h3>
+        <p class="phase-body">The final phase is about embedding the new operating model so it survives Sam leaving. Documentation is built. Supervisors are taking ownership without prompting. The improvement cadence is running on its own. By Day 90, your team owns the operation, and the only Sam-shaped hole left is the strategic one — which is what the retainer is for, if useful.</p>
+        <div class="phase-deliverables">
+          <div class="phase-deliv-label">Phase 3 deliverables</div>
+          <ul>
+            <li>Process documentation completed</li>
+            <li>Handover pack to operations leadership</li>
+            <li>Final review and continuation recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT'S INCLUDED ─────────────────────────── -->
+<section>
+  <div class="container">
+    <span class="section-eyebrow">What's included</span>
+    <h2 class="section-headline">Six things in the price, every month, for three months.</h2>
+
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-num">01</div>
+        <div>
+          <div class="included-label">On-site presence — 2 to 3 days per week</div>
+          <p class="included-desc">Sam in your warehouse, with your team, executing the work. Travel and accommodation inclusive for UK sites; overseas engagements quoted upfront.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-num">02</div>
+        <div>
+          <div class="included-label">Weekly leadership review — 1 hour</div>
+          <p class="included-desc">A standing review with you (and any leaders you want present) covering progress, blockers, and decisions needed. Same time every week, no slippage.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-num">03</div>
+        <div>
+          <div class="included-label">Embedded supervisor coaching</div>
+          <p class="included-desc">Sam coaches your shift supervisors and team leaders in their actual work — not in a training room. The goal is for them to own the operating model by Day 90.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-num">04</div>
+        <div>
+          <div class="included-label">Monthly written progress report</div>
+          <p class="included-desc">A written report at the end of each phase. What's been implemented, what's pending, what's blocked, with named owners. Suitable for sharing with your board if needed.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-num">05</div>
+        <div>
+          <div class="included-label">Phone access between site days</div>
+          <p class="included-desc">For urgent issues — escalations from your team, decisions that can't wait, surprises during the working week. Reasonable, not unlimited.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-num">06</div>
+        <div>
+          <div class="included-label">Handover documentation</div>
+          <p class="included-desc">By the end of Phase 3, your operating model is documented to the level a new operations director could pick it up. The handover pack is yours regardless of what happens after.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INVESTMENT ──────────────────────────────── -->
+<section class="investment">
+  <div class="container">
+    <div class="investment-inner">
+      <div class="investment-text">
+        <span class="section-eyebrow">The investment</span>
+        <h2 class="section-headline">£4,500 per month. Three months. £13,500 total.</h2>
+        <p>The engagement runs 90 days. The fee is a fixed monthly retainer, invoiced at the start of each month. There's no day rate, no expense surcharges for UK travel, no hourly billing surprises.</p>
+        <p><strong>This isn't a subscription you can pause.</strong> Transformation is high-intensity work that creates dependencies between phases. Pausing or terminating mid-engagement breaks the operating model before it's finished. The 90-day commitment is a feature, not a constraint.</p>
+        <ul class="investment-terms">
+          <li>£4,500 invoiced at start of months 1, 2, and 3</li>
+          <li>UK travel and accommodation inclusive</li>
+          <li>Overseas engagements: travel quoted upfront, billed at cost</li>
+          <li>Audit fee separate, if not already completed</li>
+          <li>Continuation after Day 90: optional, at retainer rates</li>
+        </ul>
+      </div>
+
+      <div class="investment-card">
+        <div class="investment-card-tag">Investment</div>
+        <div class="investment-amount">£4,500</div>
+        <div class="investment-unit">per month · 3-month engagement</div>
+        <div class="investment-total">
+          <div class="investment-total-label">Total commitment</div>
+          <div class="investment-total-num">£13,500<span>over 90 days</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO IT'S FOR / NOT FOR ──────────────────── -->
+<section>
+  <div class="container">
+    <span class="section-eyebrow">Honest fit</span>
+    <h2 class="section-headline">This is a serious commitment. Make sure it's the right one.</h2>
+
+    <div class="fit-grid">
+      <div class="fit-column">
+        <h3>Right fit if you…</h3>
+        <ul class="fit-list yes">
+          <li>Have completed an on-site audit and want the findings actually implemented, not just filed</li>
+          <li>Are an operations director or MD with the authority to unlock decisions during the engagement</li>
+          <li>Run a UK or accessible European warehouse operation with 30+ staff</li>
+          <li>Have a clear sponsor at senior level who'll champion the work internally</li>
+          <li>Are willing to share operational data, financial context, and political reality — the engagement only works on honesty</li>
+          <li>Are committed to a 90-day engagement, not just an exploration</li>
+        </ul>
+      </div>
+      <div class="fit-column no">
+        <h3>Worth knowing before enquiring</h3>
+        <ul class="fit-list no">
+          <li>If you haven't yet identified what needs transforming, the audit comes first — £950 is a much smaller commitment than £13,500</li>
+          <li>If you're looking for ongoing light-touch support (monthly review, KPI oversight, ad-hoc advisory), the retainer is the right product, not this</li>
+          <li>If you can't free up internal capacity to work alongside Sam, the engagement won't land — transformation requires your team's involvement, not just Sam's</li>
+          <li>If the budget needs business-case construction, that's fine — but be honest about that in your enquiry so we don't build false expectations</li>
+        </ul>
+        <div class="fit-note">If you're not yet sure whether transformation is the right next step, <a href="audit.html">the on-site audit (£950)</a> is the natural first move. Or <a href="book.html">book a free 20-minute call</a> to talk through your situation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW ENGAGEMENT BEGINS ───────────────────── -->
+<section class="alt-bg">
+  <div class="container">
+    <span class="section-eyebrow">How engagement begins</span>
+    <h2 class="section-headline">Three steps from enquiry to Day 1 on-site.</h2>
+
+    <div class="begins-grid">
+      <div class="begins-step">
+        <div class="begins-num">01</div>
+        <h3 class="begins-title">Submit enquiry</h3>
+        <p class="begins-body">A short form below covering your situation, what needs transforming, timing, and internal context. I'll review within 24 working hours and respond either with a proposal call or an honest "this isn't the right fit and here's what is."</p>
+      </div>
+      <div class="begins-step">
+        <div class="begins-num">02</div>
+        <h3 class="begins-title">Proposal call &amp; scoped agreement</h3>
+        <p class="begins-body">A 60-minute call to confirm scope, agree the operating rhythm, and finalise the engagement letter. If an audit hasn't been done yet, we'll discuss whether to run it as Day 0 of the engagement or as a separate piece first.</p>
+      </div>
+      <div class="begins-step">
+        <div class="begins-num">03</div>
+        <h3 class="begins-title">Start date locked, work begins</h3>
+        <p class="begins-body">Once the agreement is signed and the first month's invoice is paid, Day 1 is set. Most engagements begin within 4 weeks of enquiry — sometimes faster if your situation is urgent and the fit is clear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ENQUIRY ─────────────────────────────────── -->
+<section class="enquiry" id="enquiry">
+  <div class="container-narrow">
+    <p class="enquiry-eyebrow">Begin enquiry</p>
+    <h2 class="enquiry-headline">Transformation Programme Enquiry</h2>
+    <p class="enquiry-sub">A short structured enquiry — about 10 questions, 5 minutes. The questions help me understand whether the programme is the right next step, and what a sensible proposal call would cover.</p>
+
+    <div class="form-wrap">
+      <iframe data-tally-src="https://tally.so/embed/PdkdEd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="900"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Transformation Programme Enquiry"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Pain<span>Killer</span> Consulting</div>
+        <p class="footer-tagline">Warehouse operations consultancy. UK-based.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="audit.html">On-Site Audit</a>
+        <a href="scorecard.html">Scorecard</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+        <a href="book.html">Book a Call</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>
+        <a href="tel:03333390617">0333 339 0617</a><br>
+        <a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PainKiller Consulting Ltd</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
