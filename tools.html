@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Operational Tools — PainKiller Consulting</title>
-  <meta name="description" content="Practical warehouse operations templates. The same tools used in PainKiller audits — available to download and use independently." />
+  <meta name="description" content="Practical warehouse operations templates and free diagnostic guide. The same tools used in PainKiller audits — available to download and use independently." />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/tools.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -21,11 +22,11 @@
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
     .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
     .nav-logo span{color:var(--red);}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
     .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--ink);}
     .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
     .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
     .mobile-menu.open{display:flex;}
@@ -38,7 +39,6 @@
     .page-header{padding:64px 0 56px;border-bottom:1px solid var(--rule);}
     .page-header p{font-size:1.08rem;color:var(--ink-mid);line-height:1.7;max-width:560px;margin-top:16px;}
 
-    /* PRODUCT CARD */
     .product-section{padding:64px 0;border-bottom:1px solid var(--rule);}
     .product-card{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;border:1px solid var(--rule);padding:48px;}
     .product-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:12px;}
@@ -60,23 +60,37 @@
     .product-includes-list li{font-size:0.85rem;color:var(--ink-mid);padding:7px 0;border-bottom:1px solid var(--rule);display:flex;gap:8px;}
     .product-includes-list li::before{content:'✓';color:var(--red);flex-shrink:0;font-weight:700;}
 
-    /* LEAD MAGNET */
-    .lead-section{background:var(--ink);padding:72px 0;border-bottom:none;}
-    .lead-inner{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:center;}
-    .lead-section .label{color:#555;}
-    .lead-section .section-headline{color:var(--paper);margin-top:12px;margin-bottom:16px;}
-    .lead-section p{font-size:1rem;color:#999;line-height:1.75;margin-bottom:0;}
-    .lead-form{background:#161614;border:1px solid #2A2A28;padding:36px;}
-    .lead-form-title{font-weight:600;font-size:1rem;color:var(--paper);margin-bottom:6px;}
-    .lead-form-sub{font-size:0.83rem;color:#777;margin-bottom:24px;}
-    .lead-input{width:100%;padding:12px 14px;background:#0A0A0A;border:1px solid #2A2A28;color:var(--paper);font-family:var(--font-sans);font-size:0.9rem;margin-bottom:10px;outline:none;}
-    .lead-input:focus{border-color:#555;}
-    .lead-input::placeholder{color:#555;}
-    .lead-submit{width:100%;padding:13px 24px;background:var(--red);color:white;border:none;font-family:var(--font-sans);font-weight:600;font-size:0.9rem;cursor:pointer;transition:background 0.2s;}
-    .lead-submit:hover{background:#A93226;}
-    .lead-privacy{font-size:0.72rem;color:#555;margin-top:10px;text-align:center;}
+    /* FREE GUIDE — restructured: no form, direct download */
+    .guide-section{background:var(--ink);padding:88px 0;border-bottom:none;}
+    .guide-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center;}
+    .guide-eyebrow{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:20px;}
+    .guide-eyebrow::before{content:'';display:inline-block;width:24px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:12px;}
+    .guide-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.2;letter-spacing:-0.02em;color:var(--paper);margin-bottom:18px;}
+    .guide-headline em{font-style:italic;color:#FFB8AC;}
+    .guide-sub{font-size:1.02rem;color:#999;line-height:1.75;margin-bottom:28px;}
+    .guide-meta{list-style:none;border-top:1px solid #2A2A28;margin-bottom:28px;}
+    .guide-meta li{padding:11px 0;border-bottom:1px solid #2A2A28;font-size:0.85rem;color:#999;display:flex;gap:14px;line-height:1.5;}
+    .guide-meta li::before{content:'✓';color:var(--red);flex-shrink:0;font-weight:700;}
+    .guide-meta li strong{color:#CCC;font-weight:600;}
+    .guide-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;}
+    .guide-cta-primary{display:inline-block;background:var(--red);color:white;font-weight:600;font-size:0.95rem;padding:15px 32px;transition:background 0.2s;}
+    .guide-cta-primary:hover{background:#A93226;}
+    .guide-cta-secondary{font-size:0.88rem;color:#999;border-bottom:1px solid #2A2A28;padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
+    .guide-cta-secondary:hover{color:var(--paper);border-color:#666;}
+    .guide-note{font-size:0.78rem;color:#666;margin-top:20px;}
+    .guide-note strong{color:#999;font-weight:500;}
 
-    footer{padding:48px 0;border-top:1px solid var(--rule);}
+    /* Right side: PDF preview card */
+    .guide-preview{background:#161614;border:1px solid #2A2A28;padding:40px 36px;position:relative;}
+    .preview-corner-tag{position:absolute;top:18px;right:18px;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#666;}
+    .preview-eyebrow{font-size:0.65rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+    .preview-title{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;line-height:1.25;letter-spacing:-0.015em;color:var(--paper);margin-bottom:8px;}
+    .preview-subtitle{font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:1.3rem;color:#FFB8AC;line-height:1.3;margin-bottom:28px;}
+    .preview-divider{height:1px;background:#2A2A28;margin:24px 0;}
+    .preview-meta{font-size:0.75rem;color:#666;line-height:1.7;}
+    .preview-meta strong{color:#AAA;font-weight:600;display:inline-block;width:90px;letter-spacing:0.04em;text-transform:uppercase;font-size:0.65rem;}
+
+    footer{padding:48px 0;background:var(--paper);border-top:1px solid var(--rule);}
     .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
     .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
     .footer-logo span{color:var(--red);}
@@ -93,26 +107,36 @@
     @media(max-width:900px){
       .nav-links{display:none;}.nav-hamburger{display:flex;}
       .product-card{grid-template-columns:1fr;gap:40px;}
-      .lead-inner{grid-template-columns:1fr;gap:40px;}
+      .guide-inner{grid-template-columns:1fr;gap:40px;}
       section,.product-section{padding:64px 0;}
     }
-    @media(max-width:600px){.container{padding:0 20px;}.page-header{padding:48px 0 40px;}.product-card{padding:28px 24px;}.template-item{grid-template-columns:1fr;}.lead-section{padding:56px 0;}}
+    @media(max-width:600px){.container{padding:0 20px;}.page-header{padding:48px 0 40px;}.product-card{padding:28px 24px;}.template-item{grid-template-columns:1fr;}.guide-section{padding:56px 0;}.guide-preview{padding:32px 28px;}}
   </style>
 </head>
 <body>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="audit.html">Audit</a>
-  <a href="results.html">Results</a><a href="about.html">About</a><a href="book.html">Book a Call</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="audit.html">Audit</a>
+  <a href="scorecard.html">Scorecard</a>
+  <a href="results.html">Results</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="book.html">Book a Call</a>
 </div>
 <nav><div class="container"><div class="nav-inner">
   <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
   <ul class="nav-links">
-    <li><a href="services.html">Services</a></li><li><a href="audit.html">Audit</a></li>
-    <li><a href="results.html">Results</a></li><li><a href="tools.html" class="active">Tools</a></li>
-    <li><a href="about.html">About</a></li><li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="audit.html">Audit</a></li>
+    <li><a href="scorecard.html">Scorecard</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="tools.html" class="active">Tools</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
   </ul>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </div></div></nav>
 
 <div class="page-header">
@@ -156,9 +180,8 @@
       <div class="product-sidebar">
         <div class="product-price">£49</div>
         <div class="product-price-note">One-time payment · Instant download<br>Excel, Google Sheets, PDF &amp; Word formats</div>
-        <!-- Replace with your Stripe payment link -->
-        <a href="https://buy.stripe.com/eVq3cxd5V261eRYgF35kk00" class="product-cta">Buy now →</a>
-        <p class="product-guarantee">Instant delivery by email. If the files don't arrive within 10 minutes, contact info@painkillerconsulting.co.uk</p>
+        <a href="https://buy.stripe.com/eVq3cxd5V261eRYgF35kk00" class="product-cta" target="_blank" rel="noopener noreferrer">Buy now →</a>
+        <p class="product-guarantee">Instant delivery after payment. If the files don't arrive within 10 minutes, contact info@painkillerconsulting.co.uk</p>
         <div class="product-includes-title">Also includes</div>
         <ul class="product-includes-list">
           <li>Instructions for each template</li>
@@ -179,14 +202,15 @@
       <div>
         <p style="font-size:1rem;color:var(--ink-mid);line-height:1.75;margin-bottom:16px;">The toolkit is a self-serve option for operations managers who know what they need to track but don't have time to build the tracking infrastructure from scratch.</p>
         <p style="font-size:1rem;color:var(--ink-mid);line-height:1.75;margin-bottom:16px;">Each template is built from the same tools used during PainKiller audits — formats that have been refined across multiple operations and sectors.</p>
-        <p style="font-size:1rem;color:var(--ink-mid);line-height:1.75;">If you'd prefer someone else to do the diagnostics, the <a href="audit.html" style="color:var(--ink);border-bottom:1px solid var(--rule);">On-Site Audit</a> is the right place to start.</p>
+        <p style="font-size:1rem;color:var(--ink-mid);line-height:1.75;">If you'd prefer someone else to do the diagnostics, the <a href="audit.html" style="color:var(--ink);border-bottom:1px solid var(--rule);">On-Site Audit</a> is the right place to start. If you want a structured self-diagnostic before committing to anything, the <a href="scorecard.html" style="color:var(--ink);border-bottom:1px solid var(--rule);">£99 Scorecard</a> is the natural starting point.</p>
       </div>
       <div>
         <div style="border:1px solid var(--rule);background:var(--paper);padding:28px;">
-          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule);">Toolkit vs Audit — which is right?</div>
+          <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule);">Toolkit vs Scorecard vs Audit — which fits?</div>
           <div style="font-size:0.88rem;color:var(--ink-mid);line-height:1.7;">
-            <p style="margin-bottom:12px;"><strong style="color:var(--ink);font-weight:600;">Choose the toolkit if:</strong> you have a specific tracking gap, you prefer to run improvements in-house, or you want a low-cost starting point before considering consultancy.</p>
-            <p><strong style="color:var(--ink);font-weight:600;">Choose the audit if:</strong> you've already tried internal fixes and the problem keeps coming back, or you need an independent view of where the operation is losing value.</p>
+            <p style="margin-bottom:10px;"><strong style="color:var(--ink);font-weight:600;">Toolkit (£49):</strong> you know what you need to track, want templates to do it.</p>
+            <p style="margin-bottom:10px;"><strong style="color:var(--ink);font-weight:600;">Scorecard (£99):</strong> you want a structured self-diagnostic across six operational domains.</p>
+            <p><strong style="color:var(--ink);font-weight:600;">Audit (from £950):</strong> you've already tried internal fixes and the problem keeps coming back.</p>
           </div>
         </div>
       </div>
@@ -194,34 +218,57 @@
   </div>
 </section>
 
-<div class="lead-section">
+<!-- ─── FREE GUIDE: direct download, no form ──────── -->
+<div class="guide-section">
   <div class="container">
-    <div class="lead-inner">
+    <div class="guide-inner">
       <div>
-        <p class="label">Free Resource</p>
-        <h2 class="section-headline">The 10 signs your warehouse has a process problem, not a people problem.</h2>
-        <p>A short PDF guide — the most common diagnostic signs found across PainKiller audits, and what they usually indicate. Free to download.</p>
+        <span class="guide-eyebrow">Free Diagnostic Guide · No. 01</span>
+        <h2 class="guide-headline">The 10 signs your warehouse has a <em>process problem</em>, not a people problem.</h2>
+        <p class="guide-sub">A 12-page diagnostic guide covering the most common signs found across PainKiller audits — and what they usually indicate when you look past the obvious cause. Built from real operational patterns, not consultancy theory.</p>
+        <ul class="guide-meta">
+          <li><strong>12 pages</strong> &nbsp;·&nbsp; PDF</li>
+          <li><strong>10 diagnostic signs</strong>, each with structural causes and related KPIs</li>
+          <li><strong>12–15 minute read</strong> &nbsp;·&nbsp; designed for ops directors and warehouse managers</li>
+          <li><strong>No email required</strong> — open and read it, or download to keep</li>
+        </ul>
+        <div class="guide-actions">
+          <a href="10-signs-warehouse-process-problem.pdf" class="guide-cta-primary" target="_blank" rel="noopener noreferrer">Open the guide →</a>
+          <a href="10-signs-warehouse-process-problem.pdf" class="guide-cta-secondary" download>Or download the PDF</a>
+        </div>
+        <p class="guide-note"><strong>If three or more of the signs apply to your operation,</strong> the <a href="scorecard.html" style="color:#FFB8AC;border-bottom:1px solid #2A2A28;">£99 Scorecard</a> gives you the same diagnostic methodology applied across 25 questions.</p>
       </div>
-      <div class="lead-form">
-        <div class="lead-form-title">Get the free guide</div>
-        <div class="lead-form-sub">Delivered immediately by email.</div>
-        <!-- Replace action with your email provider (Brevo, Mailchimp, etc.) form endpoint -->
-        <form action="#" method="POST">
-          <input class="lead-input" type="text" name="name" placeholder="Your name" required />
-          <input class="lead-input" type="email" name="email" placeholder="Work email address" required />
-          <button class="lead-submit" type="submit">Send me the guide →</button>
-        </form>
-        <p class="lead-privacy">No spam. Unsubscribe any time. Email only used to send the guide and occasional operational insights.</p>
+
+      <div class="guide-preview">
+        <span class="preview-corner-tag">PDF · No. 01</span>
+        <p class="preview-eyebrow">Diagnostic Guide · No. 01</p>
+        <h3 class="preview-title">The 10 signs your warehouse has a</h3>
+        <p class="preview-subtitle">process problem, not a people problem.</p>
+        <div class="preview-divider"></div>
+        <p class="preview-meta">
+          <strong>Audience</strong> Operations directors, warehouse managers<br>
+          <strong>Reading</strong> 12–15 minutes<br>
+          <strong>Format</strong> 12-page PDF · A4<br>
+          <strong>Built from</strong> Patterns across audits in retail, 3PL, FMCG and manufacturing
+        </p>
       </div>
     </div>
   </div>
 </div>
 
-<footer style="border-top:1px solid var(--rule);"><div class="container">
+<footer><div class="container">
   <div class="footer-inner">
     <div><div class="footer-logo">Pain<span>Killer</span> Consulting</div><p class="footer-tagline">Warehouse operations consultancy. UK-based.</p></div>
-    <nav class="footer-links"><a href="services.html">Services</a><a href="audit.html">On-Site Audit</a><a href="results.html">Results</a><a href="tools.html">Tools</a><a href="about.html">About</a><a href="book.html">Book a Call</a></nav>
-    <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a></div>
+    <nav class="footer-links">
+      <a href="services.html">Services</a>
+      <a href="audit.html">On-Site Audit</a>
+      <a href="scorecard.html">Scorecard</a>
+      <a href="results.html">Results</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="book.html">Book a Call</a>
+    </nav>
+    <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
   </div>
   <div class="footer-bottom"><span>© 2025 PainKiller Consulting Ltd</span><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div></div>
 </div></footer>
