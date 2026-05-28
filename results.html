@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Results — PainKiller Consulting</title>
-  <meta name="description" content="Real results from warehouse operations audits. 17% overtime reduction, 22% pick rate increase, 28% faster goods-in to shelf." />
+  <meta name="description" content="Real results from warehouse operations audits. From e-commerce fulfilment to high-throughput retail distribution. 15 years of UK operational track record behind the work." />
+  <link rel="canonical" href="https://painkillerconsulting.co.uk/results.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -15,6 +16,7 @@
     .container{max-width:1080px;margin:0 auto;padding:0 32px;}
     .label{font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;}
     .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);}
+    .section-headline em{font-style:italic;color:var(--red);}
     .btn-primary{display:inline-block;background:var(--ink);color:var(--paper);font-weight:600;font-size:0.9rem;padding:14px 28px;transition:background 0.2s;}
     .btn-primary:hover{background:#333330;}
     .btn-text{font-size:0.88rem;font-weight:500;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color 0.2s,border-color 0.2s;}
@@ -23,11 +25,11 @@
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
     .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
     .nav-logo span{color:var(--red);}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+    .nav-links{display:flex;align-items:center;gap:26px;list-style:none;}
     .nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.04em;color:var(--ink-mid);transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--ink);}
     .nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:8px 18px;font-weight:600!important;}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
     .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);}
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
     .mobile-menu.open{display:flex;}
@@ -38,27 +40,30 @@
     .alt-bg{background:var(--paper-mid);}
 
     .page-header{padding:64px 0 56px;border-bottom:1px solid var(--rule);}
-    .page-header p{font-size:1.08rem;color:var(--ink-mid);line-height:1.7;max-width:560px;margin-top:16px;}
+    .page-header p{font-size:1.08rem;color:var(--ink-mid);line-height:1.7;max-width:620px;margin-top:16px;}
 
-    /* STATS STRIP */
-    .stats-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule);}
-    .stat-cell{padding:48px 40px;border-right:1px solid var(--rule);}
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);}
+    .stat-cell{padding:44px 32px;border-right:1px solid var(--rule);}
     .stat-cell:last-child{border-right:none;}
-    .stat-number{font-family:var(--font-serif);font-size:4.5rem;font-weight:700;color:var(--red);line-height:1;letter-spacing:-0.03em;margin-bottom:8px;}
-    .stat-label{font-weight:600;font-size:1rem;color:var(--ink);margin-bottom:4px;}
-    .stat-context{font-size:0.78rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;}
+    .stat-number{font-family:var(--font-serif);font-size:3.4rem;font-weight:700;color:var(--red);line-height:1;letter-spacing:-0.03em;margin-bottom:8px;}
+    .stat-label{font-weight:600;font-size:0.95rem;color:var(--ink);margin-bottom:4px;}
+    .stat-context{font-size:0.74rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;}
 
-    /* CASE STUDY */
     .case-study{padding:88px 0;border-bottom:1px solid var(--rule);}
     .case-study.alt-bg{background:var(--paper-mid);}
     .case-header{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:56px;}
     .case-number{font-family:var(--font-serif);font-size:0.85rem;font-weight:700;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;}
     .case-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.02em;line-height:1.2;color:var(--ink);margin-bottom:16px;}
+    .case-headline em{font-style:italic;color:var(--red);}
     .case-meta{display:flex;gap:16px;flex-wrap:wrap;}
     .case-tag{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);background:var(--paper-dark);padding:4px 10px;}
+    .case-tag.named{background:var(--ink);color:var(--paper);letter-spacing:0.04em;}
     .case-result-badge{text-align:right;}
     .case-result-number{font-family:var(--font-serif);font-size:4rem;font-weight:700;color:var(--red);line-height:1;letter-spacing:-0.03em;}
-    .case-result-label{font-size:0.78rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;}
+    .case-result-number.dark{color:var(--ink);}
+    .case-result-number.bleed{color:var(--ink);}
+    .case-result-number.bleed::before{content:'−';color:var(--red);}
+    .case-result-label{font-size:0.78rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;max-width:200px;margin-left:auto;line-height:1.5;}
     .case-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;}
     .case-section-title{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
     .case-section p{font-size:0.92rem;color:var(--ink-mid);line-height:1.75;}
@@ -66,10 +71,31 @@
     .case-findings li{font-size:0.88rem;color:var(--ink-mid);padding:8px 0;border-bottom:1px solid var(--rule);display:flex;gap:10px;line-height:1.5;}
     .case-findings li::before{content:'—';color:var(--red);flex-shrink:0;font-weight:600;}
 
-    /* METHODOLOGY */
+    /* TRACK RECORD section */
+    .track-record{padding:96px 0;border-bottom:1px solid var(--rule);}
+    .track-intro{max-width:720px;margin-bottom:56px;}
+    .track-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .track-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .track-intro p{font-size:1.08rem;color:var(--ink-mid);line-height:1.75;margin-top:18px;}
+    .track-intro p strong{color:var(--ink);font-weight:600;}
+    .track-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+    .track-card{background:var(--paper);padding:36px 32px;display:flex;flex-direction:column;}
+    .track-card.featured{background:var(--ink);color:var(--paper);}
+    .track-card.featured .track-employer{color:#888;}
+    .track-card.featured .track-role{color:var(--paper);}
+    .track-card.featured .track-role em{color:#FFB8AC;}
+    .track-card.featured .track-body{color:#999;}
+    .track-card.featured .track-detail{color:#777;border-color:#2A2A28;}
+    .track-employer{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
+    .track-role{font-family:var(--font-serif);font-weight:700;font-size:1.35rem;color:var(--ink);letter-spacing:-0.015em;line-height:1.3;margin-bottom:14px;}
+    .track-role em{font-style:italic;color:var(--red);}
+    .track-body{font-size:0.93rem;color:var(--ink-mid);line-height:1.7;margin-bottom:16px;}
+    .track-detail{margin-top:auto;padding-top:16px;border-top:1px solid var(--rule);font-size:0.78rem;color:var(--ink-light);letter-spacing:0.02em;line-height:1.6;font-style:italic;}
+
     .methodology{padding:64px 0;background:var(--ink);color:var(--paper);}
     .methodology .label{color:#555;}
     .methodology .section-headline{color:var(--paper);margin-top:12px;margin-bottom:24px;}
+    .methodology .section-headline em{color:#FFB8AC;}
     .methodology p{font-size:0.95rem;color:#999;line-height:1.75;max-width:680px;margin-bottom:16px;}
 
     footer{padding:48px 0;border-top:1px solid var(--rule);}
@@ -88,52 +114,160 @@
 
     @media(max-width:900px){
       .nav-links{display:none;}.nav-hamburger{display:flex;}
-      .stats-strip{grid-template-columns:1fr;}
-      .stat-cell{border-right:none;border-bottom:1px solid var(--rule);padding:36px 24px;}
+      .stats-strip{grid-template-columns:1fr 1fr;}
+      .stat-cell{border-right:none;border-bottom:1px solid var(--rule);padding:32px 24px;}
+      .stat-cell:nth-child(2){border-right:none;}
       .case-header{grid-template-columns:1fr;}
       .case-result-badge{text-align:left;}
+      .case-result-label{margin-left:0;max-width:none;}
       .case-body{grid-template-columns:1fr;}
-      section,.case-study{padding:64px 0;}
+      .track-grid{grid-template-columns:1fr;}
+      section,.case-study,.track-record{padding:64px 0;}
     }
-    @media(max-width:600px){.container{padding:0 20px;}.page-header{padding:48px 0 40px;}}
+    @media(max-width:600px){
+      .container{padding:0 20px;}
+      .page-header{padding:48px 0 40px;}
+      .stats-strip{grid-template-columns:1fr;}
+      .stat-number{font-size:2.8rem;}
+    }
   </style>
 </head>
 <body>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="audit.html">Audit</a>
-  <a href="results.html">Results</a><a href="about.html">About</a><a href="book.html">Book a Call</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="audit.html">Audit</a>
+  <a href="scorecard.html">Scorecard</a>
+  <a href="results.html">Results</a>
+  <a href="tools.html">Tools</a>
+  <a href="about.html">About</a>
+  <a href="book.html">Book a Call</a>
 </div>
 <nav><div class="container"><div class="nav-inner">
   <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
   <ul class="nav-links">
-    <li><a href="services.html">Services</a></li><li><a href="audit.html">Audit</a></li>
-    <li><a href="results.html" class="active">Results</a></li><li><a href="tools.html">Tools</a></li>
-    <li><a href="about.html">About</a></li><li><a href="book.html" class="nav-cta">Book Free Call</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="audit.html">Audit</a></li>
+    <li><a href="scorecard.html">Scorecard</a></li>
+    <li><a href="results.html" class="active">Results</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="nav-cta">Book Free Call</a></li>
   </ul>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
 </div></div></nav>
 
 <div class="page-header">
   <div class="container">
     <p class="label">Results</p>
-    <h1 class="section-headline">What this work has delivered.</h1>
-    <p>Three case studies from warehouse operations audits. All anonymised at client request — sector, site size, and additional context are available for qualifying enquiries.</p>
+    <h1 class="section-headline">What this work has actually delivered.</h1>
+    <p>Five case studies from PainKiller engagements. Two are named with client permission; three are anonymised at client request. Backed by 15 years of senior operational experience across UK retail distribution, aviation, and FMCG — including a consultancy role at Lidl GB Head Office.</p>
   </div>
 </div>
 
 <div class="stats-strip">
-  <div class="stat-cell"><div class="stat-number">17%</div><div class="stat-label">Reduction in overtime</div><div class="stat-context">Multi-shift · ~80 staff</div></div>
-  <div class="stat-cell"><div class="stat-number">22%</div><div class="stat-label">Increase in pick rate</div><div class="stat-context">Retail fulfilment</div></div>
+  <div class="stat-cell"><div class="stat-number">40%</div><div class="stat-label">Operational improvement</div><div class="stat-context">E-commerce fulfilment · Maylr</div></div>
+  <div class="stat-cell"><div class="stat-number">17%</div><div class="stat-label">Overtime reduction</div><div class="stat-context">Multi-shift · ~80 staff</div></div>
+  <div class="stat-cell"><div class="stat-number">22%</div><div class="stat-label">Pick rate increase</div><div class="stat-context">Retail fulfilment</div></div>
   <div class="stat-cell"><div class="stat-number">28%</div><div class="stat-label">Faster goods-in to shelf</div><div class="stat-context">FMCG · high-throughput</div></div>
 </div>
 
-<!-- CASE 1 -->
+<!-- CASE 1 — MAYLR (named, success) -->
 <div class="case-study">
   <div class="container">
     <div class="case-header">
       <div>
-        <div class="case-number">Case Study 01</div>
+        <div class="case-number">Case Study 01 · Named client</div>
+        <h2 class="case-headline">Maylr <em>— from intake chaos to a perfect routine in weeks.</em></h2>
+        <div class="case-meta">
+          <span class="case-tag named">Maylr</span>
+          <span class="case-tag">E-commerce fulfilment</span>
+          <span class="case-tag">Influencer &amp; brand clients</span>
+          <span class="case-tag">Audit + brief follow-up call</span>
+        </div>
+      </div>
+      <div class="case-result-badge">
+        <div class="case-result-number">40%</div>
+        <div class="case-result-label">Operational improvement post-audit · backlog reduced to zero</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="case-section">
+        <div class="case-section-title">The Problem</div>
+        <p>Maylr provides fulfilment for influencer and brand e-commerce clients — a fast-growing segment with volatile intake patterns and high expectations on dispatch speed. The team had grown faster than its operational structure, and intake had become the bottleneck choking the rest of the operation.</p>
+        <p style="margin-top:12px;">The pattern was textbook: <em>no formal goods-in process, no shift routine, persistent backlog that the team was constantly fighting rather than preventing</em>. Effort was high. Output wasn't.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">What the Audit Found</div>
+        <ul class="case-findings">
+          <li>No structured intake process — every consignment was handled ad-hoc based on whoever was available</li>
+          <li>Backlog was being treated as the work, rather than a symptom of an unstructured process</li>
+          <li>No consistent shift routine, meaning the operation restarted from a different point every day</li>
+          <li>Team experience was good but compensating for the absence of a process, rather than executing against one</li>
+          <li>Equipment and zone allocation had grown organically without operational logic</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">What Changed</div>
+        <p>Maylr implemented the specific recommendations delivered in the post-audit brief — a structured intake process, a defined daily routine, and clear zone allocation. The team didn't need more capacity; it needed a system to operate within.</p>
+        <p style="margin-top:12px;"><strong style="color:var(--ink);font-weight:600;">Within weeks of implementation, the backlog was reduced to zero and the operation reported a ~40% improvement across throughput and routine consistency.</strong> No additional headcount. No capital investment.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE 2 — PRINT POST UK (named, the honest "didn't act" story) -->
+<div class="case-study alt-bg">
+  <div class="container">
+    <div class="case-header">
+      <div>
+        <div class="case-number">Case Study 02 · Named client · The cost of inaction</div>
+        <h2 class="case-headline">Print Post UK <em>— a clean-looking process bleeding £50k+ in six months.</em></h2>
+        <div class="case-meta">
+          <span class="case-tag named">Print Post UK · Harlow</span>
+          <span class="case-tag">Print fulfilment</span>
+          <span class="case-tag">Audit delivered</span>
+          <span class="case-tag">Findings not implemented</span>
+        </div>
+      </div>
+      <div class="case-result-badge">
+        <div class="case-result-number bleed">£50k</div>
+        <div class="case-result-label">Estimated cost of inaction in the six months following the audit</div>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="case-section">
+        <div class="case-section-title">The Problem</div>
+        <p>Print Post UK runs a fulfilment operation that <em>looked clean from the outside.</em> The floor was tidy, the team was experienced, the KPIs weren't catastrophic. But underneath that surface, the process was slow and structurally inefficient — and the cost of that was being absorbed quietly by the business, month after month.</p>
+        <p style="margin-top:12px;">The challenge wasn't visibility. It was complacency: the sense that because the operation wasn't on fire, nothing needed to change.</p>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">What the Audit Found</div>
+        <ul class="case-findings">
+          <li>Process steps were structurally too slow — but each step looked acceptable in isolation</li>
+          <li>Inefficiency was being absorbed by individual effort rather than fixed by process redesign</li>
+          <li>The "clean" appearance of the operation was masking sustained financial drag</li>
+          <li>Multiple quick wins identified — each individually small, cumulatively significant</li>
+          <li>No structural pressure or incentive internally to act on findings that didn't feel urgent</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <div class="case-section-title">What Didn't Change</div>
+        <p>The audit findings were delivered. The brief debrief took place. The recommendations were clear. <em>And then nothing changed.</em></p>
+        <p style="margin-top:12px;"><strong style="color:var(--ink);font-weight:600;">Six months later, a recalculation of the inefficiency identified at audit estimated more than £50,000 in cumulative operational losses</strong> — money that quietly left the business in the form of slow throughput, wasted effort, and the kind of process drag that nobody notices until somebody adds it up.</p>
+        <p style="margin-top:12px;font-style:italic;color:var(--ink);">The lesson, on this site, is honest: the audit identifies the problem. The value is realised when you act on it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE 3 — ANON (overtime reduction) -->
+<div class="case-study">
+  <div class="container">
+    <div class="case-header">
+      <div>
+        <div class="case-number">Case Study 03 · Anonymised at client request</div>
         <h2 class="case-headline">Overtime that wouldn't clear, regardless of headcount added.</h2>
         <div class="case-meta">
           <span class="case-tag">Multi-shift operation</span>
@@ -163,19 +297,19 @@
       </div>
       <div class="case-section">
         <div class="case-section-title">What Changed</div>
-        <p>Shift handover was restructured with a standardised log (one of the toolkit templates, adapted). Work allocation between shifts was rebalanced. The goods-out bottleneck was resolved with a sequencing change that required no capital expenditure.</p>
+        <p>Shift handover was restructured with a standardised log. Work allocation between shifts was rebalanced. The goods-out bottleneck was resolved with a sequencing change that required no capital expenditure.</p>
         <p style="margin-top:12px;">Within eight weeks, overtime had reduced by 17%. No additional headcount was required. The site manager described the root cause as "obvious in hindsight but completely invisible from inside it."</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CASE 2 -->
+<!-- CASE 4 — ANON (pick rate) -->
 <div class="case-study alt-bg">
   <div class="container">
     <div class="case-header">
       <div>
-        <div class="case-number">Case Study 02</div>
+        <div class="case-number">Case Study 04 · Anonymised at client request</div>
         <h2 class="case-headline">A pick rate stuck at the same level for eighteen months despite multiple improvement attempts.</h2>
         <div class="case-meta">
           <span class="case-tag">E-commerce fulfilment</span>
@@ -212,12 +346,12 @@
   </div>
 </div>
 
-<!-- CASE 3 -->
+<!-- CASE 5 — ANON (goods-in / FMCG) -->
 <div class="case-study">
   <div class="container">
     <div class="case-header">
       <div>
-        <div class="case-number">Case Study 03</div>
+        <div class="case-number">Case Study 05 · Anonymised at client request</div>
         <h2 class="case-headline">A goods-in backlog creating drag across the whole operation.</h2>
         <div class="case-meta">
           <span class="case-tag">FMCG</span>
@@ -254,13 +388,54 @@
   </div>
 </div>
 
+<!-- TRACK RECORD — real career experience, framed correctly as background not as PainKiller clients -->
+<section class="track-record alt-bg">
+  <div class="container">
+    <div class="track-intro">
+      <span class="track-eyebrow">The operational track record behind the work</span>
+      <h2 class="section-headline">15 years inside UK warehouse operations. <em>The experience behind every PainKiller engagement.</em></h2>
+      <p>The PainKiller case studies above are real client engagements. The depth behind them is 15 years of senior operational experience across some of the most demanding environments in UK logistics — <strong>not as a consultant observing from the outside, but as the person responsible for the numbers.</strong> The four anchors below are the most significant.</p>
+    </div>
+
+    <div class="track-grid">
+      <div class="track-card featured">
+        <div class="track-employer">2020 · Aldi · Regional Distribution Centre</div>
+        <h3 class="track-role">Operations leadership <em>through Covid.</em> 110 supermarkets supplied. 16 hours a day.</h3>
+        <p class="track-body">Led an Aldi RDC through the Covid-19 lockdown era — supplying 110 supermarkets across a 16-hour operating window, when demand patterns broke overnight and staff sickness took out shifts at a time. The most volatile period in UK retail logistics in a generation. The kind of stress-test most consultants have never been near.</p>
+        <div class="track-detail">Role: Regional Distribution Centre Operations · Scale: 110 supermarkets · Multi-shift · 16-hour operating window</div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-employer">Lidl GB · Head Office</div>
+        <h3 class="track-role">Senior Warehouse Operations Consultant. <em>Project work across 14 RDCs.</em></h3>
+        <p class="track-body">Worked at Lidl GB Head Office as a Senior Warehouse Operations Consultant, leading project work across the 14 Lidl regional distribution centres. Most warehouse consultants have never set foot in one RDC at this scale; working across 14 teaches you to look past local explanations and find the structural ones — which is exactly the diagnostic mindset PainKiller engagements are built on.</p>
+        <div class="track-detail">Role: Senior Warehouse Operations Consultant · Function: Cross-RDC operational improvement projects · Scale: 14 regional distribution centres</div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-employer">British Airways · Ground Operations</div>
+        <h3 class="track-role">Aviation operational experience.</h3>
+        <p class="track-body">Operational experience at British Airways across ground operations — one of the few environments in UK logistics where the cost of process drag is measured in immediate, visible operational impact. The discipline that aviation operations demand of process design transfers directly to warehouse operations under volume pressure.</p>
+        <div class="track-detail">Function: Ground operations · Sector: Aviation</div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-employer">WHSmith · Distribution</div>
+        <h3 class="track-role">Retail distribution operations.</h3>
+        <p class="track-body">Operational experience at WHSmith covering retail distribution. Retail distribution at scale combines high SKU variety, tight delivery windows, and persistent margin pressure — the same triangle of constraints that defines almost every UK warehouse operation today, regardless of sector.</p>
+        <div class="track-detail">Function: Distribution operations · Sector: Retail</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="methodology">
   <div class="container">
     <p class="label">A note on these results</p>
-    <h2 class="section-headline">On anonymisation and context.</h2>
-    <p>All three case studies are anonymised at client request. The sector, site size, and outcome figures are accurate. The specific operational details have been described at a level of generality that prevents identification.</p>
-    <p>For qualifying enquiries — typically from operations managers or MDs considering an audit — additional context including sector, approximate geography, and site type can be provided under a brief NDA.</p>
-    <p>These results are not guaranteed to be replicated. Every warehouse operation is different. What the audit guarantees is that if savings aren't identified, you don't pay for it.</p>
+    <h2 class="section-headline">On named clients, anonymisation, and honest results.</h2>
+    <p><strong style="color:var(--paper);font-weight:600;">Maylr and Print Post UK</strong> are named with permission. The other three case studies are anonymised at client request — the sector, site size, and outcome figures are accurate; specific operational details have been described at a level that prevents identification. For qualifying enquiries, additional context can be provided under a brief NDA.</p>
+    <p><strong style="color:var(--paper);font-weight:600;">Print Post UK is included deliberately</strong> — to make clear that the value of an audit isn't the audit itself, it's whether the operator acts on it. The audit identifies what's wrong. The operator's willingness to change what they're doing determines whether it's worth more than the fee.</p>
+    <p>Results are not guaranteed to replicate. Every operation is different. What the audit does guarantee is that if savings aren't identified, you don't pay for the second instalment.</p>
   </div>
 </div>
 
@@ -268,19 +443,28 @@
   <div class="container">
     <p class="label">Get Started</p>
     <h2 class="section-headline" style="margin-bottom:20px;">Find out what your operation is actually costing you.</h2>
-    <p style="font-size:1.05rem;color:var(--ink-mid);line-height:1.7;max-width:500px;margin-bottom:36px;">Book a free 20-minute diagnostic call. No commitment, no pitch — just a direct conversation about whether the audit makes sense for your site.</p>
+    <p style="font-size:1.05rem;color:var(--ink-mid);line-height:1.7;max-width:560px;margin-bottom:36px;">Two ways to start. Take the <a href="scorecard.html" style="color:var(--ink);border-bottom:1px solid var(--rule);">£99 Scorecard</a> for a structured 25-question self-diagnostic across six operational health domains — instant 10-page PDF report. Or book a free 20-minute diagnostic call to talk it through.</p>
     <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
       <a href="book.html" class="btn-primary">Book Free Diagnostic Call</a>
-      <a href="audit.html" class="btn-text">See how the audit works →</a>
+      <a href="scorecard.html" class="btn-text">Or take the Scorecard — £99 →</a>
     </div>
+    <p style="font-size:0.85rem;color:var(--ink-light);margin-top:24px;"><strong style="color:var(--ink-mid);font-weight:500;">Ready for the full audit?</strong> <a href="audit-booking.html" style="color:var(--ink-mid);border-bottom:1px solid var(--rule);">Submit a booking enquiry directly →</a></p>
   </div>
 </section>
 
 <footer><div class="container">
   <div class="footer-inner">
     <div><div class="footer-logo">Pain<span>Killer</span> Consulting</div><p class="footer-tagline">Warehouse operations consultancy. UK-based.</p></div>
-    <nav class="footer-links"><a href="services.html">Services</a><a href="audit.html">On-Site Audit</a><a href="results.html">Results</a><a href="tools.html">Tools</a><a href="about.html">About</a><a href="book.html">Book a Call</a></nav>
-    <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank">LinkedIn</a></div>
+    <nav class="footer-links">
+      <a href="services.html">Services</a>
+      <a href="audit.html">On-Site Audit</a>
+      <a href="scorecard.html">Scorecard</a>
+      <a href="results.html">Results</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="book.html">Book a Call</a>
+    </nav>
+    <div class="footer-contact"><a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a><br>0333 339 0617<br><a href="https://www.linkedin.com/company/painkillerconsulting" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
   </div>
   <div class="footer-bottom"><span>© 2025 PainKiller Consulting Ltd</span><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div></div>
 </div></footer>
