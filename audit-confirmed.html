@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Confirmed — PainKiller Consulting</title>
+  <meta name="description" content="Your on-site audit is booked. Here's what happens next." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;
+      --paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;
+      --rule:#DDDDD6;--red:#C0392B;--green:#2E7D32;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1080px;margin:0 auto;padding:0 32px;}
+    .container-narrow{max-width:780px;margin:0 auto;padding:0 32px;}
+
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-progress{font-size:0.82rem;color:var(--ink-mid);font-weight:500;}
+
+    /* HERO */
+    .hero{padding:72px 0 56px;border-bottom:1px solid var(--rule);text-align:center;}
+    .check-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border:2px solid var(--green);border-radius:50%;color:var(--green);font-size:1.8rem;font-weight:700;margin-bottom:28px;}
+    .hero-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+    .hero-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2.2rem,4.5vw,3.4rem);letter-spacing:-0.025em;line-height:1.12;margin-bottom:20px;}
+    .hero-headline em{font-style:italic;color:var(--red);}
+    .hero-sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;max-width:640px;margin:0 auto;}
+
+    /* PROGRESS */
+    .progress-strip{padding:32px 0;background:var(--paper-mid);border-bottom:1px solid var(--rule);}
+    .progress-inner{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;}
+    .progress-step{display:flex;align-items:center;gap:10px;padding:0 12px;}
+    .progress-dot{width:8px;height:8px;border-radius:50%;background:var(--paper-dark);}
+    .progress-dot.done{background:var(--green);}
+    .progress-dot.current{background:var(--red);box-shadow:0 0 0 4px rgba(192,57,43,0.15);}
+    .progress-label{font-size:0.78rem;font-weight:500;color:var(--ink-light);letter-spacing:0.04em;}
+    .progress-label.current{color:var(--ink);font-weight:600;}
+    .progress-line{width:32px;height:1px;background:var(--rule);}
+
+    /* SECTIONS */
+    section{padding:80px 0;border-bottom:1px solid var(--rule);}
+    .alt-bg{background:var(--paper-mid);}
+    .section-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
+    .section-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
+    .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.6rem);letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;}
+    .section-sub{font-size:1rem;color:var(--ink-mid);line-height:1.7;margin-bottom:36px;max-width:640px;}
+
+    /* PREP CHECKLIST */
+    .checklist{border-top:1px solid var(--rule);}
+    .checklist-item{padding:24px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start;}
+    .checklist-icon{width:32px;height:32px;border:1px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:0.95rem;color:var(--ink);}
+    .checklist-content h4{font-family:var(--font-serif);font-weight:700;font-size:1.12rem;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em;}
+    .checklist-content p{font-size:0.94rem;color:var(--ink-mid);line-height:1.65;}
+
+    /* WHAT HAPPENS ON THE DAY */
+    .day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:40px;}
+    .day-block{background:var(--paper);padding:32px 28px;}
+    .day-time{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--red);letter-spacing:-0.02em;margin-bottom:10px;line-height:1;}
+    .day-title{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em;}
+    .day-body{font-size:0.9rem;color:var(--ink-mid);line-height:1.65;}
+
+    /* AFTER THE AUDIT */
+    .after-block{background:var(--ink);color:var(--paper);padding:48px 40px;margin-top:32px;}
+    .after-block h3{font-family:var(--font-serif);font-weight:700;font-size:1.6rem;margin-bottom:14px;color:var(--paper);letter-spacing:-0.02em;}
+    .after-block p{font-size:0.95rem;color:#CCCCC6;line-height:1.7;margin-bottom:14px;}
+    .after-block p strong{color:var(--paper);font-weight:600;}
+    .after-block .small{font-size:0.82rem;color:#999992;font-style:italic;margin-top:20px;padding-top:20px;border-top:1px solid #333330;}
+
+    /* SUPPORT */
+    .support{padding:64px 0;text-align:center;}
+    .support-text{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;}
+    .support-text a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--rule);padding-bottom:1px;}
+
+    footer{padding:48px 0;border-top:1px solid var(--rule);text-align:center;}
+    .footer-text{font-size:0.8rem;color:var(--ink-light);line-height:1.7;}
+    .footer-text a{color:var(--ink-mid);border-bottom:1px solid var(--rule);}
+
+    @media(max-width:700px){
+      .day-grid{grid-template-columns:1fr;}
+      section{padding:60px 0;}
+      .progress-inner{gap:0;}
+      .progress-line{width:20px;}
+      .progress-label{display:none;}
+    }
+    @media(max-width:600px){
+      .container,.container-narrow{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .checklist-item{grid-template-columns:36px 1fr;gap:14px;}
+      .checklist-icon{width:28px;height:28px;font-size:0.85rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <div class="nav-progress">On-Site Audit · Confirmed</div>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section class="hero" style="padding-bottom:48px;">
+  <div class="container-narrow">
+    <div class="check-icon">✓</div>
+    <p class="hero-eyebrow">Deposit received · Booking confirmed</p>
+    <h1 class="hero-headline">Your On-Site Audit is <em>confirmed.</em></h1>
+    <p class="hero-sub">Thank you. Your £475 deposit has been received and your audit date is now locked in. You'll receive a separate confirmation email from me within 24 hours with the agreed date, my arrival time, and any final coordination details.</p>
+  </div>
+</section>
+
+<!-- ─── PROGRESS STRIP ─────────────────────────────────── -->
+<div class="progress-strip">
+  <div class="container">
+    <div class="progress-inner">
+      <div class="progress-step">
+        <div class="progress-dot done"></div>
+        <span class="progress-label">Enquiry submitted</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="progress-dot done"></div>
+        <span class="progress-label">Date confirmed</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="progress-dot done"></div>
+        <span class="progress-label">Deposit paid</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="progress-dot current"></div>
+        <span class="progress-label current">Audit day</span>
+      </div>
+      <div class="progress-line"></div>
+      <div class="progress-step">
+        <div class="progress-dot"></div>
+        <span class="progress-label">Report delivery</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── BEFORE THE AUDIT — CHECKLIST ─────────────────── -->
+<section>
+  <div class="container-narrow">
+    <span class="section-eyebrow">Before the audit</span>
+    <h2 class="section-headline">Five things to have ready before I arrive.</h2>
+    <p class="section-sub">None of these are blockers — if any aren't possible, the audit still happens. But the more of this you can have lined up, the more we'll get done on the day.</p>
+
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="checklist-icon">1</div>
+        <div class="checklist-content">
+          <h4>Confirmed access</h4>
+          <p>Reception/security informed I'm arriving. Visitor pass arranged. Hi-vis available if your site requires it. If there's a site induction, scheduled for first thing.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-icon">2</div>
+        <div class="checklist-content">
+          <h4>Key people on-site</h4>
+          <p>Whoever you said would be available in the enquiry form — operations director or warehouse manager, a shift supervisor, ideally a senior operative. I'll need 20–30 minutes with each, ideally during their normal shift so I can see them in context.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-icon">3</div>
+        <div class="checklist-content">
+          <h4>Operational data</h4>
+          <p>If accessible: the last 3 months of pick rate, labour cost, overtime, and goods-in throughput. Doesn't need to be pretty — raw exports are fine. I'll review during quiet moments on the day rather than expecting a formal report.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-icon">4</div>
+        <div class="checklist-content">
+          <h4>Site documentation (optional)</h4>
+          <p>Any process maps, SOPs, layout drawings, or recent improvement-project reports. Not essential, but they accelerate the diagnosis and let me ask sharper questions of your team.</p>
+        </div>
+      </div>
+      <div class="checklist-item">
+        <div class="checklist-icon">5</div>
+        <div class="checklist-content">
+          <h4>An honest brief</h4>
+          <p>Before the audit, I'll send a short call to confirm logistics and ask for context I won't get on the day — political sensitivities, who's struggling, what's been tried, what's off-limits. Honesty here directly improves what I can find.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT HAPPENS ON THE DAY ───────────────────────── -->
+<section class="alt-bg">
+  <div class="container-narrow">
+    <span class="section-eyebrow">On the day</span>
+    <h2 class="section-headline">A typical audit day, in four blocks.</h2>
+    <p class="section-sub">Most audits follow this shape. Exact timing varies by site — multi-shift operations sometimes run longer to capture both shifts; single-shift sites tend to compress.</p>
+
+    <div class="day-grid">
+      <div class="day-block">
+        <div class="day-time">08:00 – 10:00</div>
+        <h4 class="day-title">Floor walk &amp; observation</h4>
+        <p class="day-body">Start on the floor before any meetings. Watch how the day actually begins. Note: shift handover quality, putaway flow, picker behaviour, supervisor patterns, KPI board activity. Most of the audit's value comes from the first two hours.</p>
+      </div>
+      <div class="day-block">
+        <div class="day-time">10:00 – 13:00</div>
+        <h4 class="day-title">Interviews &amp; process mapping</h4>
+        <p class="day-body">One-on-one conversations with each of the key people identified in the enquiry. 20–30 minutes each. Process mapping the critical flows: goods-in, putaway, picking, despatch, returns. Document what's actually done, not what the SOP says.</p>
+      </div>
+      <div class="day-block">
+        <div class="day-time">13:00 – 16:00</div>
+        <h4 class="day-title">Data review &amp; cross-checking</h4>
+        <p class="day-body">Sit with your operational data. Validate observations against the numbers. Test hypotheses: if I think handover is broken, does the data show the second shift's slow start? If I think slotting drifted, does the SKU velocity report support it?</p>
+      </div>
+      <div class="day-block">
+        <div class="day-time">16:00 – 17:00</div>
+        <h4 class="day-title">Verbal debrief</h4>
+        <p class="day-body">One-hour debrief with you (and anyone you want present). High-level findings, top three risk areas, things I want to verify in writing. Not the final report — but enough to know if you'll find the written findings useful, and what you should brief your team on tomorrow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AFTER THE AUDIT ──────────────────────────────── -->
+<section>
+  <div class="container-narrow">
+    <span class="section-eyebrow">After the audit</span>
+    <h2 class="section-headline">Within 7 working days, you'll have your written report.</h2>
+    <p class="section-sub">The written findings report goes deeper than the verbal debrief — every observation is documented with evidence, severity rating, and recommended action. Quick wins are flagged separately so your team can begin while strategic recommendations are scoped.</p>
+
+    <div class="after-block">
+      <h3>Balance payment on report delivery</h3>
+      <p>When your written report is ready, I'll send the report PDF and a Stripe invoice for the remaining <strong>£475</strong> in the same email. You'll be able to review the report immediately — the balance invoice is for your records and payment within 7 days of receipt.</p>
+      <p>The balance payment isn't conditional. It's not pay-only-if-you-like-it. The audit is a complete piece of work; the report is its deliverable. <strong>If something has gone wrong with the process and you genuinely don't think the audit was worth the fee, email me before paying and we'll talk it through.</strong> In 15 years that conversation has happened twice.</p>
+      <p class="small">A formal invoice with VAT (if applicable) and company details is generated by Stripe automatically and available on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SUPPORT ──────────────────────────────────────── -->
+<section class="support">
+  <div class="container-narrow">
+    <p class="support-text">Questions before the audit? Email <a href="mailto:info@painkillerconsulting.co.uk?subject=Audit%20preparation">info@painkillerconsulting.co.uk</a> or call <a href="tel:03333390617">0333 339 0617</a>. I'll be in touch within 24 hours to confirm the agreed date and run through the pre-call.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container-narrow">
+    <p class="footer-text">PainKiller Consulting Ltd · <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a> · <a href="tel:03333390617">0333 339 0617</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Report — Payment Received | PainKiller Consulting</title>
+  <meta name="description" content="Balance payment received. Your audit report has been emailed to you." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#1A1A18;--ink-mid:#4A4A46;--ink-light:#8A8A84;
+      --paper:#FAFAF7;--paper-mid:#F2F2ED;--paper-dark:#E8E8E2;
+      --rule:#DDDDD6;--red:#C0392B;--green:#2E7D32;
+      --font-serif:'Playfair Display',Georgia,serif;
+      --font-sans:'DM Sans',system-ui,sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+    a{color:inherit;text-decoration:none;}
+    .container-narrow{max-width:720px;margin:0 auto;padding:0 32px;}
+
+    nav{background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px;margin:0 auto;padding:0 32px;}
+    .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
+    .nav-logo span{color:var(--red);}
+    .nav-progress{font-size:0.82rem;color:var(--ink-mid);font-weight:500;}
+
+    .main{flex:1;display:flex;align-items:center;justify-content:center;padding:64px 0;}
+    .hero-content{text-align:center;}
+    .check-icon{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border:2px solid var(--green);border-radius:50%;color:var(--green);font-size:2rem;font-weight:700;margin-bottom:32px;}
+    .hero-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+    .hero-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-0.025em;line-height:1.15;margin-bottom:22px;}
+    .hero-headline em{font-style:italic;color:var(--red);}
+    .hero-sub{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;}
+
+    .info-card{background:var(--paper-mid);border:1px solid var(--rule);padding:36px 32px;margin-bottom:40px;text-align:left;max-width:560px;margin-left:auto;margin-right:auto;}
+    .info-label{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+    .info-card h3{font-family:var(--font-serif);font-weight:700;font-size:1.3rem;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em;}
+    .info-card p{font-size:0.95rem;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;}
+    .info-card p:last-child{margin-bottom:0;}
+    .info-card strong{color:var(--ink);font-weight:600;}
+
+    .next-section{background:var(--ink);color:var(--paper);padding:40px 32px;margin-top:32px;text-align:left;max-width:560px;margin-left:auto;margin-right:auto;}
+    .next-section h4{font-family:var(--font-serif);font-weight:700;font-size:1.2rem;margin-bottom:12px;color:var(--paper);letter-spacing:-0.01em;}
+    .next-section p{font-size:0.93rem;color:#CCCCC6;line-height:1.7;margin-bottom:14px;}
+    .next-section p:last-child{margin-bottom:0;}
+    .next-section a{color:#FFB8AC;border-bottom:1px solid #66332D;padding-bottom:1px;font-weight:500;}
+    .next-section a:hover{color:#FFD4CC;border-color:#FFB8AC;}
+
+    .support-text{font-size:0.9rem;color:var(--ink-light);line-height:1.7;margin-top:40px;font-style:italic;}
+    .support-text a{color:var(--ink-mid);border-bottom:1px solid var(--rule);font-style:normal;}
+
+    footer{padding:32px 0;border-top:1px solid var(--rule);text-align:center;background:var(--paper-mid);}
+    .footer-text{font-size:0.8rem;color:var(--ink-light);line-height:1.7;}
+    .footer-text a{color:var(--ink-mid);}
+
+    @media(max-width:600px){
+      .container-narrow{padding:0 20px;}
+      .nav-inner{padding:0 20px;}
+      .info-card,.next-section{padding:28px 24px;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pain<span>Killer</span> Consulting</a>
+    <div class="nav-progress">On-Site Audit · Complete</div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="container-narrow">
+    <div class="hero-content">
+      <div class="check-icon">✓</div>
+      <p class="hero-eyebrow">Balance payment received</p>
+      <h1 class="hero-headline">Thank you. Your audit is <em>complete.</em></h1>
+      <p class="hero-sub">Your £475 balance payment has been received. Your written findings report should already be in your inbox — if not, it'll arrive within the next few minutes.</p>
+
+      <div class="info-card">
+        <div class="info-label">Your report</div>
+        <h3>Where to find it</h3>
+        <p>Your audit report PDF was sent directly to your email address, attached to the same email that included the balance invoice. If you can't find it, check your spam folder and look for an email from <strong>info@painkillerconsulting.co.uk</strong> with subject line beginning <em>"Your audit report —"</em>.</p>
+        <p>Still can't find it? Email me back at <strong>info@painkillerconsulting.co.uk</strong> and I'll resend within an hour.</p>
+      </div>
+
+      <div class="next-section">
+        <h4>What to do with the report</h4>
+        <p>The findings are organised by severity and ownership — quick wins, structural recommendations, and strategic items. The action plan is yours to execute internally; that's the design.</p>
+        <p>If you'd like help implementing any of it, the natural next step is the <a href="services.html">Operational Health Retainer</a> (£650/month) for ongoing implementation support, or a <a href="services.html">Transformation Programme</a> if the findings warrant a more comprehensive intervention. Both can begin with a follow-up call rather than a new audit — I already know your operation.</p>
+      </div>
+
+      <p class="support-text">For any questions about the findings, the methodology, or what to do next — just reply to the email I sent with the report, or book a follow-up call via <a href="book.html">painkillerconsulting.co.uk/book</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container-narrow">
+    <p class="footer-text">PainKiller Consulting Ltd · <a href="mailto:info@painkillerconsulting.co.uk">info@painkillerconsulting.co.uk</a> · <a href="tel:03333390617">0333 339 0617</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
