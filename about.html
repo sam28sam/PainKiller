@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Sam Mustatea, Founder | PainKiller Consulting</title>
-  <meta name="description" content="PainKiller Consulting was founded by Sam Mustatea — 15 years inside UK warehouse operations across Aldi, Lidl, British Airways, and WHSmith. Not a consultant who's read about logistics. Someone who's run it." />
+  <title>About — Sam, Founder | PainKiller Consulting</title>
+  <meta name="description" content="PainKiller Consulting was founded by Sam — 15 years inside UK warehouse operations across Aldi, Lidl, British Airways, and WHSmith." />
   <link rel="canonical" href="https://painkillerconsulting.co.uk/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,7 +15,6 @@
     a{color:inherit;text-decoration:none;}
     img{display:block;max-width:100%;}
     .container{max-width:1080px;margin:0 auto;padding:0 32px;}
-    .container-narrow{max-width:780px;margin:0 auto;padding:0 32px;}
     .label{font-size:0.74rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px;}
     .section-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.18;letter-spacing:-0.02em;color:var(--ink);}
     .section-headline em{font-style:italic;color:var(--red);}
@@ -24,7 +23,6 @@
     .btn-text{font-size:0.9rem;font-weight:500;color:var(--ink-mid);border-bottom:1px solid var(--rule);padding-bottom:2px;}
     .btn-text:hover{color:var(--ink);border-color:var(--ink);}
 
-    /* NAV */
     nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
     .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.15rem;color:var(--ink);}
@@ -38,10 +36,8 @@
     .mobile-menu{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;flex-direction:column;align-items:flex-start;justify-content:center;padding:48px 32px;gap:28px;}
     .mobile-menu.open{display:flex;}
     .mobile-menu a{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--ink);}
-    .mobile-menu a:hover{color:var(--red);}
     .mobile-close{position:absolute;top:20px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--ink-mid);}
 
-    /* HERO — big statement page header */
     .hero{padding:96px 0 88px;border-bottom:1px solid var(--rule);}
     .hero-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center;}
     .hero-eyebrow{display:inline-block;font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:24px;}
@@ -51,21 +47,20 @@
     .hero-sub{font-size:1.12rem;color:var(--ink-mid);line-height:1.75;margin-bottom:0;}
     .hero-portrait{position:relative;}
     .hero-portrait-frame{position:relative;aspect-ratio:4/5;background:var(--paper-mid);overflow:hidden;border:1px solid var(--rule);}
-    .hero-portrait-frame img{width:100%;height:100%;object-fit:cover;}
-    .hero-portrait-frame::before{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,0.05);pointer-events:none;z-index:1;}
-    .hero-portrait-caption{margin-top:18px;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);text-align:center;}
-    .hero-portrait-caption strong{color:var(--ink-mid);font-weight:600;letter-spacing:0.04em;text-transform:none;font-size:0.92rem;display:block;margin-bottom:4px;font-family:var(--font-serif);font-style:italic;}
+    .hero-portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
+    .hero-portrait-caption{margin-top:18px;text-align:center;}
+    .hero-portrait-name{font-family:var(--font-serif);font-style:italic;font-weight:600;color:var(--ink-mid);font-size:0.95rem;margin-bottom:4px;}
+    .hero-portrait-role{font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);}
 
-    /* CREDIBILITY BAR — the brand strip */
     .credibility{padding:48px 0;border-bottom:1px solid var(--rule);background:var(--paper-mid);}
-    .credibility-label{text-align:center;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:24px;}
-    .credibility-row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;}
-    .credibility-name{font-family:var(--font-serif);font-weight:700;font-size:1.05rem;color:var(--ink);letter-spacing:0.02em;}
-    .credibility-divider{width:1px;height:18px;background:var(--rule);}
+    .credibility-label{text-align:center;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:28px;}
+    .credibility-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;max-width:1000px;margin:0 auto;}
+    .credibility-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--ink);letter-spacing:0.01em;flex:1;text-align:center;min-width:0;}
+    .credibility-divider{width:1px;height:18px;background:var(--rule);flex-shrink:0;}
 
-    /* THE "WHAT?!" SECTION — career anchors */
     section{padding:96px 0;border-bottom:1px solid var(--rule);}
     .alt-bg{background:var(--paper-mid);}
+
     .anchor-section{padding:104px 0;}
     .anchor-intro{max-width:680px;margin-bottom:64px;}
     .anchor-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
@@ -79,22 +74,21 @@
     .anchor-card.featured .anchor-headline{color:var(--paper);}
     .anchor-card.featured .anchor-headline em{color:#FFB8AC;}
     .anchor-card.featured .anchor-body{color:#999;}
-    .anchor-card.featured .anchor-detail{color:#777;border-color:#2A2A28;}
-    .anchor-label{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:14px;}
-    .anchor-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.6rem,2.2vw,2rem);line-height:1.22;letter-spacing:-0.02em;margin-bottom:18px;color:var(--ink);}
-    .anchor-headline em{font-style:italic;color:var(--red);}
-    .anchor-body{font-size:0.98rem;color:var(--ink-mid);line-height:1.75;margin-bottom:22px;}
-    .anchor-body strong{color:var(--ink);font-weight:600;}
     .anchor-card.featured .anchor-body strong{color:var(--paper);}
-    .anchor-detail{margin-top:auto;padding-top:22px;border-top:1px solid var(--rule);font-size:0.84rem;color:var(--ink-light);letter-spacing:0.02em;line-height:1.6;font-style:italic;}
+    .anchor-card.featured .anchor-detail{color:#777;border-color:#2A2A28;}
+    .anchor-label{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:18px;}
+    .anchor-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(1.5rem,2vw,1.85rem);line-height:1.25;letter-spacing:-0.015em;margin-bottom:22px;color:var(--ink);}
+    .anchor-headline em{font-style:italic;color:var(--red);}
+    .anchor-body{font-size:0.96rem;color:var(--ink-mid);line-height:1.75;margin-bottom:18px;}
+    .anchor-body:last-of-type{margin-bottom:22px;}
+    .anchor-body strong{color:var(--ink);font-weight:600;}
+    .anchor-detail{margin-top:auto;padding-top:22px;border-top:1px solid var(--rule);font-size:0.82rem;color:var(--ink-light);letter-spacing:0.02em;line-height:1.65;font-style:italic;}
 
-    /* THE STORY — long-form narrative */
     .story-inner{display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:start;}
     .story-body p{font-size:1rem;color:var(--ink-mid);line-height:1.85;margin-bottom:22px;}
     .story-body p:last-child{margin-bottom:0;}
     .story-body p strong{color:var(--ink);font-weight:600;}
     .story-body p em{color:var(--red);font-style:italic;font-weight:500;}
-    .story-sidebar{}
     .sidebar-block{padding:28px;border:1px solid var(--rule);background:var(--paper);margin-bottom:16px;}
     .sidebar-block-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
     .sidebar-list{list-style:none;}
@@ -102,28 +96,26 @@
     .sidebar-list li:last-child{border-bottom:none;}
     .sidebar-list li::before{content:'→';color:var(--red);flex-shrink:0;font-weight:600;}
 
-    /* TEAM / NETWORK SECTION */
     .team-section{background:var(--paper-mid);}
     .team-eyebrow{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:18px;}
     .team-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red);vertical-align:middle;margin-right:10px;}
     .team-intro{max-width:720px;margin-bottom:56px;}
     .team-intro p{font-size:1.08rem;color:var(--ink-mid);line-height:1.75;margin-top:18px;}
+    .team-intro p strong{color:var(--ink);font-weight:600;}
     .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
-    .team-card{background:var(--paper);padding:36px 32px;display:flex;flex-direction:column;gap:14px;}
-    .team-role{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);line-height:1;}
-    .team-title{font-family:var(--font-serif);font-weight:700;font-size:1.25rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.3;}
-    .team-body{font-size:0.92rem;color:var(--ink-mid);line-height:1.7;}
-    .team-note{margin-top:48px;padding:24px 28px;border-left:3px solid var(--red);background:var(--paper);font-size:0.92rem;color:var(--ink-mid);line-height:1.7;font-style:italic;}
-    .team-note strong{color:var(--ink);font-weight:600;font-style:normal;}
+    .team-card{background:var(--paper);padding:40px 32px;display:flex;flex-direction:column;}
+    .team-pill{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--paper-mid);font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--red);letter-spacing:-0.02em;margin-bottom:22px;}
+    .team-role{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);line-height:1;margin-bottom:12px;}
+    .team-title{font-family:var(--font-serif);font-weight:700;font-size:1.2rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.3;margin-bottom:14px;}
+    .team-body{font-size:0.92rem;color:var(--ink-mid);line-height:1.75;}
+    .team-body strong{color:var(--ink);font-weight:600;}
 
-    /* PRINCIPLES */
     .principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:48px;}
     .principle{background:var(--paper);padding:40px 32px;}
     .principle-num{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;color:var(--paper-dark);line-height:1;margin-bottom:24px;letter-spacing:-0.04em;}
     .principle-title{font-family:var(--font-serif);font-weight:700;font-size:1.2rem;color:var(--ink);margin-bottom:14px;letter-spacing:-0.01em;line-height:1.3;}
     .principle-body{font-size:0.92rem;color:var(--ink-mid);line-height:1.7;}
 
-    /* INDEPENDENCE */
     .independence{background:var(--ink);}
     .independence .label{color:#666;}
     .independence .section-headline{color:var(--paper);margin-top:12px;margin-bottom:24px;}
@@ -134,14 +126,14 @@
     .independence-list li{padding:14px 0;border-bottom:1px solid #2A2A28;font-size:0.92rem;color:#999;display:flex;gap:14px;line-height:1.55;}
     .independence-list li::before{content:'✓';color:var(--red);flex-shrink:0;font-weight:700;}
 
-    /* CTA */
     .cta-section{padding:120px 0;border-bottom:none;}
-    .cta-inner{max-width:680px;}
-    .cta-inner .section-headline{margin-top:12px;margin-bottom:22px;}
+    .cta-inner{max-width:720px;}
+    .cta-inner .label{margin-bottom:18px;}
+    .cta-headline{font-family:var(--font-serif);font-weight:700;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.2;letter-spacing:-0.02em;color:var(--ink);margin-bottom:22px;}
+    .cta-headline em{font-style:italic;color:var(--red);}
     .cta-inner p{font-size:1.08rem;color:var(--ink-mid);line-height:1.75;margin-bottom:40px;}
     .cta-actions{display:flex;gap:24px;flex-wrap:wrap;align-items:center;}
 
-    /* FOOTER */
     footer{padding:56px 0;border-top:1px solid var(--rule);}
     .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;}
     .footer-logo{font-family:var(--font-serif);font-weight:700;font-size:1.1rem;color:var(--ink);margin-bottom:8px;}
@@ -159,18 +151,19 @@
       .nav-links{display:none;}.nav-hamburger{display:flex;}
       .hero-inner{grid-template-columns:1fr;gap:48px;}
       .hero-portrait{max-width:380px;margin:0 auto;}
+      .credibility-row{justify-content:center;gap:14px 24px;}
       .anchors-grid{grid-template-columns:1fr;}
       .story-inner{grid-template-columns:1fr;gap:48px;}
       .team-grid{grid-template-columns:1fr;}
       .principles-grid{grid-template-columns:1fr;}
       .independence-inner{grid-template-columns:1fr;gap:40px;}
-      .credibility-row{gap:24px;}
       section{padding:64px 0;}
     }
     @media(max-width:600px){
-      .container,.container-narrow{padding:0 20px;}
+      .container{padding:0 20px;}
       .hero{padding:64px 0 56px;}
       .credibility-divider{display:none;}
+      .credibility-name{flex:0 1 auto;}
       .anchor-card{padding:36px 28px;}
       .cta-section{padding:72px 0;}
     }
@@ -208,29 +201,27 @@
   </div>
 </nav>
 
-<!-- ─── HERO ────────────────────────────────────── -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
       <div>
-        <span class="hero-eyebrow">Founder · Sam Mustatea</span>
+        <span class="hero-eyebrow">Founder · Sam</span>
         <h1 class="hero-headline">15 years on the inside. <em>Not watching from a meeting room.</em></h1>
         <p class="hero-sub">PainKiller wasn't built by a consultant who's read about logistics. It was built by someone who ran an Aldi regional distribution centre through Covid — delivering to 110 supermarkets, 16 hours a day, while the country was at standstill. Then led project work across 14 Lidl regional distribution centres. Then built this, to apply that learning to the problems other operators don't see.</p>
       </div>
       <div class="hero-portrait">
         <div class="hero-portrait-frame">
-          <img src="sam-mustatea.jpg" alt="Sam Mustatea, founder of PainKiller Consulting" />
+          <img src="sam-mustatea.png" alt="Sam, founder of PainKiller Consulting" />
         </div>
         <div class="hero-portrait-caption">
-          <strong>Sam Mustatea</strong>
-          Founder · PainKiller Consulting
+          <div class="hero-portrait-name">Sam Mustatea</div>
+          <div class="hero-portrait-role">Founder · PainKiller Consulting</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── CREDIBILITY BAR ─────────────────────────── -->
 <div class="credibility">
   <div class="container">
     <p class="credibility-label">Operations experience across</p>
@@ -245,60 +236,53 @@
       <span class="credibility-divider"></span>
       <span class="credibility-name">ZF Automotive</span>
       <span class="credibility-divider"></span>
-      <span class="credibility-name">Hayman's Group</span>
+      <span class="credibility-name">Hayman's</span>
       <span class="credibility-divider"></span>
       <span class="credibility-name">Kimia</span>
     </div>
   </div>
 </div>
 
-<!-- ─── THE TWO "WHAT?!" ANCHORS ───────────────── -->
 <section class="anchor-section">
   <div class="container">
     <div class="anchor-intro">
       <span class="anchor-eyebrow">The career, in two stories</span>
       <h2 class="section-headline">There are warehouse consultants. <em>And then there are people who have actually run them.</em></h2>
-      <p>Most operations consultancy is delivered by people whose hardest day was a delayed slide deck. PainKiller is built on a different premise. Below are two career anchors that shaped how I now look at every operation I walk into.</p>
+      <p>Most operations consultancy is delivered by people whose hardest day was a delayed slide deck. PainKiller is built on a different premise. Below are two career anchors that shaped how Sam now looks at every operation he walks into.</p>
     </div>
 
     <div class="anchors-grid">
       <div class="anchor-card featured">
         <div class="anchor-label">2020 · Aldi · Regional Distribution Centre</div>
         <h3 class="anchor-headline">Ran an Aldi RDC <em>through Covid.</em> 110 supermarkets supplied. 16 hours a day.</h3>
-        <p class="anchor-body">When the country shut down, supermarket distribution didn't stop — it intensified. Demand patterns broke overnight. Staff sickness took out shifts at a time. The country watched empty shelves on the news and trusted that someone, somewhere, was getting product through. <strong>I was one of those people.</strong></p>
-        <p class="anchor-body">Running an RDC supplying 110 supermarkets for 16 hours a day during the most volatile period in UK retail logistics taught me what no MBA can: how operations behave when everything you took for granted disappears. That's the stress-test most consultants have never been near.</p>
+        <p class="anchor-body">When the country shut down, supermarket distribution didn't stop — it intensified. Demand patterns broke overnight. Staff sickness took out shifts at a time. The country watched empty shelves on the news and trusted that someone, somewhere, was getting product through. <strong>Sam was one of those people.</strong></p>
+        <p class="anchor-body">Running an RDC supplying 110 supermarkets for 16 hours a day during the most volatile period in UK retail logistics teaches you what no MBA can: how operations behave when everything you took for granted disappears. That's the stress-test most consultants have never been near.</p>
         <div class="anchor-detail">Role: Regional Distribution Centre Operations · Period: Covid-19 lockdown era · Scale: 110 supermarkets, multi-shift, 16-hour operating window</div>
       </div>
       <div class="anchor-card">
         <div class="anchor-label">Project work · Lidl · 14 regional distribution centres</div>
         <h3 class="anchor-headline">Led project work across <em>14 Lidl RDCs.</em> Most consultants haven't set foot in even one.</h3>
         <p class="anchor-body">Working across 14 regional distribution centres at scale is rare. It means seeing the same problem manifest in 14 slightly different ways — and learning what causes the variation. <strong>It teaches you to look past local explanations to find the structural ones.</strong></p>
-        <p class="anchor-body">It's the kind of cross-site exposure that turns generic warehouse advice into pattern recognition. When I walk into an audit today, the diagnostic isn't theoretical — it's based on having seen what works and what doesn't, across multiple operations of comparable scale, run by competent people.</p>
+        <p class="anchor-body">It's the kind of cross-site exposure that turns generic warehouse advice into pattern recognition. When Sam walks into an audit today, the diagnostic isn't theoretical — it's based on having seen what works and what doesn't, across multiple operations of comparable scale, run by competent people.</p>
         <div class="anchor-detail">Role: Operations project leadership · Scale: 14 regional distribution centres · Function: Cross-site improvement projects</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── THE STORY ────────────────────────────── -->
 <section class="alt-bg">
   <div class="container">
     <div class="story-inner">
       <div class="story-body">
         <p class="label">The Background</p>
-
-        <p>I've spent <strong>15 years inside warehouse operations</strong> — not as an external consultant observing from a distance, but as the person responsible for the numbers. Pick rates, labour efficiency, goods-in throughput, overtime costs. The metrics that either make a site profitable or quietly drain it.</p>
-
-        <p>My career has run through some of the most operationally demanding environments in the UK. <strong>Aldi.</strong> <strong>Lidl.</strong> <strong>British Airways ground operations.</strong> <strong>WHSmith distribution.</strong> Then manufacturing, FMCG, and 3PL alongside. Different sectors, different cultures, different scales — and the same patterns showing up everywhere.</p>
-
-        <p>The pattern I kept seeing was this: <em>operations struggling with problems that had been attributed to the wrong cause.</em> A labour problem that was actually a slotting problem. An overtime problem that was actually a handover problem. A throughput problem that was actually a dock scheduling problem. The diagnosis was wrong, so the solution was wrong, so the problem came back.</p>
-
+        <p>Sam has spent <strong>15 years inside warehouse operations</strong> — not as an external consultant observing from a distance, but as the person responsible for the numbers. Pick rates, labour efficiency, goods-in throughput, overtime costs. The metrics that either make a site profitable or quietly drain it.</p>
+        <p>The career has run through some of the most operationally demanding environments in the UK. <strong>Aldi.</strong> <strong>Lidl.</strong> <strong>British Airways ground operations.</strong> <strong>WHSmith distribution.</strong> Then manufacturing, FMCG, and specialist 3PL alongside. Different sectors, different cultures, different scales — and the same patterns showing up everywhere.</p>
+        <p>The pattern Sam kept seeing was this: <em>operations struggling with problems that had been attributed to the wrong cause.</em> A labour problem that was actually a slotting problem. An overtime problem that was actually a handover problem. A throughput problem that was actually a dock scheduling problem. The diagnosis was wrong, so the solution was wrong, so the problem came back.</p>
         <p>Most of the time, the cause is only visible from the floor — not from a dashboard, not from a process map, not from a SteerCo. The people on the floor know. They've often been saying so for months. <strong>They just haven't been asked the right questions by anyone with the standing to act on the answers.</strong></p>
-
-        <p>PainKiller was built on that observation. An outside perspective, applied at floor level, by someone who's actually run operations like yours. If I can't find savings greater than the audit fee, you don't pay for it. That's not marketing — it's the only way to make the offer honest.</p>
+        <p>PainKiller was built on that observation. An outside perspective, applied at floor level, by people who've actually run operations like yours. If we can't find savings greater than the audit fee, you don't pay for it. That's not marketing — it's the only way to make the offer honest.</p>
       </div>
 
-      <div class="story-sidebar">
+      <div>
         <div class="sidebar-block">
           <div class="sidebar-block-label">Sector experience</div>
           <ul class="sidebar-list">
@@ -322,7 +306,7 @@
           </ul>
         </div>
         <div class="sidebar-block">
-          <div class="sidebar-block-label">How I work</div>
+          <div class="sidebar-block-label">How we work</div>
           <ul class="sidebar-list">
             <li>Floor-level observation, not just data review</li>
             <li>Staff interviews on every audit</li>
@@ -335,43 +319,40 @@
   </div>
 </section>
 
-<!-- ─── TEAM / NETWORK ───────────────────────── -->
 <section class="team-section">
   <div class="container">
     <div class="team-intro">
-      <span class="team-eyebrow">The PainKiller approach</span>
-      <h2 class="section-headline">Operations consultancy that also <em>understands the commercial side.</em></h2>
-      <p>Most warehouse consultancies are run by operators who don't think commercially, or by commercial people who don't understand operations. PainKiller is deliberately built on both — because the problems clients are paying to fix don't sit cleanly in one box.</p>
+      <span class="team-eyebrow">The PainKiller team</span>
+      <h2 class="section-headline">A small core team. <em>Operations, customer success, and specialist insight — working as one.</em></h2>
+      <p>Most warehouse consultancies are run by operators who don't think commercially, or by commercial people who don't understand operations. <strong>PainKiller is built deliberately on both</strong> — because the problems clients pay to fix don't sit cleanly in one box. Every engagement draws on three integrated capabilities, working together as one team.</p>
     </div>
 
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-role">The operations side</div>
-        <h3 class="team-title">Sam Mustatea — founder, lead practitioner</h3>
-        <p class="team-body">Every audit, every Rapid-Resolve session, every transformation engagement is led by Sam personally. 15 years inside the operations he now consults on. No junior associates running the diagnostics. No outsourced report writers. Senior practitioner, every engagement.</p>
+        <div class="team-pill">01</div>
+        <div class="team-role">Operations</div>
+        <h3 class="team-title">15 years inside the operations we now consult on</h3>
+        <p class="team-body">Sam leads every audit, Rapid-Resolve session, and transformation engagement personally. 15 years inside retail distribution, aviation, manufacturing, FMCG, and specialist 3PL. <strong>No junior associates running the diagnostics, no outsourced report writers</strong> — senior practitioner, every engagement.</p>
       </div>
       <div class="team-card">
-        <div class="team-role">The commercial &amp; customer-success side</div>
-        <h3 class="team-title">Strategic input from senior customer-success leadership</h3>
-        <p class="team-body">PainKiller draws on senior expertise in customer success and commercial strategy — currently from a Principal Customer Success Manager working in central London. The result: recommendations that don't just fix the operation, but make sense to the people paying for the operation.</p>
+        <div class="team-pill">02</div>
+        <div class="team-role">Customer success</div>
+        <h3 class="team-title">Award-winning customer-success leadership, on every engagement</h3>
+        <p class="team-body">Our customer-success lead — a Principal Customer Success Manager with award-winning experience at a major London-based technology company — works alongside Sam on every engagement. The result: <strong>recommendations that don't just fix the operation, but actually land with the people paying for it</strong> — the board, the procurement team, the operations directors signing off the work.</p>
       </div>
       <div class="team-card">
-        <div class="team-role">The specialist network</div>
-        <h3 class="team-title">Trusted specialists, brought in when needed</h3>
-        <p class="team-body">For engagements that need deeper specialist input — slotting algorithms, WMS configuration, advanced data analysis — PainKiller draws on a curated network of senior operations practitioners. Selected for their work, not their CV. Brought in only when their input materially improves the outcome.</p>
+        <div class="team-pill">03</div>
+        <div class="team-role">Specialist insight</div>
+        <h3 class="team-title">Senior operations specialists, integrated into every engagement</h3>
+        <p class="team-body">A small, hand-picked group of senior operations specialists work alongside Sam on every audit and transformation programme. They contribute deeper technical analysis — slotting algorithms, WMS configuration, advanced data work — and their insights are part of every report we produce. <strong>Selected for their judgement, not their CV.</strong></p>
       </div>
-    </div>
-
-    <div class="team-note">
-      <strong>What this means in practice:</strong> when you hire PainKiller, you get Sam Mustatea on every visit and every report — not an associate. Where specialist depth is needed beyond Sam's own experience, that's drawn from a tested network rather than improvised. And when commercial framing matters — making the business case, presenting findings to a board, structuring an improvement programme that procurement will sign off on — that capability is built in, not bolted on.
     </div>
   </div>
 </section>
 
-<!-- ─── PRINCIPLES ──────────────────────────── -->
 <section>
   <div class="container">
-    <p class="label">How I work</p>
+    <p class="label">How we work</p>
     <h2 class="section-headline">Three principles that don't change from job to job.</h2>
     <div class="principles-grid">
       <div class="principle">
@@ -386,14 +367,13 @@
       </div>
       <div class="principle">
         <div class="principle-num">03</div>
-        <div class="principle-title">If I can't find savings, I don't invoice for them.</div>
+        <div class="principle-title">If we can't find savings, we don't invoice for them.</div>
         <p class="principle-body">The zero-risk guarantee isn't marketing. It's the only way to make the offer honest. If an operation's problems don't yield savings greater than the audit fee — which is rare, but possible — it would be wrong to charge for it. The guarantee reflects a genuine belief that the work will find value, not a legal escape clause buried in terms.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── INDEPENDENCE ────────────────────────── -->
 <section class="independence">
   <div class="container">
     <div class="independence-inner">
@@ -417,13 +397,12 @@
   </div>
 </section>
 
-<!-- ─── CTA ─────────────────────────────────── -->
 <section class="cta-section">
   <div class="container">
     <div class="cta-inner">
       <p class="label">Work together</p>
-      <h2 class="section-headline">Start with a conversation. <em>20 minutes. No deck.</em></h2>
-      <p>Book a free 20-minute diagnostic call. Tell me about your operation and what isn't working. I'll tell you honestly whether the audit makes sense — and if it doesn't, I'll say so and recommend whichever of the other services is the right fit. Or none, if that's the honest answer.</p>
+      <h2 class="cta-headline">Start with a conversation. <em>20 minutes. No deck.</em></h2>
+      <p>Book a free 20-minute diagnostic call. Tell us about your operation and what isn't working. We'll tell you honestly whether the audit makes sense — and if it doesn't, we'll say so and recommend whichever of the other services is the right fit. Or none, if that's the honest answer.</p>
       <div class="cta-actions">
         <a href="book.html" class="btn-primary">Book Free Diagnostic Call</a>
         <a href="services.html" class="btn-text">Or view all services →</a>
