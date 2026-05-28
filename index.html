@@ -205,6 +205,13 @@
       font-size: 0.72rem; color: var(--ink-light); margin-top: 16px;
       padding-top: 16px; border-top: 1px solid var(--rule); font-style: italic;
     }
+    .sidebar-link {
+      display: inline-block; margin-top: 14px;
+      font-size: 0.8rem; font-weight: 500; color: var(--ink);
+      border-bottom: 1px solid var(--rule); padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .sidebar-link:hover { color: var(--red); border-color: var(--red); }
 
     /* ─── EXPERIENCE STRIP ───────────────────────────────── */
     .experience-strip {
@@ -540,6 +547,7 @@
           <div class="sidebar-desc">Faster goods-in to shelf at a high-throughput FMCG operation</div>
         </div>
         <p class="sidebar-source">Anonymised. Sector and site size available on request.</p>
+        <a href="blog/" class="sidebar-link">Or read the field notes →</a>
       </aside>
     </div>
   </div>
