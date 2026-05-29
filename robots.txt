@@ -1,0 +1,14 @@
+# robots.txt — painkillerconsulting.co.uk
+# Last updated: 28 May 2026
+
+# Allow all standard search engine crawlers to index the whole site
+User-agent: *
+Allow: /
+
+# Block confirmation pages — these are post-conversion endpoints with no SEO value
+# and may contain order-confirmation details we don't want crawled
+Disallow: /audit-confirmed.html
+Disallow: /audit-report.html
+
+# Sitemap location
+Sitemap: https://painkillerconsulting.co.uk/sitemap.xml
